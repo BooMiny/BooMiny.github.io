@@ -43,7 +43,7 @@
     <h2 class="author">BooMiny</h2>
     <h3 class="description">女程序猿也可以性感和可耐o(*￣▽￣*)ブ</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>3</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>6</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>
@@ -71,6 +71,391 @@
 
         <section id="main">
   
+    <article id="post-JS作用域" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/20/JS作用域/" class="article-date">
+  <time class="post-time" datetime="2017-06-20T01:42:39.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br/>
+    <span class="post-day">20</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/20/JS作用域/">JS作用域 变量提升</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+  &nbsp; | &nbsp;
+  <div class="view-box">
+    <span id="/2017/06/20/JS作用域/" class="leancloud_visitors" data-flag-title="JS作用域 变量提升">
+      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
+    </span>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、全局变量"><a href="#一、全局变量" class="headerlink" title="一、全局变量"></a>一、全局变量</h2><ul>
+<li>申明在<strong>函数之外</strong>的变量</li>
+<li>申明变量时凡是<strong>没有var关键字</strong>，而直接赋值的变量均为全局变量</li>
+</ul>
+<h2 id="二、局部变量"><a href="#二、局部变量" class="headerlink" title="二、局部变量"></a>二、局部变量</h2><ul>
+<li>申明在<strong>函数体中</strong>的变量，并且只能在当前函数体内访问</li>
+</ul>
+<h1 id="三、实例"><a href="#三、实例" class="headerlink" title="三、实例"></a>三、实例</h1><ol>
+<li><p>function test() {  </p>
+<p>​           a = 30;   //没有用var声明变量，为全局变量</p>
+<p>​          var b = 20;</p>
+<p>​     }</p>
+<p> test();</p>
+<p> console.log(“a=”+a); //这里很明显，a为全局变量   <strong>输出a=30</strong></p>
+<p> console.log(“b=”+b);//b为局部变量，故在函数test外调用是，<em>提示未定义</em></p>
+<p>​</p>
+</li>
+<li><p>var a = 1;</p>
+<p>function test() {  </p>
+<p>​          console.log(“a=”+a); //这里a为undefined</p>
+<p>/<em>函数中声明的变量在整个函数中都有定义。如果函数<strong>内部有定义变量</strong>，即使在定义之前输出但会<strong>先执行后面定义语句</strong>，然后判断输出结果，所以说声明的变量在整个函数中都是起作用的。</em>/</p>
+<p>​          var a = 2;</p>
+<p>​     }</p>
+<p> test();//输出undefined</p>
+</li>
+<li><p>局部变量a可以覆盖全局变量a</p>
+<p>var a=1;</p>
+<p>​    function main(){</p>
+<p>​        var a=2;//局部变量</p>
+<p>​        console.log(a);//    覆盖输出2</p>
+<p>​    } </p>
+<p>   main();</p>
+<p>   console.log(a);//1</p>
+</li>
+<li><p>javascript没有块级作用域</p>
+<p>function test(){<br>   for(var i = 0 ; i &lt; 3 ; i++){</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">//i=0,1,2,最后执行到i=3时退出循环</div></pre></td></tr></table></figure>
+<p>   }<br>   console.log(i);//3<br>}<br>test();</p>
+<p><strong>与C、C++、java则会输出0</strong></p>
+</li>
+<li><p>变量提升</p>
+<p>var global; // 变量提升，全局作用域范围内，此时只是声明，并没有赋值<br>console.log(global); // undefined<br>global = ‘global’; // 此时才赋值<br>console.log(global); // 打印出global</p>
+<p>function fn () {<br>　　var a; // 变量提升，函数作用域范围内<br>　　console.log(a);<br>　　a = ‘aaa’;<br>　　console.log(a);<br>}<br>fn();</p>
+<p>​</p>
+<p>​</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://boominy.github.io/2017/06/20/JS作用域/" data-id="cj45idx3k0002rwtpz7z4adtp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-浅谈JS闭包" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/20/浅谈JS闭包/" class="article-date">
+  <time class="post-time" datetime="2017-06-20T01:35:16.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br/>
+    <span class="post-day">20</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/20/浅谈JS闭包/">浅谈JS闭包</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+  &nbsp; | &nbsp;
+  <div class="view-box">
+    <span id="/2017/06/20/浅谈JS闭包/" class="leancloud_visitors" data-flag-title="浅谈JS闭包">
+      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
+    </span>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、闭包的概念："><a href="#一、闭包的概念：" class="headerlink" title="一、闭包的概念："></a>一、闭包的概念：</h3><p> 闭包是指有权访问另一个函数作用域中的变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量</p>
+<h3 id="二、闭包特点："><a href="#二、闭包特点：" class="headerlink" title="二、闭包特点："></a>二、闭包特点：</h3><ul>
+<li>函数嵌套函数</li>
+<li>函数内部可以引用外部的参数和变量</li>
+<li>参数和变量不会被垃圾回收机制回收</li>
+</ul>
+<h3 id="三、优缺点："><a href="#三、优缺点：" class="headerlink" title="三、优缺点："></a>三、优缺点：</h3><ul>
+<li><p>优点：</p>
+<p>1.希望一个变量长期驻扎在内存中<br>2.避免全局变量的污染<br>3.私有成员的存在</p>
+</li>
+<li><p>缺点：</p>
+<ol>
+<li>闭包有一个非常严重的问题，那就是内存浪费问题，这个内存浪费不仅仅因为它常驻内存，更重要的是，对闭包的使用不当会造成无效内存的产生</li>
+</ol>
+</li>
+</ul>
+<h3 id="四、闭包简例："><a href="#四、闭包简例：" class="headerlink" title="四、闭包简例："></a>四、闭包简例：</h3><ul>
+<li>function f1(){</li>
+</ul>
+<p>　　　　var n=999;</p>
+<p>　　　　nAdd=function(){n+=1}</p>
+<p>　　　　function f2(){<br>　　　　　　alert(n);<br>　　　　}</p>
+<p>　　　　return f2;</p>
+<p>　　}</p>
+<p>　　var result=f1();</p>
+<p>　　result(); // 999</p>
+<p>　　nAdd();</p>
+<p>　　result(); // 1000</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://boominy.github.io/2017/06/20/浅谈JS闭包/" data-id="cj45idx3s0005rwtppjge4j00" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-javascript语言特性" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/19/javascript语言特性/" class="article-date">
+  <time class="post-time" datetime="2017-06-19T07:17:59.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br/>
+    <span class="post-day">19</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/19/javascript语言特性/">javascript语言特性</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+  &nbsp; | &nbsp;
+  <div class="view-box">
+    <span id="/2017/06/19/javascript语言特性/" class="leancloud_visitors" data-flag-title="javascript语言特性">
+      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
+    </span>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>javascript语言实现继承机制的核心就是 <strong>prototype</strong> ，而不是Java语言那样的类式继承。</li>
+<li>Javascript 解析引擎在读取一个Object的属性的值时，会沿着 <strong>原型链</strong>向上寻找，如果最终没有找到，则该属性值为<strong>undefined</strong>； 如果最终找到该属性的值，则返回结果。</li>
+<li>当javascript解析引擎执行“给一个Object的某个属性赋值”的时候，如果当前Object存在该属性，则改写该属性的值，如果当前的Object本身并不存在该属性，则赋值该属性的值 。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://boominy.github.io/2017/06/19/javascript语言特性/" data-id="cj45idx3c0001rwtpozkcnhbc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-6-7月的北京实训" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/19/6-7月的北京实训/" class="article-date">
+  <time class="post-time" datetime="2017-06-19T06:59:25.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br/>
+    <span class="post-day">19</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/19/6-7月的北京实训/">6~7月的北京实训</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+  &nbsp; | &nbsp;
+  <div class="view-box">
+    <span id="/2017/06/19/6-7月的北京实训/" class="leancloud_visitors" data-flag-title="6~7月的北京实训">
+      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
+    </span>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、演讲"><a href="#一、演讲" class="headerlink" title="一、演讲"></a>一、演讲</h1><ol>
+<li><p>体态：眼神 表情 </p>
+</li>
+<li><p>声音：大 富有感染力</p>
+</li>
+<li><p>内容：</p>
+<p>​</p>
+</li>
+</ol>
+<h1 id="二、劳动法"><a href="#二、劳动法" class="headerlink" title="二、劳动法"></a>二、劳动法</h1><ol>
+<li><p>实习期：未毕业，工资协商 无五险一金</p>
+</li>
+<li><p>试用期：毕业  有法律保护 五险一金 岗位工资80% 最长不超过六个月</p>
+<p>​                1年：不超过1个月    2~3年：2个月          3年以上：不超过六个月 </p>
+<p>​                 同一个人试用期只能有一次 可以延期（前提是不超过法律规定期限）</p>
+<p>​                 开除条件：</p>
+<ul>
+<li><p>试用期被证明不符合录用条件</p>
+</li>
+<li><p>严重违反用人单位规章制度</p>
+</li>
+<li><p>严重失职违章舞弊</p>
+</li>
+<li><p>劳动者同时与其他用人单位建立劳动关系的</p>
+</li>
+<li><p>虚假信息，威胁等手段</p>
+</li>
+<li><p>酒驾</p>
+</li>
+<li><p>公司内部培训（HR）：工资总额的1.5%~2.5% 培训费用不需偿还</p>
+<p>外资培训：费用高 包含所有的费用（包括住宿费，交通费），培训期间有工资（全资）</p>
+</li>
+</ul>
+<p>3.试用期考核：</p>
+</li>
+</ol>
+<ul>
+<li>签约时不会写明考核标准</li>
+<li>受到不公正对待时要敢于用法律手段维护自己的合法权益（比如说查明不合格项） </li>
+</ul>
+<ol>
+<li><p>签订合同后，如果确实不能胜任这一块工作，可以申请调配，企业需要提前30天提前通知，并给一个月工资</p>
+</li>
+<li><p>年假：（最短休假时间）</p>
+<ul>
+<li>1~10年：5天</li>
+<li>10年以上：10天</li>
+<li>20年以上：15天</li>
+<li>不休无法累计，但是有三薪补偿</li>
+</ul>
+</li>
+<li><p>事假：</p>
+<ul>
+<li>工资全无，累计一定程度有相应惩罚</li>
+<li>可用年假抵扣</li>
+</ul>
+</li>
+<li><p>病假;</p>
+<ul>
+<li>必须有证明</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>带薪40%左右，累计可用年假抵扣</li>
+</ul>
+<ol>
+<li><p>婚嫁，产假，陪产假：</p>
+<ul>
+<li>婚假：结婚证为证明（时常看地区）</li>
+<li>产假：生孩子的人（4个多月）</li>
+<li>陪产假：男方（7~10天）</li>
+</ul>
+</li>
+<li><p>五险一金：（企业与员工共同缴纳个人20%(上限+下限)+40%）</p>
+<ul>
+<li>养老保险</li>
+<li>失业保险（非本人意愿导致失业）钱少并且领取过程麻烦</li>
+<li>医疗保险</li>
+<li>工伤保险</li>
+<li>生育保险(在当地缴纳满一年)</li>
+<li>住房公积金（<strong>一金</strong>）</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://boominy.github.io/2017/06/19/6-7月的北京实训/" data-id="cj45idx340000rwtp4vwdrjyr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
     <article id="post-something" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/13/something/" class="article-date">
@@ -88,7 +473,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/13/something/">something</a>
+      <a class="article-title" href="/2017/06/13/something/">javascript call和apply区别</a>
     </h1>
   
 
@@ -98,7 +483,7 @@
               
   &nbsp; | &nbsp;
   <div class="view-box">
-    <span id="/2017/06/13/something/" class="leancloud_visitors" data-flag-title="something">
+    <span id="/2017/06/13/something/" class="leancloud_visitors" data-flag-title="javascript call和apply区别">
       &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
     </span>
   </div>
@@ -110,11 +495,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="一-方法定义"><a href="#一-方法定义" class="headerlink" title="一.方法定义"></a>一.方法定义</h2><ol>
+<li><p>call方法：</p>
+<ul>
+<li><h5 id="a-call-b-arg1-arg2-就是a对象的方法应用到b对象"><a href="#a-call-b-arg1-arg2-就是a对象的方法应用到b对象" class="headerlink" title="a.call(b,arg1,arg2..)就是a对象的方法应用到b对象"></a>a.call(b,arg1,arg2..)就是a对象的方法应用到b对象</h5><p>实例：</p>
+<p>function add(a,b)<br>{<br>alert(a+b);<br>}<br>function reduce(a,b)<br>{<br>alert(a-b);<br>}<br>add.call(reduce,1,3) //将add方法运用到reduce,结果为4</p>
+</li>
+<li><h5 id="call可以改变this指向"><a href="#call可以改变this指向" class="headerlink" title="call可以改变this指向"></a>call可以改变this指向</h5><p>实例：</p>
+<p>function Animal()<br>{<br>this.name=”animal”;<br>this.showName=function()<br>{<br>alert(this.name)<br>}<br>}<br>function Cat()<br>{<br>this.name=”cat”;<br>}<br>var animal = new Animal();<br>var cat = new Cat();<br>animal.showName(); //结果为animal<br>animal.showName.call(cat); //原本cat没有showName方法，但是通过call方法将animal的showName方法应用到cat上,因此结果为cat</p>
+</li>
+<li><h5 id="实现继承"><a href="#实现继承" class="headerlink" title="实现继承"></a>实现继承</h5><p>实例：</p>
+<p>function Animal(name)<br>{<br>this.name=name;<br>this.showName=function()<br>{<br>alert(this.name)<br>}<br>}<br>function Cat(name)<br>{<br>Animal.call(this,name); //将Animal应用到Cat上，因此Cat拥有了Animal的所有属性和方法<br>}<br>var cat = new Cat(“Black Cat”);<br>cat.showName(); //浏览器弹出Black Cat</p>
+</li>
+</ul>
+</li>
+<li><p>apply用法</p>
+<ul>
+<li>apply和call的用法只有一个地方不一样，除此之外，其他地方基本一模一样</li>
+</ul>
+<p>a.call(b,arg1,arg2…)</p>
+<ul>
+<li>apply(b,[arg1,arg2]) //apply只有2个参数，它将call的参数（arg1,arg2…）放在一个数组中作为apply的第二参数</li>
+</ul>
+<p>​</p>
+</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/13/something/" data-id="cj3v3l4x20001actpijxm7ub3" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/13/something/" data-id="cj45idx3k0003rwtpltr17lwa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -143,7 +553,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/13/what/">what</a>
+      <a class="article-title" href="/2017/06/13/what/">MVC MVP和MVVM</a>
     </h1>
   
 
@@ -153,7 +563,7 @@
               
   &nbsp; | &nbsp;
   <div class="view-box">
-    <span id="/2017/06/13/what/" class="leancloud_visitors" data-flag-title="what">
+    <span id="/2017/06/13/what/" class="leancloud_visitors" data-flag-title="MVC MVP和MVVM">
       &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
     </span>
   </div>
@@ -165,76 +575,64 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/2017/06/13/what/aaa.jpg" alt="Alt dog"></p>
+        <h1 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h1><h3 color="#0000ff" face="宋体">一、三个组成</h3>
+
+<ul>
+<li><p>视图(View):用户界面</p>
+</li>
+<li><p>控制器(Controller):业务逻辑</p>
+</li>
+<li><p>模型(Model):数据保存</p>
+<p>各部分之间的通信方式：</p>
+<p>​</p>
+<p><img src="/2017/06/13/what/mvc.png" alt="Alt mvc"></p>
+</li>
+</ul>
+<ol>
+<li><p>View 传送指令到 Controller</p>
+</li>
+<li><p>Controller 完成业务逻辑后，要求 Model 改变状态</p>
+</li>
+<li><p>Model 将新的数据发送到 View，用户得到反馈</p>
+<h3 color="#0000ff" face="宋体">二、互动模式</h3>
+
+<ol>
+<li><p>view接受指令传给Controller</p>
+<p><img src="/2017/06/13/what/mvc1.png" alt="Alt f"></p>
+</li>
+<li><p>直接通过controller接受指令。</p>
+<p><img src="/2017/06/13/what/mvc2.png" alt="Alt o"></p>
+<p>​</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 color="#0000ff" face="宋体">三、实例：Backbone</h3>
+
+<p><img src="/2017/06/13/what/mvc3.png" alt="Alt i"></p>
+<ol>
+<li>用户可以向 View 发送指令（DOM 事件），再由 View 直接要求 Model 改变状态。</li>
+<li>用户也可以直接向 Controller 发送指令（改变 URL 触发 hashChange 事件），再由 Controller 发送给 View。</li>
+<li>Controller 非常薄，只起到路由的作用，而 View 非常厚，业务逻辑都部署在 View。所以，Backbone 索性取消了 Controller，只保留一个 Router（路由器）。</li>
+</ol>
+<h1 id="MVP"><a href="#MVP" class="headerlink" title="MVP"></a>MVP</h1><p>MVP 模式将 Controller 改名为 Presenter，同时改变了通信方向。</p>
+<p><img src="/2017/06/13/what/mvp.png" alt="Alt s"></p>
+<ol>
+<li><p>各部分之间的通信，都是双向的。</p>
+</li>
+<li><p>View 与 Model 不发生联系，都通过 Presenter 传递。</p>
+</li>
+<li><p>View 非常薄，不部署任何业务逻辑，称为”被动视图”（Passive View），即没有任何主动性，而 Presenter非常厚，所有逻辑都部署在那里。</p>
+<h1 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h1><p>MVVM 模式将 Presenter 改名为 ViewModel，基本上与 MVP 模式完全一致。</p>
+<p>唯一的区别是，它采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel，反之亦然。<a href="https://angularjs.org/" target="_blank" rel="external">Angular</a> 和 <a href="http://emberjs.com/" target="_blank" rel="external">Ember</a> 都采用这种模式。</p>
+<p><img src="/2017/06/13/what/mvvm.png" alt="Alt o"></p>
+</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/13/what/" data-id="cj3v3l4xh0002actpp33upddt" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-hello-world" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/12/hello-world/" class="article-date">
-  <time class="post-time" datetime="2017-06-12T11:28:54.710Z" itemprop="datePublished">
-    <span class="post-month">6月</span><br/>
-    <span class="post-day">12</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/12/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div>
-          
-          
-              
-  &nbsp; | &nbsp;
-  <div class="view-box">
-    <span id="/2017/06/12/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
-      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
-    </span>
-  </div>
-
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/12/hello-world/" data-id="cj3v3l4wj0000actp35tou7vd" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/13/what/" data-id="cj45idx3k0004rwtpr3twc0si" class="article-share-link">Share</a>
       
       
     </footer>
@@ -286,7 +684,7 @@
     <h2 class="author">BooMiny</h2>
     <h3 class="description">女程序猿也可以性感和可耐o(*￣▽￣*)ブ</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>3</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>6</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>
@@ -295,7 +693,7 @@
 
     <div class="social-link">
       
-        <a class="hvr-bounce-in" href="http://github.com/ShanaMaid" target="_blank" title="Github">
+        <a class="hvr-bounce-in" href="https://github.com/BooMiny" target="_blank" title="Github">
           Github
         </a>
       

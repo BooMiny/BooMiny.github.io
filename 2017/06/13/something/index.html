@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>something | SexMonkey</title>
+  <title>javascript call和apply区别 | SexMonkey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="女程序猿也可以性感和可耐o(*￣▽￣*)ブ">
+  <meta name="description" content="一.方法定义 call方法：  a.call(b,arg1,arg2..)就是a对象的方法应用到b对象实例： function add(a,b){alert(a+b);}function reduce(a,b){alert(a-b);}add.call(reduce,1,3) //将add方法运用到reduce,结果为4  call可以改变this指向实例： function Animal(){t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="something">
+<meta property="og:title" content="javascript call和apply区别">
 <meta property="og:url" content="http://boominy.github.io/2017/06/13/something/index.html">
 <meta property="og:site_name" content="SexMonkey">
-<meta property="og:description" content="女程序猿也可以性感和可耐o(*￣▽￣*)ブ">
-<meta property="og:updated_time" content="2017-06-13T04:58:15.534Z">
+<meta property="og:description" content="一.方法定义 call方法：  a.call(b,arg1,arg2..)就是a对象的方法应用到b对象实例： function add(a,b){alert(a+b);}function reduce(a,b){alert(a-b);}add.call(reduce,1,3) //将add方法运用到reduce,结果为4  call可以改变this指向实例： function Animal(){t">
+<meta property="og:updated_time" content="2017-06-20T01:13:02.496Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="something">
-<meta name="twitter:description" content="女程序猿也可以性感和可耐o(*￣▽￣*)ブ">
+<meta name="twitter:title" content="javascript call和apply区别">
+<meta name="twitter:description" content="一.方法定义 call方法：  a.call(b,arg1,arg2..)就是a对象的方法应用到b对象实例： function add(a,b){alert(a+b);}function reduce(a,b){alert(a-b);}add.call(reduce,1,3) //将add方法运用到reduce,结果为4  call可以改变this指向实例： function Animal(){t">
   
     <link rel="alternate" href="/atom.xml" title="SexMonkey" type="application/atom+xml">
   
@@ -44,7 +44,7 @@
     <h2 class="author">BooMiny</h2>
     <h3 class="description">女程序猿也可以性感和可耐o(*￣▽￣*)ブ</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>3</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>6</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      something
+      javascript call和apply区别
     </h1>
   
 
@@ -97,7 +97,7 @@
               
   &nbsp; | &nbsp;
   <div class="view-box">
-    <span id="/2017/06/13/something/" class="leancloud_visitors" data-flag-title="something">
+    <span id="/2017/06/13/something/" class="leancloud_visitors" data-flag-title="javascript call和apply区别">
       &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
     </span>
   </div>
@@ -109,11 +109,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="一-方法定义"><a href="#一-方法定义" class="headerlink" title="一.方法定义"></a>一.方法定义</h2><ol>
+<li><p>call方法：</p>
+<ul>
+<li><h5 id="a-call-b-arg1-arg2-就是a对象的方法应用到b对象"><a href="#a-call-b-arg1-arg2-就是a对象的方法应用到b对象" class="headerlink" title="a.call(b,arg1,arg2..)就是a对象的方法应用到b对象"></a>a.call(b,arg1,arg2..)就是a对象的方法应用到b对象</h5><p>实例：</p>
+<p>function add(a,b)<br>{<br>alert(a+b);<br>}<br>function reduce(a,b)<br>{<br>alert(a-b);<br>}<br>add.call(reduce,1,3) //将add方法运用到reduce,结果为4</p>
+</li>
+<li><h5 id="call可以改变this指向"><a href="#call可以改变this指向" class="headerlink" title="call可以改变this指向"></a>call可以改变this指向</h5><p>实例：</p>
+<p>function Animal()<br>{<br>this.name=”animal”;<br>this.showName=function()<br>{<br>alert(this.name)<br>}<br>}<br>function Cat()<br>{<br>this.name=”cat”;<br>}<br>var animal = new Animal();<br>var cat = new Cat();<br>animal.showName(); //结果为animal<br>animal.showName.call(cat); //原本cat没有showName方法，但是通过call方法将animal的showName方法应用到cat上,因此结果为cat</p>
+</li>
+<li><h5 id="实现继承"><a href="#实现继承" class="headerlink" title="实现继承"></a>实现继承</h5><p>实例：</p>
+<p>function Animal(name)<br>{<br>this.name=name;<br>this.showName=function()<br>{<br>alert(this.name)<br>}<br>}<br>function Cat(name)<br>{<br>Animal.call(this,name); //将Animal应用到Cat上，因此Cat拥有了Animal的所有属性和方法<br>}<br>var cat = new Cat(“Black Cat”);<br>cat.showName(); //浏览器弹出Black Cat</p>
+</li>
+</ul>
+</li>
+<li><p>apply用法</p>
+<ul>
+<li>apply和call的用法只有一个地方不一样，除此之外，其他地方基本一模一样</li>
+</ul>
+<p>a.call(b,arg1,arg2…)</p>
+<ul>
+<li>apply(b,[arg1,arg2]) //apply只有2个参数，它将call的参数（arg1,arg2…）放在一个数组中作为apply的第二参数</li>
+</ul>
+<p>​</p>
+</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/13/something/" data-id="cj3v3l4x20001actpijxm7ub3" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/13/something/" data-id="cj45idx3k0003rwtpltr17lwa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -122,10 +147,19 @@
     
 <nav id="article-nav">
   
+    <a href="/2017/06/19/6-7月的北京实训/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          6~7月的北京实训
+        
+      </div>
+    </a>
+  
   
     <a href="/2017/06/13/what/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">what</div>
+      <div class="article-nav-title">MVC MVP和MVVM</div>
     </a>
   
 </nav>
@@ -186,7 +220,7 @@
     <h2 class="author">BooMiny</h2>
     <h3 class="description">女程序猿也可以性感和可耐o(*￣▽￣*)ブ</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>3</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>6</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>
@@ -195,7 +229,7 @@
 
     <div class="social-link">
       
-        <a class="hvr-bounce-in" href="http://github.com/ShanaMaid" target="_blank" title="Github">
+        <a class="hvr-bounce-in" href="https://github.com/BooMiny" target="_blank" title="Github">
           Github
         </a>
       
