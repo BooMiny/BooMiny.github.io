@@ -43,7 +43,7 @@
     <h2 class="author">BooMiny</h2>
     <h3 class="description">女程序猿也可以性感和可耐o(*￣▽￣*)ブ</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>20</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>
@@ -66,6 +66,152 @@
 </div>
 
         <section id="main">
+  
+    <article id="post-uni" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/01/uni/" class="article-date">
+  <time class="post-time" datetime="2017-07-01T13:53:15.000Z" itemprop="datePublished">
+    <span class="post-month">7月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/01/uni/">正则表达式</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+  &nbsp; | &nbsp;
+  <div class="view-box">
+    <span id="/2017/07/01/uni/" class="leancloud_visitors" data-flag-title="正则表达式">
+      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
+    </span>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>序言：正则表达式这个东西，挺重要也挺麻烦的，所以今天就在网上搜集整理了一波，方便用到的时候使用，嘻嘻，喜欢的拿走不谢哦(●’◡’●)</p>
+<h4 id="一、基本知识："><a href="#一、基本知识：" class="headerlink" title="一、基本知识："></a>一、基本知识：</h4><ol>
+<li>/正则表达式主体/修饰符(可选)</li>
+<li>i 执行对大小写不敏感的匹配。</li>
+<li>g 执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。</li>
+<li>m 执行多行匹配。</li>
+<li>[abc] 查找方括号之间的任何字符。</li>
+<li>[0-9] 查找任何从 0 至 9 的数字</li>
+<li>(x|y) 查找任何以 | 分隔的选项。</li>
+<li>\d 查找数字。</li>
+<li>\s 查找空白字符</li>
+<li>\b 匹配单词边界。</li>
+<li>\uxxxx 查找以十六进制数 xxxx 规定的 Unicode 字符。</li>
+<li>n+ 匹配任何包含至少一个 <em>n</em> 的字符串。</li>
+<li>n<em> 匹配任何包含零个或多个 </em>n* 的字符串。</li>
+<li>n? 匹配任何包含零个或一个 <em>n</em> 的字符串。</li>
+</ol>
+<h4 id="二、实例："><a href="#二、实例：" class="headerlink" title="二、实例："></a>二、实例：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">/*是否带有小数*/</div><div class="line">function    isDecimal(strValue )  &#123;  </div><div class="line">   var  objRegExp= /^\d+\.\d+$/;</div><div class="line">   return  objRegExp.test(strValue);  </div><div class="line">&#125;  </div><div class="line"></div><div class="line">/*校验是否中文名称组成 */</div><div class="line">function ischina(str) &#123;</div><div class="line">	var reg=/^[\u4E00-\u9FA5]&#123;2,4&#125;$/;   /*定义验证表达式*/</div><div class="line">	return reg.test(str);     /*进行验证*/</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*校验是否全由8位数字组成 */</div><div class="line">function isStudentNo(str) &#123;</div><div class="line">	var reg=/^[0-9]&#123;8&#125;$/;   /*定义验证表达式*/</div><div class="line">	return reg.test(str);     /*进行验证*/</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*校验电话码格式 */</div><div class="line">function isTelCode(str) &#123;</div><div class="line">	var reg= /^((0\d&#123;2,3&#125;-\d&#123;7,8&#125;)|(1[3584]\d&#123;9&#125;))$/;</div><div class="line">	return reg.test(str);</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*校验邮件地址是否合法 */</div><div class="line">function IsEmail(str) &#123;</div><div class="line">	var reg=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;</div><div class="line">	return reg.test(str);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="三、热心网友整理的："><a href="#三、热心网友整理的：" class="headerlink" title="三、热心网友整理的："></a>三、热心网友整理的：</h4><p>只能输入数字：”^[0-9]<em>$”。<br>只能输入n位的数字：”^\d{n}$”。<br>只能输入至少n位的数字：”^\d{n,}$”。<br>只能输入m~n位的数字：。”^\d{m,n}$”<br>只能输入零和非零开头的数字：”^(0|[1-9][0-9]</em>)$”。<br>只能输入有两位小数的正实数：”^[0-9]+(.[0-9]{2})?$”。<br>只能输入有1~3位小数的正实数：”^[0-9]+(.[0-9]{1,3})?$”。<br>只能输入非零的正整数：”^+?[1-9][0-9]<em>$”。<br>只能输入非零的负整数：”^-[1-9][]0-9”</em>$。<br>只能输入长度为3的字符：”^.{3}$”。<br>只能输入由26个英文字母组成的字符串：”^[A-Za-z]+$”。<br>只能输入由26个大写英文字母组成的字符串：”^[A-Z]+$”。<br>只能输入由26个小写英文字母组成的字符串：”^[a-z]+$”。<br>只能输入由数字和26个英文字母组成的字符串：”^[A-Za-z0-9]+$”。<br>只能输入由数字、26个英文字母或者下划线组成的字符串：”^\w+$”。<br>验证用户密码：”^[a-zA-Z]\w{5,17}$”正确格式为：以字母开头，长度在6~18之间，只能包含字符、数字和下划线。<br>验证是否含有^%&amp;’,;=?$\”等字符：”[^%&amp;’,;=?$\x22]+”。<br>只能输入汉字：”^[\u4e00-\u9fa5]{0,}$” </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://boominy.github.io/2017/07/01/uni/" data-id="cj4ldgqiw000hwktpqaglvxl5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-biji" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/01/biji/" class="article-date">
+  <time class="post-time" datetime="2017-07-01T12:25:42.000Z" itemprop="datePublished">
+    <span class="post-month">7月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/01/biji/">biji</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+  &nbsp; | &nbsp;
+  <div class="view-box">
+    <span id="/2017/07/01/biji/" class="leancloud_visitors" data-flag-title="biji">
+      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
+    </span>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>序言：我这个银啊，最大的缺点局势爱忘，越简单越容易忘，所以我要把所有最基础的东西都给整理一遍，嘻嘻，别觉得我智障哦(⊙o⊙)。开始啦，都是我的小笔记，大家可以滤过，和我一样脑子经常忘带的可以多进来逛逛(●’◡’●)。</p>
+<h4 id="1-插入css样式表："><a href="#1-插入css样式表：" class="headerlink" title="1. 插入css样式表："></a>1. 插入css样式表：</h4><ul>
+<li>外部样式表：<strong><link rel="stylesheet" type="text/css" href="###.css"></strong></li>
+<li>内部样式表：<strong><style></style></strong></li>
+<li>内联样式：例：<strong><p style=" color:sienna;margin-left:20px"></p></strong></li>
+<li>优先级：内联样式&gt;内部样式&gt;外部样式</li>
+</ul>
+<h4 id="2-插入JS脚本："><a href="#2-插入JS脚本：" class="headerlink" title="2.插入JS脚本："></a>2.插入JS脚本：</h4><ul>
+<li>放在内部(head或body中)的JS脚本：<strong><script></script></strong></li>
+<li>外部的JS脚本：<strong><script src="###.js"></script></strong></li>
+<li>JS脚本放置技巧：<ol>
+<li>如果把javascript放在head里的话，则先被解析,但这时候body还没有解析。（常规html结构都是head在前，body在后）如果head的js代码是<strong>需要传</strong>入一个<strong>参</strong>数（在body中调用该方法时，才会传入参数），并需调用该参数进行一系列的操作，那么这时候肯定就会报错，因为函数该参数未定义（undefined）。</li>
+<li>，从JavaScript对页面<strong>下载性能方向</strong>考虑：由于脚本会阻塞其他资源的下载（如图片等）和页面渲染，直到脚本全部下载并执行完成后，页面的渲染才会继续，因此推荐将所有的<script>标签尽可能放到<body>标签的底部，以尽量减少对整个页面下载的影响。</li>
+<li><strong><script type="text/javascript" defer="defer"></strong>defer延迟页面加载，但是只有ie支持defer属性</li>
+</ol>
+</li>
+</ul>
+<h4 id="3-JS正则表达式："><a href="#3-JS正则表达式：" class="headerlink" title="3.JS正则表达式："></a>3.JS正则表达式：</h4></script></li></ol></li></ul>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://boominy.github.io/2017/07/01/biji/" data-id="cj4ldgqhy0006wktpx0yjtx4h" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
   
     <article id="post-JSmanul" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -308,7 +454,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/07/01/JSmanul/" data-id="cj4kznv8x0000hwtpw4zu12ck" class="article-share-link">Partager</a>
+      <a data-url="http://boominy.github.io/2017/07/01/JSmanul/" data-id="cj4ldgqhd0001wktp97oc9tis" class="article-share-link">Share</a>
       
       
     </footer>
@@ -379,7 +525,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/30/tuofeng/" data-id="cj4kznvbm000ghwtpqo49r7gj" class="article-share-link">Partager</a>
+      <a data-url="http://boominy.github.io/2017/06/30/tuofeng/" data-id="cj4ldgqir000fwktp7f6qsv2r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -493,7 +639,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/29/compitible/" data-id="cj4kznv9t0004hwtplba0e0ji" class="article-share-link">Partager</a>
+      <a data-url="http://boominy.github.io/2017/06/29/compitible/" data-id="cj4ldgqhu0005wktpbqmtpoyy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -560,7 +706,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/28/face/" data-id="cj4kznv9x0005hwtp63813iww" class="article-share-link">Partager</a>
+      <a data-url="http://boominy.github.io/2017/06/28/face/" data-id="cj4ldgqia0008wktpj4taqjaf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -625,7 +771,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/23/nullandun/" data-id="cj4kznvas0009hwtp0t4si8yq" class="article-share-link">Partager</a>
+      <a data-url="http://boominy.github.io/2017/06/23/nullandun/" data-id="cj4ldgqig000bwktpn13xyndi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -734,7 +880,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/23/ztm/" data-id="cj4kznvbu000jhwtp6p9ulzlq" class="article-share-link">Partager</a>
+      <a data-url="http://boominy.github.io/2017/06/23/ztm/" data-id="cj4ldgqj3000kwktp6as02h3z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -828,7 +974,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/23/primitive/" data-id="cj4kznvax000bhwtpk5qtf0mt" class="article-share-link">Partager</a>
+      <a data-url="http://boominy.github.io/2017/06/23/primitive/" data-id="cj4ldgqij000cwktpjutoa8xv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -894,141 +1040,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/23/table/" data-id="cj4kznvbb000ehwtpyw1i3l2l" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-psskill" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/23/psskill/" class="article-date">
-  <time class="post-time" datetime="2017-06-23T01:02:00.000Z" itemprop="datePublished">
-    <span class="post-month">6月</span><br/>
-    <span class="post-day">23</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/23/psskill/">PS-批量操作</a>
-    </h1>
-  
-
-        <div>
-          
-          
-              
-  &nbsp; | &nbsp;
-  <div class="view-box">
-    <span id="/2017/06/23/psskill/" class="leancloud_visitors" data-flag-title="PS-批量操作">
-      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
-    </span>
-  </div>
-
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、录制动作"><a href="#一、录制动作" class="headerlink" title="一、录制动作"></a>一、录制动作</h3><ol>
-<li><p>打开photoshop，选择“窗口”—“动作”，调出动作窗口。</p>
-<p><img src="/2017/06/23/psskill/first.png" alt="Alt w"></p>
-</li>
-<li><p>选择“创建新动作”，点击“记录”，即可在ps中进行操作，ps会自动记录下你的所有操作。</p>
-<p><img src="/2017/06/23/psskill/two.png" alt="alt f"></p>
-</li>
-<li><p>操作完毕，点击“停止记录”。</p>
-<p><img src="/2017/06/23/psskill/three.png" alt="alt s"></p>
-</li>
-</ol>
-<h3 id="二、批量操作"><a href="#二、批量操作" class="headerlink" title="二、批量操作"></a>二、批量操作</h3><ol>
-<li><p>选择“文件”—“自动”—“批处理”。</p>
-<p><img src="/2017/06/23/psskill/four.png" alt="alt d"></p>
-</li>
-<li><p>在“播放”选项中，选择录制好的动作。</p>
-<p><img src="/2017/06/23/psskill/five.png" alt="alt d"></p>
-</li>
-<li><p>在“源”选项中，选择需要操作的图片；在“目标”选项中，选择保存或者保存位置。点击“确定”即可开始批量操作。</p>
-<p><img src="/2017/06/23/psskill/six.png" alt="alt d"></p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/23/psskill/" data-id="cj4kznvb7000chwtpv4p4in1a" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-Lei" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/22/Lei/" class="article-date">
-  <time class="post-time" datetime="2017-06-22T13:29:14.000Z" itemprop="datePublished">
-    <span class="post-month">6月</span><br/>
-    <span class="post-day">22</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/22/Lei/">CSS选择器</a>
-    </h1>
-  
-
-        <div>
-          
-          
-              
-  &nbsp; | &nbsp;
-  <div class="view-box">
-    <span id="/2017/06/22/Lei/" class="leancloud_visitors" data-flag-title="CSS选择器">
-      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
-    </span>
-  </div>
-
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2017/06/22/Lei/kk.png" alt="Alt s"></p>
-<p><img src="/2017/06/22/Lei/ss.png" alt="Alt d"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/22/Lei/" data-id="cj4kznv9j0003hwtpao2sbf2w" class="article-share-link">Partager</a>
+      <a data-url="http://boominy.github.io/2017/06/23/table/" data-id="cj4ldgqiu000gwktpmf95late" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1043,7 +1055,7 @@
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">next &raquo;</a>
   </nav>
 </section>
         
@@ -1080,7 +1092,7 @@
     <h2 class="author">BooMiny</h2>
     <h3 class="description">女程序猿也可以性感和可耐o(*￣▽￣*)ブ</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>20</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>
