@@ -43,7 +43,7 @@
     <h2 class="author">BooMiny</h2>
     <h3 class="description">女程序猿也可以性感和可耐o(*￣▽￣*)ブ</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>19</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>20</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>
@@ -57,11 +57,102 @@
             <li>归档</li>
           </a>
         
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
     </ul>
   </div>
 </div>
 
         <section id="main">
+  
+    <article id="post-annything" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/22/annything/" class="article-date">
+  <time class="post-time" datetime="2017-06-22T13:05:34.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br/>
+    <span class="post-day">22</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/22/annything/">CSS定位分析（static、fixed、relative、absolute）</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+  &nbsp; | &nbsp;
+  <div class="view-box">
+    <span id="/2017/06/22/annything/" class="leancloud_visitors" data-flag-title="CSS定位分析（static、fixed、relative、absolute）">
+      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
+    </span>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-static"><a href="#1-static" class="headerlink" title="1.static"></a>1.static</h3><ul>
+<li>默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。</li>
+</ul>
+<h3 id="2-fixed"><a href="#2-fixed" class="headerlink" title="2.fixed"></a>2.fixed</h3><ul>
+<li>生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。可通过z-index进行层次分级。</li>
+</ul>
+<h3 id="3-relative和absolute对比分析"><a href="#3-relative和absolute对比分析" class="headerlink" title="3.relative和absolute对比分析"></a>3.relative和absolute对比分析</h3><ul>
+<li><p><strong>absolute</strong>：生成绝对定位的元素，相对于 static 定位以外的<strong>第一个父元素</strong>进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。可通过z-index进行<strong>层次分级</strong></p>
+</li>
+<li><p><strong>relative</strong>：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常位置进行定位。可通过z-index进行<strong>层次分级</strong></p>
+</li>
+<li><p><strong>二者区别</strong>：</p>
+<ol>
+<li><p>relative。定位为relative的元素脱离正常的文本流中，但其<strong>在文本流中的位置依然存在</strong></p>
+<p><img src="/2017/06/22/annything/ee.png" alt="Alt w"></p>
+<p>黄色背景的层定位为relative，红色边框区域为其在正常流中的位置。在通过top、left对其定位后，从灰色背景层的位置可以看出其正常位置依然存在。</p>
+</li>
+<li><p>absolute。定位为absolute的层脱离正常文本流，但与relative的区别是其<strong>在正常流中的位置不再存在</strong></p>
+<p><img src="/2017/06/22/annything/rr.png" alt="Alt s"></p>
+<p>可以看到，在将黄色背景层定位为absolute后，灰色背景层自动补上。</p>
+</li>
+<li><p><strong>relative</strong>定位的层总是相对于其<strong>最近的父元素</strong>，无论其父元素是何种定位方式</p>
+<p><img src="/2017/06/22/annything/qq.png" alt="Alt s"></p>
+<p>红色背景层为relative定位，其直接父元素绿色背景层为默认的static定位。红色背景层的位置为相对绿色背景层top、left个20元素</p>
+<p><strong>absolute</strong>定位的层总是相对于其<strong>最近的定义为absolute或relative的父层</strong>，而这个父层并不一定是其直接父层</p>
+<p><img src="/2017/06/22/annything/gg.png" alt="Alt s"></p>
+<p>如果其父层中<strong>都未定义</strong>absolute或relative，<strong>则其将相对body</strong>进行定位</p>
+<p><img src="/2017/06/22/annything/dd.png" alt="Alt h"></p>
+</li>
+</ol>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://boominy.github.io/2017/06/22/annything/" data-id="cj4kz1njp00050stpmnjd0ip5" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
   
     <article id="post-href和src的区别" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -123,7 +214,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/22/href和src的区别/" data-id="cj4jhxasb0006e8tp3fbnl8xc" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/22/href和src的区别/" data-id="cj4kz1njw00070stpz6mt0xl5" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -234,7 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/22/html块级元素和行级元素/" data-id="cj4jhxasb0007e8tppgo1mx39" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/22/html块级元素和行级元素/" data-id="cj4kz1nk900080stpurg6yxeg" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -385,7 +476,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/22/几种前端语言对比分析/" data-id="cj4jhxat6000he8tpzvp0m3z0" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/22/几种前端语言对比分析/" data-id="cj4kz1nmh000i0stphlw7jtif" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -487,7 +578,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/20/JS作用域/" data-id="cj4jhxarw0001e8tpbus3difw" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/20/JS作用域/" data-id="cj4kz1niu00020stps9kzr8a6" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -570,7 +661,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/20/浅谈JS闭包/" data-id="cj4jhxat6000ie8tpt5d6gghw" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/20/浅谈JS闭包/" data-id="cj4kz1nor000j0stp1k8czpgj" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -630,7 +721,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/19/javascript语言特性/" data-id="cj4jhxasr0008e8tp0rex0srp" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/19/javascript语言特性/" data-id="cj4kz1nkp000a0stpx639qfmx" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -770,7 +861,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/19/6-7月的北京实训/" data-id="cj4jhxarw0000e8tpv7y3wxcw" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/19/6-7月的北京实训/" data-id="cj4kz1nhy00000stpi0keou8c" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -850,7 +941,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/13/something/" data-id="cj4jhxasr000ce8tpxm9q9vw4" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/13/something/" data-id="cj4kz1nlf000d0stpfm8qcsld" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -958,7 +1049,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/13/what/" data-id="cj4jhxat6000ge8tp3xlojk36" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/13/what/" data-id="cj4kz1nmb000h0stpl4s1ryoh" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -994,6 +1085,10 @@
             <li>归档</li>
           </a>
         
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
     </ul>
   </div>
 </div>
@@ -1006,7 +1101,7 @@
     <h2 class="author">BooMiny</h2>
     <h3 class="description">女程序猿也可以性感和可耐o(*￣▽￣*)ブ</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>19</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>20</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>

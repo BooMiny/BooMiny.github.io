@@ -43,7 +43,7 @@
     <h2 class="author">BooMiny</h2>
     <h3 class="description">女程序猿也可以性感和可耐o(*￣▽￣*)ブ</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>19</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>20</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>
@@ -57,11 +57,268 @@
             <li>归档</li>
           </a>
         
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
     </ul>
   </div>
 </div>
 
         <section id="main">
+  
+    <article id="post-JSmanul" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/01/JSmanul/" class="article-date">
+  <time class="post-time" datetime="2017-07-01T07:25:32.000Z" itemprop="datePublished">
+    <span class="post-month">7月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/01/JSmanul/">JS手册</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+  &nbsp; | &nbsp;
+  <div class="view-box">
+    <span id="/2017/07/01/JSmanul/" class="leancloud_visitors" data-flag-title="JS手册">
+      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
+    </span>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、序言："><a href="#一、序言：" class="headerlink" title="一、序言："></a>一、序言：</h3><ol>
+<li>在开始之前我们先谈谈什么叫做<strong>大前端</strong>吧。所谓“大前端”，顾名思义应该是比“小前端”承担更多职责。传统上，Web应用可分为前端（在浏览器中执行的部分）和后端（在服务器中执行的部分）。前端工程师的职责是以Web技术（HTML、CSS、JavaScript、DOM、Ajax等）实现基于浏览器的用户界面。以相衔接的工作来说，是将视觉设计师、交互设计师的工作成果转化为可运行代码，完成的代码则要交付给后端工程师，进一步完成代码集成、测试、发布和部署。这样一种体系可能存在不少问题，具体就不展开了。“大前端”则是将传统上归于后端的服务器脚本和模板划归到前端。</li>
+<li>我学东西比较急，通常都是把逻辑搞懂了，然后语法这方面就靠查看手册，今天就好好复习一下吧。</li>
+</ol>
+<h3 id="二、进入主题"><a href="#二、进入主题" class="headerlink" title="二、进入主题"></a>二、进入主题</h3><ol>
+<li><p>定义变量:var</p>
+</li>
+<li><p>定义函数function()</p>
+</li>
+<li><p>输出内容：document.write();</p>
+</li>
+<li><p>警告弹出：alert()</p>
+</li>
+<li><p>确认：confirm()</p>
+</li>
+<li><p>消息对话框：prompt()</p>
+</li>
+<li><p>打开新窗口：window.open(“<a href="http://#######&quot;,&quot;打开方式&quot;,&quot;width=#&quot;,&quot;height=#&quot;,&quot;top=#&quot;,&quot;left=#" target="_blank" rel="external">http://#######&quot;,&quot;打开方式&quot;,&quot;width=#&quot;,&quot;height=#&quot;,&quot;top=#&quot;,&quot;left=#</a>“)</p>
+<p>打开方式：_blank,_self,_top;</p>
+</li>
+<li><p>关闭窗口：obj.close();</p>
+</li>
+<li><p>通过id获取元素：document.getElementById(“id”);</p>
+</li>
+<li><p>获取或者替换HTML元素的内容：obj.innerHTML;</p>
+</li>
+<li><p>改变HTML样式：Obj.style.property = new style;例：mychar.style.color = “red”;</p>
+</li>
+<li><p>显示和隐藏：obj.style.display = block(显示)/none(隐藏);</p>
+</li>
+<li><p>控制类名:obj.className = classname       例：p1.classname = “two”</p>
+</li>
+<li><p>数组定义:var myarr = new Array(),myarr[0] = 80; myarr = new array(11,22,33);</p>
+<p>使用一个新索引，即可为数组增加新元素</p>
+</li>
+<li><p>数组长度:myarray.length;</p>
+</li>
+<li><p>二维数组：</p>
+<ul>
+<li>var myarr=new Array();  //先声明一维 for(var i=0;i&lt;2;i++){   //一维长度为2   myarr[i]=new Array();  //再声明二维    for(var j=0;j&lt;3;j++){   //二维长度为3   myarr[i][j]=i+j;   // 赋值，每个数组元素的值为i+j   } }</li>
+</ul>
+</li>
+<li><p>事件：</p>
+<ul>
+<li>鼠标单击事件：onclick = “function()”</li>
+<li>鼠标经过事件：onmouseover = “function()”</li>
+<li>鼠标离开事件：onmouseout = “function()”</li>
+<li>光标聚焦事件：onfocus = “function()”</li>
+<li>失焦事件：onblur = “function()”</li>
+<li>内容选中事件：onselect = “function()”</li>
+<li>文本框内容改变事件：onchange = “function()”</li>
+<li>加载事件：onload = “function()”</li>
+<li>卸载事件：onunload = “function()”</li>
+</ul>
+</li>
+<li><p>内置对象：</p>
+<ul>
+<li>访问对象属性的方法：objName.propertyName;</li>
+<li>访问对象的方法：objName.methodName()</li>
+<li>日期对象；var Udate = new Date(); /  var Udate = new Date(2012,10,1);<ul>
+<li>返回/设置日期：get/setDate()</li>
+<li>返回/设置年份（四位数）：get/setFullYear()</li>
+<li>返回/设置年份：get/setYear()</li>
+<li>返回/设置月份：get/setMonth()</li>
+<li>返回/设置小时(24小时):get/setHours()</li>
+<li>返回/设置分钟：get/setMinutes()</li>
+<li>返回/设置秒钟：get/setSeconds()</li>
+<li>返回/设置时间(毫秒为单位)：get/setTime()</li>
+</ul>
+</li>
+<li>字符串对象:<ul>
+<li>定义：var mystr = “I love Javasript!”</li>
+<li>访问长度：mystr.length</li>
+<li>访问方法：mystr.function()</li>
+<li>返回指定位置字符串:mystr.charAt()</li>
+<li>返回指定字符串值首次出现的位置：mystr.indexof(“o”,5)</li>
+<li>字符串分割：<ul>
+<li>mystr.split(“se”,”limit”)——se代表以什么分割，如：”_或者.”当se为空字符串””时将分割每一个单词</li>
+<li>limit是要分割的字符数，可省略；</li>
+</ul>
+</li>
+<li>字符串提取：mystr.substr(start,stop);</li>
+</ul>
+</li>
+<li>Math对象：<ul>
+<li>Math.PI</li>
+<li>向上取整：Math.ceil(x)</li>
+<li>向下取整：Math.floor(x)</li>
+<li>四舍五入：Math.round(x)</li>
+<li>随机数：Math.random()</li>
+</ul>
+</li>
+<li>数组对象：<ul>
+<li>数组连接：arr1.contact(arr2,arr3)</li>
+<li>指定分隔符连接数组元素：arr.join(“分隔符”)——arr.join(“.”)</li>
+<li>颠倒数组：arr.reverse()</li>
+<li>选定元素：arr.slice(start,end)</li>
+<li>数组排序：arr.sort();</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>浏览器对象：</p>
+<ul>
+<li>计时器：<ul>
+<li>设定计时器每隔指定时间调用一次函数：setInterval(“function()”,time)</li>
+<li>取消计时器：clearinterval(id_ofsetinterval)</li>
+<li>载入后延迟指定时间去执行一次代码(仅一次)：setTimeout(“代码”,time)</li>
+<li>取消计时器：clearTimeout(id_ofsetTimeout)</li>
+</ul>
+</li>
+<li>history对象：<ul>
+<li>history中url数量：window.history.length</li>
+<li>history中的前一个url：window.history.back()</li>
+<li>history中的下一个url：window.history.forward()</li>
+<li>history中的某个具体页面：window.history.go()</li>
+</ul>
+</li>
+<li>location对象：<ul>
+<li>设置或返回以#开头的URＬ：window.location.hash</li>
+<li>设置或返回主机名和当前URL端口号：window.location.host</li>
+<li>设置或返回当前URL的主机名：window.location.hostname</li>
+<li>设置或返回完整的URL：window.location.href</li>
+<li>设置或返回当前URL的端口号：window.location.port</li>
+<li>设置或返回当前URL的协议：window.location.protocol</li>
+<li>设置或返回从问号（？）开始的URL（查询部分）:window.location.search</li>
+<li>加载新的文档：window.location.assign()</li>
+<li>重新加载文档：window.location.reload()</li>
+<li>用新的文档代替当前文档：window.location.repalce()</li>
+</ul>
+</li>
+<li>Navigator对象：<ul>
+<li>浏览器代码名的字符串表示：navigator.appCodeName</li>
+<li>返回浏览器名称：navigator.appname</li>
+<li>返回浏览器的平台和版本信息：navigator.appVersion</li>
+<li>返回浏览器的操作系统平台：navigator.platform</li>
+<li>返回由客户发送的user.agent头部的值</li>
+</ul>
+</li>
+<li>Screen对象：<ul>
+<li>窗口可使用的屏幕高度，单位像素：window.screen.availHeight</li>
+<li>窗口可使用的屏幕宽度，单位像素：window.screen.availWidth</li>
+<li>用户浏览器表示的颜色位数：window.screen.colorDepth</li>
+<li>屏幕的高度，单位像素：window.screen.height</li>
+<li>屏幕的宽度，单位像素：window.screen.width</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>DOM对象：</p>
+<ul>
+<li><p>返回带有指定名称节点的对象组合：document.getElementsByName(name);</p>
+</li>
+<li><p>返回带有指定标签名节点的对象组合：document.getElementsByTagName(Tagname)</p>
+</li>
+<li><p>通过元素节点的<strong>属性</strong>名称获取属性的值：elementNode.getAttribute(name)</p>
+</li>
+<li><p>通过元素节点的属性名称设置属性值（增加）：elementNode.setAttribute(name,value)</p>
+</li>
+<li><p>节点属性：</p>
+<ul>
+<li>节点名称：node.nodeName</li>
+<li>节点的值：node.nodeValue</li>
+<li>节点的类型：node.nodeType</li>
+</ul>
+</li>
+<li><p>访问子节点：elementNode.childNodes</p>
+</li>
+<li><p>访问子节点的第一项和最后一项：node.firstchild——node.lastchild</p>
+</li>
+<li><p>访问父节点：elementNode.parentNode</p>
+</li>
+<li><p>访问兄弟节点：node.nextSibling</p>
+</li>
+<li><p>插入节点(最后一个子节点之后)：node.appendChild(newnode)</p>
+</li>
+<li><p>在已有子节点之前插入一个新的子节点：node.insertBefore(newnode,node)</p>
+</li>
+<li><p>删除节点：node.removeChild(node)</p>
+</li>
+<li><p>替换元素节点：node.removeChild(newnode,oldnode)</p>
+</li>
+<li><p>创建元素节点：document.createElement(tagName)</p>
+</li>
+<li><p>创建文本节点：document.createTextNode(data)</p>
+</li>
+<li><p>浏览器窗口可视区域大小：var w = document.documentElement.clientWidth||document.body.clientWidth,</p>
+<p>var h = document.documentElement.clientHeight||document.body.clientHeight</p>
+</li>
+<li><p>获取网页内容高度和宽度：</p>
+<p>var w = document.documentElement.scrollWidth||document.body.scrollWidth</p>
+<p>var h = document.documentElement.scrollHeight||document.body.scrollHeight</p>
+</li>
+<li><p>网页尺寸：offsetHeight = clientHeight+滚动条+边框</p>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://boominy.github.io/2017/07/01/JSmanul/" data-id="cj4kz1nih00010stpjkatmpff" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
   
     <article id="post-tuofeng" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -122,7 +379,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/30/tuofeng/" data-id="cj4jhxat6000ee8tpm367v3pf" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/30/tuofeng/" data-id="cj4kz1nm0000f0stpjx0kgl9t" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -236,7 +493,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/29/compitible/" data-id="cj4jhxasb0004e8tpw8mlmvh7" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/29/compitible/" data-id="cj4kz1nja00040stpq1l9gxdm" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -303,7 +560,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/28/face/" data-id="cj4jhxasb0005e8tp7web8ucn" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/28/face/" data-id="cj4kz1njs00060stpnbiw9gxc" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -368,7 +625,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/23/nullandun/" data-id="cj4jhxasr0009e8tp4llz80pm" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/23/nullandun/" data-id="cj4kz1nkh00090stpj534j6lb" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -477,7 +734,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/23/ztm/" data-id="cj4jhxat6000fe8tpxv05rhlz" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/23/ztm/" data-id="cj4kz1nm4000g0stpkb6f8wnw" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -571,7 +828,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/23/primitive/" data-id="cj4jhxasr000ae8tpp0p4vma1" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/23/primitive/" data-id="cj4kz1nl4000c0stps6bso1fr" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -637,7 +894,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/23/table/" data-id="cj4jhxat6000de8tpry2jg643" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/23/table/" data-id="cj4kz1nls000e0stp4wvi5wqe" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -714,7 +971,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/23/psskill/" data-id="cj4jhxasr000be8tp09p10bd7" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/23/psskill/" data-id="cj4kz1nkv000b0stpc2lkuoo6" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -771,94 +1028,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/22/Lei/" data-id="cj4jhxarw0002e8tpr5tw8775" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-annything" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/22/annything/" class="article-date">
-  <time class="post-time" datetime="2017-06-22T13:05:34.000Z" itemprop="datePublished">
-    <span class="post-month">6月</span><br/>
-    <span class="post-day">22</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/22/annything/">CSS定位分析（static、fixed、relative、absolute）</a>
-    </h1>
-  
-
-        <div>
-          
-          
-              
-  &nbsp; | &nbsp;
-  <div class="view-box">
-    <span id="/2017/06/22/annything/" class="leancloud_visitors" data-flag-title="CSS定位分析（static、fixed、relative、absolute）">
-      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
-    </span>
-  </div>
-
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-static"><a href="#1-static" class="headerlink" title="1.static"></a>1.static</h3><ul>
-<li>默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。</li>
-</ul>
-<h3 id="2-fixed"><a href="#2-fixed" class="headerlink" title="2.fixed"></a>2.fixed</h3><ul>
-<li>生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。可通过z-index进行层次分级。</li>
-</ul>
-<h3 id="3-relative和absolute对比分析"><a href="#3-relative和absolute对比分析" class="headerlink" title="3.relative和absolute对比分析"></a>3.relative和absolute对比分析</h3><ul>
-<li><p><strong>absolute</strong>：生成绝对定位的元素，相对于 static 定位以外的<strong>第一个父元素</strong>进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。可通过z-index进行<strong>层次分级</strong></p>
-</li>
-<li><p><strong>relative</strong>：生成相对定位的元素，通过top,bottom,left,right的设置相对于其正常位置进行定位。可通过z-index进行<strong>层次分级</strong></p>
-</li>
-<li><p><strong>二者区别</strong>：</p>
-<ol>
-<li><p>relative。定位为relative的元素脱离正常的文本流中，但其<strong>在文本流中的位置依然存在</strong></p>
-<p><img src="/2017/06/22/annything/ee.png" alt="Alt w"></p>
-<p>黄色背景的层定位为relative，红色边框区域为其在正常流中的位置。在通过top、left对其定位后，从灰色背景层的位置可以看出其正常位置依然存在。</p>
-</li>
-<li><p>absolute。定位为absolute的层脱离正常文本流，但与relative的区别是其<strong>在正常流中的位置不再存在</strong></p>
-<p><img src="/2017/06/22/annything/rr.png" alt="Alt s"></p>
-<p>可以看到，在将黄色背景层定位为absolute后，灰色背景层自动补上。</p>
-</li>
-<li><p><strong>relative</strong>定位的层总是相对于其<strong>最近的父元素</strong>，无论其父元素是何种定位方式</p>
-<p><img src="/2017/06/22/annything/qq.png" alt="Alt s"></p>
-<p>红色背景层为relative定位，其直接父元素绿色背景层为默认的static定位。红色背景层的位置为相对绿色背景层top、left个20元素</p>
-<p><strong>absolute</strong>定位的层总是相对于其<strong>最近的定义为absolute或relative的父层</strong>，而这个父层并不一定是其直接父层</p>
-<p><img src="/2017/06/22/annything/gg.png" alt="Alt s"></p>
-<p>如果其父层中<strong>都未定义</strong>absolute或relative，<strong>则其将相对body</strong>进行定位</p>
-<p><img src="/2017/06/22/annything/dd.png" alt="Alt h"></p>
-</li>
-</ol>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/22/annything/" data-id="cj4jhxasb0003e8tpif7datdy" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/22/Lei/" data-id="cj4kz1nj700030stpgk71vwf2" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -894,6 +1064,10 @@
             <li>归档</li>
           </a>
         
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
     </ul>
   </div>
 </div>
@@ -906,7 +1080,7 @@
     <h2 class="author">BooMiny</h2>
     <h3 class="description">女程序猿也可以性感和可耐o(*￣▽￣*)ブ</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>19</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>20</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>

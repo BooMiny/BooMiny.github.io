@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>面对对象——三大基本特征&amp;&amp;五项原则 | SexMonkey</title>
+  <title>JS手册 | SexMonkey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、三大特性 封装：把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行信息隐藏 继承：可以让某个类型的对象获得另一个类型的对象的属性的方法。 通过继承创建的新类称为“子类”或“派生类”，被继承的类称为“基类”、“父类”或“超类”。            多态：指一个类实例的相同方法在不同情形有不同表现形式。多态机制使具有不同内部结构的对象可以共享相同的外">
+  <meta name="description" content="一、序言： 在开始之前我们先谈谈什么叫做大前端吧。所谓“大前端”，顾名思义应该是比“小前端”承担更多职责。传统上，Web应用可分为前端（在浏览器中执行的部分）和后端（在服务器中执行的部分）。前端工程师的职责是以Web技术（HTML、CSS、JavaScript、DOM、Ajax等）实现基于浏览器的用户界面。以相衔接的工作来说，是将视觉设计师、交互设计师的工作成果转化为可运行代码，完成的代码则要交付">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面对对象——三大基本特征&amp;&amp;五项原则">
-<meta property="og:url" content="http://boominy.github.io/2017/06/28/face/index.html">
+<meta property="og:title" content="JS手册">
+<meta property="og:url" content="http://boominy.github.io/2017/07/01/JSmanul/index.html">
 <meta property="og:site_name" content="SexMonkey">
-<meta property="og:description" content="一、三大特性 封装：把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行信息隐藏 继承：可以让某个类型的对象获得另一个类型的对象的属性的方法。 通过继承创建的新类称为“子类”或“派生类”，被继承的类称为“基类”、“父类”或“超类”。            多态：指一个类实例的相同方法在不同情形有不同表现形式。多态机制使具有不同内部结构的对象可以共享相同的外">
-<meta property="og:updated_time" content="2017-06-28T08:18:26.209Z">
+<meta property="og:description" content="一、序言： 在开始之前我们先谈谈什么叫做大前端吧。所谓“大前端”，顾名思义应该是比“小前端”承担更多职责。传统上，Web应用可分为前端（在浏览器中执行的部分）和后端（在服务器中执行的部分）。前端工程师的职责是以Web技术（HTML、CSS、JavaScript、DOM、Ajax等）实现基于浏览器的用户界面。以相衔接的工作来说，是将视觉设计师、交互设计师的工作成果转化为可运行代码，完成的代码则要交付">
+<meta property="og:updated_time" content="2017-07-01T07:29:54.494Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面对对象——三大基本特征&amp;&amp;五项原则">
-<meta name="twitter:description" content="一、三大特性 封装：把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行信息隐藏 继承：可以让某个类型的对象获得另一个类型的对象的属性的方法。 通过继承创建的新类称为“子类”或“派生类”，被继承的类称为“基类”、“父类”或“超类”。            多态：指一个类实例的相同方法在不同情形有不同表现形式。多态机制使具有不同内部结构的对象可以共享相同的外">
+<meta name="twitter:title" content="JS手册">
+<meta name="twitter:description" content="一、序言： 在开始之前我们先谈谈什么叫做大前端吧。所谓“大前端”，顾名思义应该是比“小前端”承担更多职责。传统上，Web应用可分为前端（在浏览器中执行的部分）和后端（在服务器中执行的部分）。前端工程师的职责是以Web技术（HTML、CSS、JavaScript、DOM、Ajax等）实现基于浏览器的用户界面。以相衔接的工作来说，是将视觉设计师、交互设计师的工作成果转化为可运行代码，完成的代码则要交付">
   
     <link rel="alternate" href="/atom.xml" title="SexMonkey" type="application/atom+xml">
   
@@ -66,12 +66,12 @@
   </div>
 </div>
 
-        <section id="main"><article id="post-face" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-JSmanul" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/06/28/face/" class="article-date">
-  <time class="post-time" datetime="2017-06-28T08:06:41.000Z" itemprop="datePublished">
-    <span class="post-month">6月</span><br/>
-    <span class="post-day">28</span>
+    <a href="/2017/07/01/JSmanul/" class="article-date">
+  <time class="post-time" datetime="2017-07-01T07:25:32.000Z" itemprop="datePublished">
+    <span class="post-month">7月</span><br/>
+    <span class="post-day">01</span>
   </time>
 </a>
    
@@ -83,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      面对对象——三大基本特征&amp;&amp;五项原则
+      JS手册
     </h1>
   
 
@@ -93,7 +93,7 @@
               
   &nbsp; | &nbsp;
   <div class="view-box">
-    <span id="/2017/06/28/face/" class="leancloud_visitors" data-flag-title="面对对象——三大基本特征&amp;&amp;五项原则">
+    <span id="/2017/07/01/JSmanul/" class="leancloud_visitors" data-flag-title="JS手册">
       &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
     </span>
   </div>
@@ -105,23 +105,209 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、三大特性"><a href="#一、三大特性" class="headerlink" title="一、三大特性"></a>一、三大特性</h2><ol>
-<li><strong>封装</strong>：把客观事物封装成抽象的类，并且类可以把自己的<strong>数据和方法</strong>只让可信的类或者对象操作，对不可信的进行信息隐藏</li>
-<li><strong>继承</strong>：可以让某个类型的对象<strong>获得另一个类型的对象的属性</strong>的方法。 通过继承创建的新类称为“子类”或“派生类”，被继承的类称为“基类”、“父类”或“超类”。           </li>
-<li><strong>多态</strong>：指一个类实例的相同方法在<strong>不同情形有不同表现形式</strong>。多态机制使具有不同内部结构的对象可以共享相同的外部接口</li>
+        <h3 id="一、序言："><a href="#一、序言：" class="headerlink" title="一、序言："></a>一、序言：</h3><ol>
+<li>在开始之前我们先谈谈什么叫做<strong>大前端</strong>吧。所谓“大前端”，顾名思义应该是比“小前端”承担更多职责。传统上，Web应用可分为前端（在浏览器中执行的部分）和后端（在服务器中执行的部分）。前端工程师的职责是以Web技术（HTML、CSS、JavaScript、DOM、Ajax等）实现基于浏览器的用户界面。以相衔接的工作来说，是将视觉设计师、交互设计师的工作成果转化为可运行代码，完成的代码则要交付给后端工程师，进一步完成代码集成、测试、发布和部署。这样一种体系可能存在不少问题，具体就不展开了。“大前端”则是将传统上归于后端的服务器脚本和模板划归到前端。</li>
+<li>我学东西比较急，通常都是把逻辑搞懂了，然后语法这方面就靠查看手册，今天就好好复习一下吧。</li>
 </ol>
-<h2 id="二、五大基本原则"><a href="#二、五大基本原则" class="headerlink" title="二、五大基本原则"></a>二、五大基本原则</h2><ol>
-<li>单一职责原则SRP(Single Responsibility Principle)是指一个类的功能要单一，不能包罗万象</li>
-<li>开放封闭原则OCP(Open－Close Principle)<br>一个模块在扩展性方面应该是开放的而在更改性方面应该是封闭的。</li>
-<li>替换原则(the Liskov Substitution Principle LSP)<br>子类应当可以替换父类并出现在父类能够出现的任何地方。</li>
-<li>依赖原则(the Dependency Inversion Principle DIP) 具体依赖抽象，上层依赖下层。</li>
-<li>接口分离原则(the Interface Segregation Principle ISP)<br>模块间要通过抽象接口隔离开，而不是通过具体的类强耦合起来</li>
+<h3 id="二、进入主题"><a href="#二、进入主题" class="headerlink" title="二、进入主题"></a>二、进入主题</h3><ol>
+<li><p>定义变量:var</p>
+</li>
+<li><p>定义函数function()</p>
+</li>
+<li><p>输出内容：document.write();</p>
+</li>
+<li><p>警告弹出：alert()</p>
+</li>
+<li><p>确认：confirm()</p>
+</li>
+<li><p>消息对话框：prompt()</p>
+</li>
+<li><p>打开新窗口：window.open(“<a href="http://#######&quot;,&quot;打开方式&quot;,&quot;width=#&quot;,&quot;height=#&quot;,&quot;top=#&quot;,&quot;left=#" target="_blank" rel="external">http://#######&quot;,&quot;打开方式&quot;,&quot;width=#&quot;,&quot;height=#&quot;,&quot;top=#&quot;,&quot;left=#</a>“)</p>
+<p>打开方式：_blank,_self,_top;</p>
+</li>
+<li><p>关闭窗口：obj.close();</p>
+</li>
+<li><p>通过id获取元素：document.getElementById(“id”);</p>
+</li>
+<li><p>获取或者替换HTML元素的内容：obj.innerHTML;</p>
+</li>
+<li><p>改变HTML样式：Obj.style.property = new style;例：mychar.style.color = “red”;</p>
+</li>
+<li><p>显示和隐藏：obj.style.display = block(显示)/none(隐藏);</p>
+</li>
+<li><p>控制类名:obj.className = classname       例：p1.classname = “two”</p>
+</li>
+<li><p>数组定义:var myarr = new Array(),myarr[0] = 80; myarr = new array(11,22,33);</p>
+<p>使用一个新索引，即可为数组增加新元素</p>
+</li>
+<li><p>数组长度:myarray.length;</p>
+</li>
+<li><p>二维数组：</p>
+<ul>
+<li>var myarr=new Array();  //先声明一维 for(var i=0;i&lt;2;i++){   //一维长度为2   myarr[i]=new Array();  //再声明二维    for(var j=0;j&lt;3;j++){   //二维长度为3   myarr[i][j]=i+j;   // 赋值，每个数组元素的值为i+j   } }</li>
+</ul>
+</li>
+<li><p>事件：</p>
+<ul>
+<li>鼠标单击事件：onclick = “function()”</li>
+<li>鼠标经过事件：onmouseover = “function()”</li>
+<li>鼠标离开事件：onmouseout = “function()”</li>
+<li>光标聚焦事件：onfocus = “function()”</li>
+<li>失焦事件：onblur = “function()”</li>
+<li>内容选中事件：onselect = “function()”</li>
+<li>文本框内容改变事件：onchange = “function()”</li>
+<li>加载事件：onload = “function()”</li>
+<li>卸载事件：onunload = “function()”</li>
+</ul>
+</li>
+<li><p>内置对象：</p>
+<ul>
+<li>访问对象属性的方法：objName.propertyName;</li>
+<li>访问对象的方法：objName.methodName()</li>
+<li>日期对象；var Udate = new Date(); /  var Udate = new Date(2012,10,1);<ul>
+<li>返回/设置日期：get/setDate()</li>
+<li>返回/设置年份（四位数）：get/setFullYear()</li>
+<li>返回/设置年份：get/setYear()</li>
+<li>返回/设置月份：get/setMonth()</li>
+<li>返回/设置小时(24小时):get/setHours()</li>
+<li>返回/设置分钟：get/setMinutes()</li>
+<li>返回/设置秒钟：get/setSeconds()</li>
+<li>返回/设置时间(毫秒为单位)：get/setTime()</li>
+</ul>
+</li>
+<li>字符串对象:<ul>
+<li>定义：var mystr = “I love Javasript!”</li>
+<li>访问长度：mystr.length</li>
+<li>访问方法：mystr.function()</li>
+<li>返回指定位置字符串:mystr.charAt()</li>
+<li>返回指定字符串值首次出现的位置：mystr.indexof(“o”,5)</li>
+<li>字符串分割：<ul>
+<li>mystr.split(“se”,”limit”)——se代表以什么分割，如：”_或者.”当se为空字符串””时将分割每一个单词</li>
+<li>limit是要分割的字符数，可省略；</li>
+</ul>
+</li>
+<li>字符串提取：mystr.substr(start,stop);</li>
+</ul>
+</li>
+<li>Math对象：<ul>
+<li>Math.PI</li>
+<li>向上取整：Math.ceil(x)</li>
+<li>向下取整：Math.floor(x)</li>
+<li>四舍五入：Math.round(x)</li>
+<li>随机数：Math.random()</li>
+</ul>
+</li>
+<li>数组对象：<ul>
+<li>数组连接：arr1.contact(arr2,arr3)</li>
+<li>指定分隔符连接数组元素：arr.join(“分隔符”)——arr.join(“.”)</li>
+<li>颠倒数组：arr.reverse()</li>
+<li>选定元素：arr.slice(start,end)</li>
+<li>数组排序：arr.sort();</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>浏览器对象：</p>
+<ul>
+<li>计时器：<ul>
+<li>设定计时器每隔指定时间调用一次函数：setInterval(“function()”,time)</li>
+<li>取消计时器：clearinterval(id_ofsetinterval)</li>
+<li>载入后延迟指定时间去执行一次代码(仅一次)：setTimeout(“代码”,time)</li>
+<li>取消计时器：clearTimeout(id_ofsetTimeout)</li>
+</ul>
+</li>
+<li>history对象：<ul>
+<li>history中url数量：window.history.length</li>
+<li>history中的前一个url：window.history.back()</li>
+<li>history中的下一个url：window.history.forward()</li>
+<li>history中的某个具体页面：window.history.go()</li>
+</ul>
+</li>
+<li>location对象：<ul>
+<li>设置或返回以#开头的URＬ：window.location.hash</li>
+<li>设置或返回主机名和当前URL端口号：window.location.host</li>
+<li>设置或返回当前URL的主机名：window.location.hostname</li>
+<li>设置或返回完整的URL：window.location.href</li>
+<li>设置或返回当前URL的端口号：window.location.port</li>
+<li>设置或返回当前URL的协议：window.location.protocol</li>
+<li>设置或返回从问号（？）开始的URL（查询部分）:window.location.search</li>
+<li>加载新的文档：window.location.assign()</li>
+<li>重新加载文档：window.location.reload()</li>
+<li>用新的文档代替当前文档：window.location.repalce()</li>
+</ul>
+</li>
+<li>Navigator对象：<ul>
+<li>浏览器代码名的字符串表示：navigator.appCodeName</li>
+<li>返回浏览器名称：navigator.appname</li>
+<li>返回浏览器的平台和版本信息：navigator.appVersion</li>
+<li>返回浏览器的操作系统平台：navigator.platform</li>
+<li>返回由客户发送的user.agent头部的值</li>
+</ul>
+</li>
+<li>Screen对象：<ul>
+<li>窗口可使用的屏幕高度，单位像素：window.screen.availHeight</li>
+<li>窗口可使用的屏幕宽度，单位像素：window.screen.availWidth</li>
+<li>用户浏览器表示的颜色位数：window.screen.colorDepth</li>
+<li>屏幕的高度，单位像素：window.screen.height</li>
+<li>屏幕的宽度，单位像素：window.screen.width</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>DOM对象：</p>
+<ul>
+<li><p>返回带有指定名称节点的对象组合：document.getElementsByName(name);</p>
+</li>
+<li><p>返回带有指定标签名节点的对象组合：document.getElementsByTagName(Tagname)</p>
+</li>
+<li><p>通过元素节点的<strong>属性</strong>名称获取属性的值：elementNode.getAttribute(name)</p>
+</li>
+<li><p>通过元素节点的属性名称设置属性值（增加）：elementNode.setAttribute(name,value)</p>
+</li>
+<li><p>节点属性：</p>
+<ul>
+<li>节点名称：node.nodeName</li>
+<li>节点的值：node.nodeValue</li>
+<li>节点的类型：node.nodeType</li>
+</ul>
+</li>
+<li><p>访问子节点：elementNode.childNodes</p>
+</li>
+<li><p>访问子节点的第一项和最后一项：node.firstchild——node.lastchild</p>
+</li>
+<li><p>访问父节点：elementNode.parentNode</p>
+</li>
+<li><p>访问兄弟节点：node.nextSibling</p>
+</li>
+<li><p>插入节点(最后一个子节点之后)：node.appendChild(newnode)</p>
+</li>
+<li><p>在已有子节点之前插入一个新的子节点：node.insertBefore(newnode,node)</p>
+</li>
+<li><p>删除节点：node.removeChild(node)</p>
+</li>
+<li><p>替换元素节点：node.removeChild(newnode,oldnode)</p>
+</li>
+<li><p>创建元素节点：document.createElement(tagName)</p>
+</li>
+<li><p>创建文本节点：document.createTextNode(data)</p>
+</li>
+<li><p>浏览器窗口可视区域大小：var w = document.documentElement.clientWidth||document.body.clientWidth,</p>
+<p>var h = document.documentElement.clientHeight||document.body.clientHeight</p>
+</li>
+<li><p>获取网页内容高度和宽度：</p>
+<p>var w = document.documentElement.scrollWidth||document.body.scrollWidth</p>
+<p>var h = document.documentElement.scrollHeight||document.body.scrollHeight</p>
+</li>
+<li><p>网页尺寸：offsetHeight = clientHeight+滚动条+边框</p>
+</li>
+</ul>
+</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/28/face/" data-id="cj4kz1njs00060stpnbiw9gxc" class="article-share-link">Partager</a>
+      <a data-url="http://boominy.github.io/2017/07/01/JSmanul/" data-id="cj4kz1nih00010stpjkatmpff" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -130,19 +316,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/06/29/compitible/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Récent</strong>
-      <div class="article-nav-title">
-        
-          浏览器(内核，渲染，兼容)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/06/23/nullandun/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/06/30/tuofeng/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Ancien</strong>
-      <div class="article-nav-title">null、undefined和&quot; &quot;区别</div>
+      <div class="article-nav-title">常见的几种编程命名方式</div>
     </a>
   
 </nav>
