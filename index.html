@@ -43,7 +43,7 @@
     <h2 class="author">BooMiny</h2>
     <h3 class="description">女程序猿也可以性感和可耐o(*￣▽￣*)ブ</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>25</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>
@@ -66,6 +66,598 @@
 </div>
 
         <section id="main">
+  
+    <article id="post-javafile" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/05/javafile/" class="article-date">
+  <time class="post-time" datetime="2017-07-05T09:52:19.000Z" itemprop="datePublished">
+    <span class="post-month">7月</span><br/>
+    <span class="post-day">05</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/05/javafile/">java读写文件</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+  &nbsp; | &nbsp;
+  <div class="view-box">
+    <span id="/2017/07/05/javafile/" class="leancloud_visitors" data-flag-title="java读写文件">
+      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
+    </span>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>​      java读写文件的方法挺多的，在初学java的时候更是傻傻分不清，在搜集各路大神的资料后，我总结了一个较为完善的版本。</p>
+<h3 id="一、文件IO图"><a href="#一、文件IO图" class="headerlink" title="一、文件IO图"></a>一、文件IO图</h3><p><img src="/2017/07/05/javafile/dada.png" alt="Alt dd"></p>
+<h3 id="二、相关的类和流"><a href="#二、相关的类和流" class="headerlink" title="二、相关的类和流"></a>二、相关的类和流</h3><ol>
+<li><p><strong>File类</strong>：</p>
+<ul>
+<li>File类封装了<strong>对用户机器的文件系统进行操作</strong>的功能。例如，可以用File类获得文件上次修改的时间移动，或者对文件进行删除、重命名。</li>
+<li>File类的主要方法有：<strong>getName()</strong>,getCanonicalFile(),lastModified(),<strong>isDerector()</strong>,<strong>isFile()</strong>,getPath()</li>
+<li>②File类与FileInputStream类的区别： </li>
+<li><strong>流类关注</strong>的是<strong>文件内容</strong>，而<strong>File类</strong>关注的是<strong>文件在磁盘上的存储</strong>。</li>
+<li>File不属于文件流,<strong>只能代表</strong>一个文件或是目录的<strong>路径名</strong>而已。</li>
+<li>如果<strong>处理文件或者目录名</strong>，就应该<strong>使用File对象</strong>，而不是字符串。例如，File类的equals方法知道一些文件系统对大小写是敏感的，目录尾的“/”字符无关紧要。</li>
+<li>自己的领会： FileInputStream类或者FileReader类的构造函数有多个，其中典型的两个分别为：一个使用File对象为参数；而另一个使用表示路径的String对象作为参数；自己以前一直觉得直接用了String指定路径就可以了，一直不明白为什么很多人都先构造一个File对象，现在终于明白了，“<strong>如果处理文件或者目录名，就应该使用File对象，而不是字符串。</strong>”！ </li>
+</ul>
+</li>
+<li><p><strong>FileInputStream类</strong>：</p>
+<ul>
+<li><p>①FileInputStream类介绍：</p>
+</li>
+<li><p>以<strong>字节为单位</strong>（非unicode）的流处理。字节序列即：<strong>二进制数据</strong>。与编码无关，不存在乱码问题。</p>
+</li>
+<li><p>FileInputStream类的主要方法有： <strong>Read（）</strong>，<strong>read（byte[] b）</strong>，<strong>read（byte[],int off,int len）</strong>,available();</p>
+</li>
+<li><p>②FileInputStream类与FileReader类的区别： </p>
+<p>两个类的<strong>构造函数的形式和参数都是相同</strong>的，<strong>参数为File对象或者表示路径的String</strong>，它们到底有何区别呢？</p>
+<p><strong>FileInputStream</strong>：<strong>以字节流方式读取</strong>；</p>
+<p><strong>FileReader：把文件转换为字符流读</strong></p>
+<p><strong>InputStream提供的是字节流的读取，而非文本读取</strong>，这是和Reader类的根别。用<strong>Reader读取出来的是char数组或者String</strong> ，使用<strong>InputStream读取出来的是byte数组</strong>。</p>
+<p><strong>Reader类及其子类提供的字符流的读取char（16位,unicode编码）</strong>，<strong>inputStream及其子类提供字节流的读取byte（8位）</strong>，所以<strong>FileReader类</strong>是将文件按<strong>字符流</strong>的方式读取，<strong>FileInputStream</strong>则按<strong>字节流</strong>的方式读取文件；<strong>InputStreamReader可以将读如stream转换成字符流方式</strong>，<strong>是reader和stream之间的桥梁 </strong></p>
+<p>最初<a href="http://lib.csdn.net/base/java" target="_blank" rel="external">Java</a>是不支持对文本文件的处理的，为了弥补这个缺憾而引入了Reader和Writer两个类。 </p>
+<p>FileInputStream类以二进制输入/输出，I/O速度快且效率搞，但是它的read（）方法读到的是一个字节（二进制数据），很不利于人们阅读。 </p>
+<p>而FileReader类弥补了这个缺陷，可以以文本格式输入/输出，非常方便；比如可以使用<strong>while((ch = filereader.read())!=-1 )循环来读取文件</strong>；可以使用<strong>BufferedReader的readLine()方法一行一行的读取文本</strong>。 </p>
+<p>当我们<strong>读写文本文件</strong>的时候，<strong>采用Reader</strong>是非常方便的，比如FileReader， InputStreamReader和BufferedReader。其中<strong>最重要的类是InputStreamReader</strong>，它是字节转换为字符的桥梁。 你<strong>可以在构造器重指定编码的方式</strong>，如果<strong>不指定的话将采用底层<a href="http://lib.csdn.net/base/operatingsystem" target="_blank" rel="external">操作系统</a>的默认编码方式</strong>，例如GBK等。 </p>
+<p><strong>FileReader与InputStreamReader涉及编码转换(指定编码方式或者采用os默认编码)</strong>，<strong>可能</strong>在不同的平台上出现<strong>乱码</strong>现象！而<strong>FileInputStream以二进制方式处理</strong>，<strong>不会出现乱码</strong>现象. </p>
+<p>自己的领会： </p>
+<p><strong>如果处理纯文本文件，建议使用FileReader</strong>，因为更方便，也更适合阅读；但是要注意编码问题！ </p>
+<p><strong>其他情况（处理非纯文本文件），FileInputStream是唯一的选择</strong>；FileInputStream是进Socket通讯时会用到很多，如将文件流是Stream的方式传向服务器！</p>
+</li>
+</ul>
+</li>
+<li><p><strong>FileReader类</strong>： </p>
+<p><strong>InputStreamReader类的子类</strong>，所有方法（read（）等）都从父类InputStreamReader中继承而来； </p>
+<p>② 与InputStreamReader类的区别：</p>
+<p>参见上面的区别;</p>
+<p>自己的领会： </p>
+<p>该类与它的父类InputStreamReader的<strong>主要不同在于构造函数</strong>，主要区别也就在于构造函数！从InputStreamReader的构造函数中看到，参数为<strong>InputStream和编码方式，可以看出，当要指定编码方式时，必须使用InputStreamReader类</strong>；而FileReader构造函数的参数与FileInputStream同，为File对象或表示path的String，可以看出，当要根据File对象或者String读取一个文件时，用FileReader；我想FileReader子类的作用也就在于这个小分工吧。</p>
+</li>
+</ol>
+<p>   一般用法： </p>
+<p>   FileReader fr = new FileReader(“ming.txt”); </p>
+<p>   　　 char[] buffer = new char[1024]; </p>
+<p>   　　 int ch = 0; </p>
+<p>   　　while((ch = fr.read())!=-1 ) </p>
+<p>   　　{ </p>
+<p>   　　　System.out.print((char)ch); </p>
+<p>   　　} </p>
+<ol>
+<li><p><strong>InputStreamReader类</strong>： </p>
+<p>以文本格式输入/输出，可以指定编码格式； </p>
+<p>主要方法： getEncoding()，read(); </p>
+<p>一般用法： </p>
+<p>InputStreamReader isr = new InputStreamReader(new FileInputStream(“ming.txt”)); </p>
+<p>　　while((ch = isr.read())!=-1) </p>
+<p>　　{ </p>
+<p>　　　System.out.print((char)ch); </p>
+<p>　　} </p>
+</li>
+<li><p>BufferedReader类 </p>
+<p>BufferedReader 由Reader类扩展而来，提供通用的缓冲方式文本读取，而且提供了很实用的readLine，读取分行文本很适合，BufferedReader是针对Reader的，不直接针对文件，也不是只针对文件读取。 </p>
+<p>一般用法： </p>
+<p>BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(“ming.txt”))); </p>
+<p>　　 String data = null; </p>
+<p>　　 while((data = br.readLine())!=null) </p>
+<p>　　 { </p>
+<p>　　　 System.out.println(data); </p>
+<p>　　 } </p>
+</li>
+<li><p>总结以上内容，得出比较好的规范用法： </p>
+<p>① </p>
+<p>File file = new File (“hello.txt”); </p>
+<p>FileInputStream in=new FileInputStream(file); </p>
+<p>② </p>
+<p>File file = new File (“hello.txt”); </p>
+<p>FileInputStream in=new FileInputStream(file); </p>
+<p>InputStreamReader inReader=new InputStreamReader(in); </p>
+<p>BufferedReader bufReader=new BufferedReader(inReader); </p>
+<p>③ </p>
+<p>File file = new File (“hello.txt”); </p>
+<p>FileReader fileReader=new FileReader(file); </p>
+<p>BufferedReader bufReader=new BufferedReader(fileReader);</p>
+</li>
+<li><p>FileWriter类：</p>
+<p>构造方法：FileWriter fw = new FileWriter(String fileName);//创建字符输出流类对象和已存在的文件相关联。文件不存在的话，并创建。</p>
+<p>​                                             如：FileWriter fw = new FileWriter(“C:\demo.txt”);</p>
+<p>​                  FileWriter fw = new FileWriter(String fileName,boolean append);//创建字符输出流类对象和已存在的文件相关联,并设置该该流对文件的操作是否为续写。</p>
+<p>​                                             如：FileWriter fw = new FileWriter(“C:\demo.txt”,ture); //表示在fw对文件再次写入时，会在该文件的结尾续写，并不会覆盖掉。</p>
+<p>主要方法： void write(String str)   //写入字符串。当执行完此方法后，字符数据还并没有写入到目的文件中去。此时字符数据会保存在缓冲区中。</p>
+<p>​                                                        此时在使用刷新方法就可以使数据保存到目的文件中去。</p>
+<p>​                  viod flush()                //刷新该流中的缓冲。将缓冲区中的字符数据保存到目的文件中去。</p>
+<p>​                  viod close()               //关闭此流。在关闭前会先刷新此流的缓冲区。在关闭后，再写入或者刷新的话，会抛IOException异常</p>
+<p>package filewriter;  </p>
+</li>
+</ol>
+<p>   import java.io.FileWriter;  </p>
+<p>   import java.io.IOException;  </p>
+<p>   public class Filewriter {  </p>
+<p>   ​    private static final String LINE_SEPARATOR = System.getProperty(“line.separator”);  </p>
+<pre><code>/** 
+</code></pre><p>   ​     *  </p>
+<p>   ​     * @param args </p>
+<p>   ​     * @throws IOException  </p>
+<p>   ​     */  </p>
+<p>   ​    public static void main(String[] args) throws IOException {  </p>
+<p>   ​        /** </p>
+<p>   ​         * 创建一个可以往文件中写入字符数据的字符流输出流对象 </p>
+<p>   ​         * 创建时必须明确文件的目的地 </p>
+<p>   ​         * 如果文件不存在，这回自动创建。如果文件存在，则会覆盖。 </p>
+<p>   ​         * 当路径错误时会抛异常 </p>
+<p>   ​         *  </p>
+<p>   ​         * 当在创建时加入true参数，回实现对文件的续写。 </p>
+<p>   ​         */  </p>
+<p>   ​        FileWriter fw = new FileWriter(“C:\demo1.txt”,false);  </p>
+<p>   ​        /** </p>
+<p>   ​         * 调用该对象的write方法，向文件写入字符。 </p>
+<p>   ​         *  </p>
+<p>   ​         * 其实写入到了临时存储缓冲区中 </p>
+<p>   ​         */  </p>
+<p>   //      fw.write(“hello \r\nworld!”);//windows中的换行为\r\n    unix下为\r。  </p>
+<p>   ​        fw.write(“aello”+LINE_SEPARATOR+”world!”);          fw.write(“hahaha”);  </p>
+<p>   ​       /** </p>
+<p>   ​         * 进行刷新，将字符写到目的地中。 </p>
+<p>   ​         */  </p>
+<p>   //      fw.flush();  </p>
+<p>   ​        /** </p>
+<p>   ​         * 关闭流，关闭资源。在关闭前会调用flush方法 刷新缓冲区。关闭后在写的话，会抛IOException </p>
+<p>   ​         */          fw.close();  </p>
+<p>   ​            </p>
+<p>   ​    }  </p>
+<p>   }  </p>
+<ol>
+<li>实例：</li>
+</ol>
+<p>import java.io.FileInputStream;  </p>
+<p>import java.io.FileOutputStream;  </p>
+<p>import java.io.IOException;  </p>
+<p>class IODemo  </p>
+<p>{  </p>
+<p>​    public static void main(String[] args)   </p>
+<p>​    {  </p>
+<p>​        try  </p>
+<p>​        {  </p>
+<p>​        //使用FileInputStream和FileOutputStream进行文件复制  </p>
+<p>​        FileInputStream fis=new FileInputStream(“a.txt”);  </p>
+<p>​        FileOutputStream fos=new FileOutputStream(“b.txt”);  </p>
+<p>​            int read;  </p>
+<p>​            //read=fis.read();  </p>
+<p>​            byte b[]=new byte[1024];  </p>
+<p>​            //读取文件，存入字节数组b，返回读取到的字符数，存入read,默认每次将b数组装满  </p>
+<p>​            read=fis.read(b);  </p>
+<p>​            while(read!=-1)  </p>
+<p>​            {  </p>
+<p>​                fos.write(b,0,read);  </p>
+<p>​                read=fis.read(b);  </p>
+<p>​                //read=fis.read();  </p>
+<p>​           }  </p>
+<p>​            fis.close();  </p>
+<p>​            fos.close();  </p>
+<p>​        }  </p>
+<p>​        catch (IOException e)  </p>
+<p>​        {  </p>
+<p>​           e.printStackTrace();  </p>
+<p>​        }  </p>
+<p>​          </p>
+<p>​    }  </p>
+<p>}  </p>
+<p>9.用FileReader  和 FileWriter 写的复制文本文件的小程序。</p>
+<p>package IOtest;    </p>
+<p>import java.io.FileNotFoundException;  </p>
+<p>import java.io.FileReader;  </p>
+<p>import java.io.FileWriter;  </p>
+<p>import java.io.IOException;  </p>
+<p>public class TxtCopy {  </p>
+<p>​    /** </p>
+<p>​     * 将C：\的myHeart.txt copy 到 D:\下 </p>
+<p>​     *  </p>
+<p>​     * 首先创建Reader读取数据数据的 读取流对象。 </p>
+<p>​     *  </p>
+<p>​     * @throws FileNotFoundException </p>
+<p>​     */  </p>
+<p>​    public static void main(String[] args) {  </p>
+<p>​        FileReader fr = null;  </p>
+<p>​        FileWriter fw = null;  </p>
+<p>​        try {  </p>
+<p>​            fr = new FileReader(“C:\my.txt”);  </p>
+<p>​            fw = new FileWriter(“D:\you.txt”);  </p>
+<p>​            //读一个字符，写一个字符方法  </p>
+<p>//          int ch = 0;  </p>
+<p>//  </p>
+<p>//          while ((ch = fr.read()) != -1) {  </p>
+<p>//              fw.write(ch);  </p>
+<p>//          }  </p>
+<p>​            char []buf = new char[1024];  </p>
+<p>​            int len = 0;  </p>
+<p>​           //读一个数组大小，写一个数组大小方法。  </p>
+<p>​            while((len = fr.read(buf)) != -1){  </p>
+<p>​                fw.write(buf, 0, len);                </p>
+<p>​            }  </p>
+<p>​              </p>
+<p>​        } catch (Exception e) {  </p>
+<p>​            System.out.println(e.toString());  </p>
+<p>​        } finally {  </p>
+<p>​            if (fr != null)  </p>
+<p>​                try {  </p>
+<p>​                    fr.close();  </p>
+<p>​                } catch (Exception e2) {  </p>
+<p>​                    throw new RuntimeException(“关闭失败！”);  </p>
+<p>​                }  </p>
+<p>​            if (fw != null)                  try {  </p>
+<p>​                    fw.close();                  } catch (IOException e) {  </p>
+<p>​                    throw new RuntimeException(“关闭失败！”);  </p>
+<p>​                }  </p>
+<p>​        }  </p>
+<p>​    }  </p>
+<p>}  </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://boominy.github.io/2017/07/05/javafile/" data-id="cj4r0q9cv000arotpcapd0ukv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-TCP-Ip" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/05/TCP-Ip/" class="article-date">
+  <time class="post-time" datetime="2017-07-05T02:56:20.000Z" itemprop="datePublished">
+    <span class="post-month">7月</span><br/>
+    <span class="post-day">05</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/05/TCP-Ip/">TCP/IP协议</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+  &nbsp; | &nbsp;
+  <div class="view-box">
+    <span id="/2017/07/05/TCP-Ip/" class="leancloud_visitors" data-flag-title="TCP/IP协议">
+      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
+    </span>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、定义："><a href="#一、定义：" class="headerlink" title="一、定义："></a>一、定义：</h3><p>TCP/IP 是供已连接因特网的计算机进行通信的通信协议。</p>
+<p>TCP/IP 指传输控制协议/网际协议 (<em>T</em>ransmission <em>C</em>ontrol <em>P</em>rotocol / <em>I</em>nternet <em>P</em>rotocol)。</p>
+<p>TCP/IP 定义了电子设备（比如计算机）如何连入因特网，以及数据如何在它们之间传输的标准。</p>
+<h4 id="二、TCP-IP中包含一系列用于处理数据的通信协议："><a href="#二、TCP-IP中包含一系列用于处理数据的通信协议：" class="headerlink" title="二、TCP/IP中包含一系列用于处理数据的通信协议："></a>二、TCP/IP中包含一系列用于处理数据的通信协议：</h4><ul>
+<li><p>TCP (传输控制协议) - 应用程序之间通信</p>
+<ul>
+<li>固定连接的</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>当应用程序希望通过 TCP 与另一个应用程序通信时，它会发送一个通信请求。这个请求必须被送到一个确切的地址。在双方“握手”之后，TCP 将在两个应用程序之间建立一个<strong>全双工 (full-duplex) 的通信</strong>。</p>
+<p>这个全双工的通信将占用两个计算机之间的通信线路，直到它被一方或双方关闭为止。</p>
+<p>UDP 和 TCP 很相似，但是更简单，同时可靠性低于 TCP。</p>
+</li>
+</ul>
+<ul>
+<li><p>UDP (用户数据包协议) - 应用程序之间的简单通信</p>
+</li>
+<li><p>IP (网际协议) - 计算机之间的通信</p>
+<ul>
+<li><p>当一个 IP 包从一台计算机被发送，它会到达一个 IP 路由器。</p>
+<p>IP 路由器负责将这个包路由至它的目的地，直接地或者通过其他的路由器。</p>
+<p>在一个相同的通信中，一个包所经由的路径可能会和其他的包不同。而路由器负责根据通信量、网络中的错误或者其他参数来进行正确地寻址。</p>
+</li>
+</ul>
+</li>
+<li><p>ICMP (因特网消息控制协议) - 针对错误和状态</p>
+</li>
+<li><p>DHCP (动态主机配置协议) - 针对动态寻址</p>
+</li>
+<li><p>TCP/IP 意味着 TCP 和 IP 在一起协同工作。</p>
+<p>TCP 负责应用软件（比如你的浏览器）和网络软件之间的通信。</p>
+<p>IP 负责计算机之间的通信。</p>
+<p>TCP 负责将数据分割并装入 IP 包，然后在它们到达的时候重新组合它们。</p>
+<p>IP 负责将包发送至接受者。</p>
+</li>
+</ul>
+<h4 id="三、TCP-IP是不同通信协议的大结合"><a href="#三、TCP-IP是不同通信协议的大结合" class="headerlink" title="三、TCP/IP是不同通信协议的大结合"></a>三、TCP/IP是不同通信协议的大结合</h4><ol>
+<li><p>TCP - 传输控制协议</p>
+<ul>
+<li><p>TCP 用于从应用程序到网络的数据传输控制。</p>
+<p>TCP 负责在数据传送之前将它们分割为 IP 包，然后在它们到达的时候将它们重组。</p>
+</li>
+</ul>
+</li>
+<li><p>IP - 网际控制协议</p>
+<ul>
+<li><p>IP 负责计算机之间的通信。</p>
+<p>IP 负责在因特网上发送和接收数据包。</p>
+</li>
+</ul>
+</li>
+<li><p>HTTP - 超文本控制协议</p>
+<ul>
+<li><p>HTTP 负责 web 服务器与 web 浏览器之间的通信。</p>
+<p>HTTP 用于从 web 客户端（浏览器）向 web 服务器发送请求，并从 web 服务器向 web 客户端返回内容（网页）。</p>
+</li>
+</ul>
+</li>
+<li><p>HTTPS - 安全的HTTP</p>
+<ul>
+<li><p>HTTPS 负责在 web 服务器和 web 浏览器之间的安全通信。</p>
+<p>作为有代表性的应用，HTTPS 会用于处理信用卡交易和其他的敏感数据。</p>
+</li>
+</ul>
+</li>
+<li><p>SSL -安全套接字</p>
+<ul>
+<li>SSL 协议用于为安全数据传输加密数据。</li>
+</ul>
+</li>
+<li><p>SMTP  - 简单邮件传输协议</p>
+<ul>
+<li>SMTP 用于电子邮件的传输。</li>
+</ul>
+</li>
+<li><p>FTP - 文件传输协议</p>
+<ul>
+<li>FTP 负责计算机之间的文件传输。</li>
+</ul>
+</li>
+<li><p>ICMP  - 因特网消息控制协议</p>
+<p>ICMP 负责网络中的错误处理。</p>
+</li>
+<li><p>PPTP - 点对点隧道协议</p>
+<p>PPTP 用于私人网络之间的连接（隧道）。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://boominy.github.io/2017/07/05/TCP-Ip/" data-id="cj4r0q9cb0004rotpl2x6hkyj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-http" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/03/http/" class="article-date">
+  <time class="post-time" datetime="2017-07-03T02:28:02.000Z" itemprop="datePublished">
+    <span class="post-month">7月</span><br/>
+    <span class="post-day">03</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/03/http/">http协议</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+  &nbsp; | &nbsp;
+  <div class="view-box">
+    <span id="/2017/07/03/http/" class="leancloud_visitors" data-flag-title="http协议">
+      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
+    </span>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>序言：这个其实就是自己整理的关键信息，没事的时候回顾回顾，详细信息请参照w3c标准。</p>
+<h3 id="一：定义："><a href="#一：定义：" class="headerlink" title="一：定义："></a>一：定义：</h3><p>HTTP协议是Hyper Text Transfer Protocol（超文本传输协议）的缩写,是用于从万维网（WWW:World Wide Web ）服务器传输超文本到本地浏览器的传送协议。。</p>
+<p>HTTP是一个基于TCP/IP通信协议来传递数据（HTML 文件, 图片文件, 查询结果等）</p>
+<h3 id="二、工作原理："><a href="#二、工作原理：" class="headerlink" title="二、工作原理："></a>二、工作原理：</h3><ol>
+<li>HTTP协议工作于<strong>客户端-服务端</strong>架构为上。浏览器作为HTTP客户端通过<strong>URL</strong>向HTTP服务端即WEB服务器发送所有请求</li>
+<li>Web服务器有：Apache服务器，IIS服务器（Internet Information Services）等。</li>
+<li>HTTP默认端口号为80，但是你也可以改为8080或者其他端口。</li>
+</ol>
+<h3 id="三、特点："><a href="#三、特点：" class="headerlink" title="三、特点："></a>三、特点：</h3><ol>
+<li><strong>无连接</strong>：无连接的含义是限制<strong>每次连接只处理一个请求</strong>。服务器<strong>处理</strong>完客户的请求，<strong>并</strong>收到客户的<strong>应答后</strong>，即<strong>断开连接</strong>。采用这种方式可以<strong>节省传输时间</strong>。</li>
+<li><strong>媒体独立</strong>的：这意味着，<strong>只要客户端和服务器知道如何处理的数据内容</strong>，任何类型的数据<strong>都可以通过HTTP发送</strong>。客户端以及服务器指定使用适合的MIME-type内容类型。</li>
+<li><strong>无状态</strong>：HTTP协议是无状态协议。无状态是指协议对于事务处理<strong>没有记忆能力</strong>。缺少状态意味着如果<strong>后续处理需要前面的信息，则它必须重传</strong>，这样可能<strong>导致每次连接传送的数据量增大</strong>。另一方面，在服务器不需要先前信息时它的应答就较快。</li>
+<li>请求</li>
+</ol>
+<h3 id="三、请求方法"><a href="#三、请求方法" class="headerlink" title="三、请求方法"></a>三、请求方法</h3><table>
+<thead>
+<tr>
+<th>1</th>
+<th>GET</th>
+<th>请求指定的页面信息，并返回实体主体。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>HEAD</td>
+<td>类似于get请求，只不过返回的响应中没有具体的内容，用于获取报头</td>
+</tr>
+<tr>
+<td>3</td>
+<td>POST</td>
+<td>向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST请求可能会导致新的资源的建立和/或已有资源的修改。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>PUT</td>
+<td>从客户端向服务器传送的数据取代指定的文档的内容。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>DELETE</td>
+<td>请求服务器删除指定的页面。</td>
+</tr>
+<tr>
+<td>6</td>
+<td>CONNECT</td>
+<td>HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器。</td>
+</tr>
+<tr>
+<td>7</td>
+<td>OPTIONS</td>
+<td>允许客户端查看服务器的性能。</td>
+</tr>
+<tr>
+<td>8</td>
+<td>TRACE</td>
+<td>回显服务器收到的请求，主要用于测试或诊断。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="四、常见状态码"><a href="#四、常见状态码" class="headerlink" title="四、常见状态码"></a>四、常见状态码</h4><ul>
+<li>200 - 请求成功</li>
+</ul>
+<ul>
+<li><p>301 - 资源（网页等）被永久转移到其它URL</p>
+</li>
+<li><p>400 - 客户端请求有语法错误，不能被服务器所理解</p>
+</li>
+<li><p>401 - 请求未经授权，这个状态代码必须和WWW-Authenticate报头域一起使用 </p>
+</li>
+<li><p>403 - 服务器收到请求，但是拒绝提供服务</p>
+</li>
+<li><p>404 - 请求的资源（网页等）不存在</p>
+</li>
+<li><p>500 - 内部服务器错误</p>
+</li>
+<li><p>503 Server - 服务器当前不能处理客户端的请求，一段时间后可能恢复正常</p>
+</li>
+<li><p>状态码分类：</p>
+<p>| 分类   | 分类描述                    |<br>| —- | ———————– |<br>| 1<strong>  | 信息，服务器收到请求，需要请求者继续执行操作  |<br>| 2</strong>  | 成功，操作被成功接收并处理           |<br>| 3<strong>  | 重定向，需要进一步的操作以完成请求       |<br>| 4</strong>  | 客户端错误，请求包含语法错误或无法完成请求   |<br>| 5**  | 服务器错误，服务器在处理请求的过程中发生了错误 |</p>
+</li>
+</ul>
+<h3 id="五、HTTP协议相关技术补充"><a href="#五、HTTP协议相关技术补充" class="headerlink" title="五、HTTP协议相关技术补充"></a>五、HTTP协议相关技术补充</h3><ol>
+<li><p>基础： 高层协议有：文件传输协议FTP、电子邮件传输协议SMTP、域名系统服务DNS、网络新闻传输协议NNTP和HTTP协议等</p>
+</li>
+<li><p>中介由三种：代理(Proxy)、网关(Gateway)和通道(Tunnel)。</p>
+<ul>
+<li><strong>一个代理根据URI的绝对格式来接受请求</strong>，<strong>重写全部或部分消息</strong>，通过 URI的标识把已格式化过的请求发送到服务器。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><strong>网关是一个接收代理</strong>，<strong>作为一些其它服务器的上层</strong>，并且如果必须的话，<strong>可以把请求翻译给下层的服务器协议</strong>。</li>
+<li><strong>一 个通道作为不改变消息的两个连接之间的<em>中继点</em></strong>。当通讯需要通过一个中介(例如：防火墙等)或者是中介不能识别消息的内容时，通道经常被使用。</li>
+</ul>
+<ol>
+<li><p>协议分析的优势—HTTP分析器检测网络攻击</p>
+<ul>
+<li>以<strong>模块化的方式对高层协议进行分析处理</strong>，将是未来入侵检测的方向。<br>HTTP及其代理的常用端口80、3128和8080在network部分用port标签进行了规定</li>
+</ul>
+</li>
+<li><p>、HTTP协议<strong>Content Lenth限制漏洞导致拒绝服务攻击</strong></p>
+<ul>
+<li>使用POST方法时，可以设置ContentLenth来定义需要传送的数据长度，例如ContentLenth:999999999，<strong>在传送完成前，内 存不会释放</strong>，攻击者可以利用这个缺陷，<strong>连续向WEB服务器发送垃圾数据直至WEB服务器内存耗尽</strong>。这种攻击方法基本不会留下痕迹。</li>
+</ul>
+</li>
+<li><p>利用HTTP协议的特性进行拒绝服务攻击的一些构思<br>​       <strong>服务器端忙于处理攻击者伪造的TCP连接请求而无暇理睬客户的正常请求</strong>（毕竟客户端的正常请求比率非常之小），此时从正常客户的角度看来，服务器失去响应，这种情况我们称作：服务器端受到了SYNFlood攻击（SYN洪水攻击）。<br>而Smurf、TearDrop等是利用ICMP报文来Flood和IP碎片攻击的。本文用“正常连接”的方法来产生拒绝服务攻击。<br>19端口在早期已经有人用来做Chargen攻击了，即Chargen_Denial_of_Service，但是！他们用的方法是在两台Chargen 服务器之间产生UDP连接，让服务器处理过多信息而DOWN掉，那么，干掉一台WEB服务器的条件就必须有2个：1.有Chargen服务2.有HTTP 服务<br>方法：攻击者伪造源IP给N台Chargen发送连接请求（Connect），Chargen接收到连接后就会返回每秒72字节的字符流（实际上根据网络实际情况，这个速度更快）给服务器。</p>
+</li>
+<li><p>Http指纹识别技术<br>   Http指纹识别的原理大致上也是相同的：<strong>记录不同服务器对Http协议执行中的微小差别进行识别.</strong>Http指纹识别比TCP/IP堆栈指纹识别复杂许 多,理由是定制Http服务器的配置文件、增加插件或组件使得更改Http的响应信息变的很容易,这样使得识别变的困难；然而定制TCP/IP堆栈的行为 需要对核心层进行修改,所以就容易识别.<br>​      要让服务器返回不同的Banner信息的设置是很简单的,像Apache这样的开放源代码的Http服务器,用户可以在源代码里修改Banner信息,然 后重起Http服务就生效了；对于没有公开源代码的Http服务器比如微软的IIS或者是Netscape,可以在存放Banner信息的Dll文件中修 改,相关的文章有讨论的,这里不再赘述,当然这样的修改的效果还是不错的.另外一种模糊Banner信息的方法是使用插件。、</p>
+<p>常用测试请求：<br>1：HEAD/Http/1.0发送基本的Http请求<br>2：DELETE/Http/1.0发送那些不被允许的请求,比如Delete请求<br>3：GET/Http/3.0发送一个非法版本的Http协议请求<br>4：GET/JUNK/1.0发送一个不正确规格的Http协议请求</p>
+</li>
+<li><p>为了提高用户使用浏览器时的性能，现代浏览器还支持<strong>并发的访问方式</strong>，浏览一个网页时同时建立多个连接，以迅速获得一个网页上的多个图标，这样能更快速完成整个网页的传输。</p>
+<p>HTTP1.1中提供了这种持续连接的方式，而下一代HTTP协议：HTTP-NG更增加了有关<strong>会话控制、丰富的内容协商</strong>等方式的支持，来提供<br>更高效率的连接。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://boominy.github.io/2017/07/03/http/" data-id="cj4r0q9cw000crotp4hso23p4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
   
     <article id="post-uni" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -129,7 +721,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/07/01/uni/" data-id="cj4ldgqiw000hwktpqaglvxl5" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/07/01/uni/" data-id="cj4r0q9dc000jrotpyv4ueduj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -197,11 +789,198 @@
 </ol>
 </li>
 </ul>
-<h4 id="3-JS正则表达式："><a href="#3-JS正则表达式：" class="headerlink" title="3.JS正则表达式："></a>3.JS正则表达式：</h4></script></li></ol></li></ul>
+<h4 id="3-JS调试："><a href="#3-JS调试：" class="headerlink" title="3.JS调试："></a>3.JS调试：</h4><ol>
+<li>浏览器启用调试工具一般是按下 F12 键，并在调试菜单中选择 “Console” 。</li>
+<li>console.log()方法：<ul>
+<li>a = 5;<br>b = 6;<br>c = a + b;<br>console.log(c);</li>
+</ul>
+</li>
+<li>设置断点:<strong>debugger</strong> 关键字用于停止执行 JavaScript，并调用调试函数。<ul>
+<li>var x = 15 * 5;<br>debugger;<br>document.getElementbyId(“demo”).innerHTML = x;</li>
+</ul>
+</li>
+<li>主要浏览器的调试工具：<ul>
+<li>chrome浏览器：<ul>
+<li>在工具中选择开发者工具</li>
+<li>最后选择Console</li>
+</ul>
+</li>
+<li>Firefox浏览器：<ul>
+<li>访问页面:<br><a href="http://www.getfirebug.com。">http://www.getfirebug.com。</a></li>
+<li>按照说明 :<br>安装 Firebug。</li>
+</ul>
+</li>
+<li>Internet Explorer浏览器：<ul>
+<li>在工具中选择开发者工具。</li>
+<li>最后，选择 Console</li>
+</ul>
+</li>
+<li>Opara:<ul>
+<li>打开浏览器。</li>
+<li>Opera 的内置调试工具为 Dragonfly，详细说明可访问页面:<br><a href="http://www.opera.com/dragonfly/。">http://www.opera.com/dragonfly/。</a></li>
+</ul>
+</li>
+<li>Safari:<ul>
+<li>打开浏览器。</li>
+<li>右击鼠标，选择检查元素。</li>
+<li>在底部弹出的窗口中选择”控制台”。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="4-JS变量提升："><a href="#4-JS变量提升：" class="headerlink" title="4.JS变量提升："></a>4.JS变量提升：</h4><ul>
+<li><p>JavaScript 中，函数及变量的声明都将被提升到函数的最顶部。</p>
+</li>
+<li><p>JavaScript 中，变量可以在使用后声明，也就是变量可以先使用再声明。</p>
+</li>
+<li><p>JavaScript 只有声明的变量会提升，初始化的不会。</p>
+<ul>
+<li><p>var x = 5; // 初始化 x</p>
+<p>elem = document.getElementById(“demo”); // 查找元素<br>elem.innerHTML = x + “ “ + y;           // 显示 x 和 y</p>
+<p>var y = 7; // 初始化 y</p>
+<p>//输出5和undefined</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-eval函数："><a href="#5-eval函数：" class="headerlink" title="5.eval函数："></a>5.eval函数：</h4><ul>
+<li><p>eval()只有一个参数。如果<strong>传入的参数不是字符串</strong>，它直接<strong>返回这个函数</strong>。如果参数<strong>是字符串</strong>，它会把字符串当成JavaScript代码进行编译，如果<strong>编译失败</strong>者<strong>抛出</strong>一个语法错误<strong>异常</strong>。如果<strong>编译成功</strong>，则开始<strong>执行这一段代码</strong>，并返回字符串中的最后一个表达式会或语句的值，如果<strong>最后一个表达式或语句没有值</strong>，则最终<strong>返回undefined</strong>。如果字符串<strong>抛出一个异常</strong>，这个异常将把该调用<strong>传递给eval()</strong>。</p>
+</li>
+<li><p>如果一个函数定义了一个局部变量x，然后<strong>调用eval(“x”)</strong>，它会<strong>返回局部变量的值</strong>。如果它调用eval(“x=1”)，它会改变局部变量的值。如果函数<strong>调用了eval(“var y=2;”)</strong>,它<strong>声明了一个新的局部变量y</strong>，同样地，一个函数可以通过如下代码声明一个局部变量：</p>
+<p>eval(“function f(){return x+1;}”);</p>
+</li>
+<li><p>全局eval:但当脚本定义了eval的一个别名，且用另一个名称调用它时，会直接改变全局变量的值</p>
+</li>
+<li><p>在严格模式下，eval执行的代码段可以查询或更改局部变量，但不能在局部作用域中定义新的变量或函数</p>
+</li>
+<li><p>严格模式将“eval”列为保留字，这让eval（）更像一个运算符。不能用一个别名覆盖eval（）函数。并且变量名，函数名。函数参数或者异常捕获的参数都不能取名为eval。</p>
+</li>
+</ul>
+<h4 id="6-JS严格模式："><a href="#6-JS严格模式：" class="headerlink" title="6.JS严格模式："></a>6.JS严格模式：</h4><ul>
+<li>严格模式通过在脚本或函数的<strong>头部添加 “use strict”</strong> 表达式来声明。</li>
+<li>不允许使用未声明的变量：</li>
+<li>不允许删除变量或对象。</li>
+<li>不允许删除函数。</li>
+<li>不允许变量重名:</li>
+<li>不允许使用八进制:</li>
+<li>不允许使用转义字符:</li>
+<li>不允许对只读属性赋值:</li>
+<li>不允许对一个使用getter方法读取的属性进行赋值</li>
+<li>不允许删除一个不允许删除的属性：</li>
+<li>变量名不能使用 “eval” 字符串:</li>
+<li>变量名不能使用 “arguments” 字符串:</li>
+<li>由于一些安全原因，在作用域 eval() 创建的变量不能被调用：</li>
+<li>禁止this关键字指向全局对象。</li>
+</ul>
+<h4 id="7-javascript使用误区："><a href="#7-javascript使用误区：" class="headerlink" title="7.javascript使用误区："></a>7.javascript使用误区：</h4><ul>
+<li><p><strong>if</strong> 条件语句返回 <strong>true</strong> (不是我们预期的)因为条件语句执行为 x 赋值 10，10 为 true</p>
+<ul>
+<li>var x = 0;</li>
+<li>if (x == 10)</li>
+</ul>
+</li>
+<li><p><strong>if</strong> 条件语句返回 <strong>false</strong> (不是我们预期的)因为条件语句执行为 x 赋值 0，0 为 false:</p>
+<ul>
+<li>var x = 0;</li>
+<li>if (x = 0)</li>
+</ul>
+</li>
+<li><p>在常规的比较中，数据类型是被忽略的，以下 if 条件语句返回 true：</p>
+<ul>
+<li>var x = 10;</li>
+<li>var y = “10”;</li>
+<li>if (x == y)</li>
+</ul>
+</li>
+<li><p>在严格的比较运算中，=== 为恒等计算符，同时检查表达式的值与类型，以下 if 条件语句返回 false：</p>
+<ul>
+<li>var x = 10;<br>var y = “10”;<br>if (x === y)</li>
+<li>switch 语句会使用恒等计算符(===)进行比较:<ul>
+<li>以下实例由于类型不一致不会执行 alert 弹窗：</li>
+<li>var x = 10;</li>
+<li>switch(x) {case “10”: alert(“Hello”);}</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>加法连接注意事项：</p>
+<ul>
+<li><strong>加法</strong>是两个<strong>数字</strong>相加。</li>
+<li><strong>连接</strong>是两个<strong>字符串</strong>连接。</li>
+<li>var x = 10 + 5;          // x 的结果为 15</li>
+<li>var x = 10 + “5”;        // x 的结果为 “105”</li>
+</ul>
+</li>
+<li><p>JavaScript 中的所有数据都是以 64 位<strong>浮点型数据(float)</strong> 来存储。</p>
+<p>所有的编程语言，包括 JavaScript，对浮点型数据的精确度都很难确定：</p>
+<ul>
+<li>var x = 0.1;</li>
+<li>var y = 0.2;</li>
+<li>var z = x + y            // z 的结果为 0.3</li>
+<li>if (z == 0.3)            // 返回 false</li>
+<li>为解决以上问题，可以用整数的乘除法来解决：</li>
+<li>var z = (x <em> 10 + y </em> 10) / 10;       // z 的结果为 0.3</li>
+</ul>
+</li>
+<li><p>javascript字符串分行：</p>
+<ul>
+<li>JavaScript 允许我们在字符串中使用断行语句:</li>
+<li>但是，在字符串中直接<strong>使用回车换行</strong>是<strong>会报错</strong>的：</li>
+<li>字符串断行需要使用反斜杠(\).</li>
+</ul>
+</li>
+<li><p>javaScript <strong>不支持使用名字来索引数组</strong>，<strong>只允许使用数字索引</strong>。在 JavaScript 中, <strong>对象</strong> 使用 <strong>名字作为索引</strong>。如果你<strong>使用名字作为索引</strong>，当访问数组时，JavaScript 会把数组<strong>重新定义为标准对象</strong>。</p>
+</li>
+<li><p>在 JavaScript 中, <strong>null</strong> 用于对象, <strong>undefined</strong> 用于变量，属性和方法。</p>
+<p>对象只有被定义才有可能为 null，否则为 undefined。</p>
+</li>
+</ul>
+<h4 id="8-JSON"><a href="#8-JSON" class="headerlink" title="8.JSON"></a>8.JSON</h4><ul>
+<li>JSON 是用于存储和传输数据的格式。</li>
+<li>JSON 是一种轻量级的数据交换格式。</li>
+<li>JSON是独立的语言 </li>
+<li>JSON 易于理解。</li>
+<li>实例：<ul>
+<li>{“sites”:[<br>​    {“name”:”Runoob”, “url”:”www.runoob.com”},<br>​    {“name”:”Google”, “url”:”www.google.com”},<br>​    {“name”:”Taobao”, “url”:”www.taobao.com”}<br>]}</li>
+</ul>
+</li>
+</ul>
+<h4 id="9-javascript-void-0"><a href="#9-javascript-void-0" class="headerlink" title="9.javascript:void(0)"></a>9.javascript:void(0)</h4><ul>
+<li>javascript:void(0), 仅仅表示一个死链接</li>
+</ul>
+<h4 id="10-Javascript代码规范"><a href="#10-Javascript代码规范" class="headerlink" title="10.Javascript代码规范"></a>10.Javascript代码规范</h4><ul>
+<li>全局变量为大写 (<strong>UPPERCASE </strong>)</li>
+<li>常量 (如 PI) 为大写 (<strong>UPPERCASE </strong>)</li>
+</ul>
+<ul>
+<li>变量名推荐使用驼峰法来命名(<strong>camelCase</strong>)</li>
+<li>通常运算符 ( = + - * / ) 前后需要添加空格</li>
+<li>通常使用 4 个空格符号来缩进代码块：</li>
+<li>一条语句通常以分号作为结束符。</li>
+<li><ul>
+<li>将左花括号放在第一行的结尾。</li>
+<li>左花括号前添加一空格。</li>
+<li>将右花括号独立放在一行。</li>
+<li>不要以分号结束一个复杂的声明。</li>
+</ul>
+</li>
+<li>对象定义的规则:<ul>
+<li>将左花括号与类名放在同一行。</li>
+<li>冒号与属性值间有个空格。</li>
+<li>字符串使用双引号，数字不需要。</li>
+<li>最后一个属性-值对后面不要添加逗号。</li>
+<li>将右花括号独立放在一行，并以分号作为结束符号</li>
+</ul>
+</li>
+<li>每行字符小于数 80 个</li>
+<li>HTML 与 JavaScript 尽量使用相同的命名规则。</li>
+</ul>
+</script></li></ol></li></ul>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/07/01/biji/" data-id="cj4ldgqhy0006wktpx0yjtx4h" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/07/01/biji/" data-id="cj4r0q9cb0005rotpmtua11v2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -454,7 +1233,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/07/01/JSmanul/" data-id="cj4ldgqhd0001wktp97oc9tis" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/07/01/JSmanul/" data-id="cj4r0q9bf0000rotptko6z7p5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -525,7 +1304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/30/tuofeng/" data-id="cj4ldgqir000fwktp7f6qsv2r" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/30/tuofeng/" data-id="cj4r0q9dc000irotp93j3rizx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -639,7 +1418,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/29/compitible/" data-id="cj4ldgqhu0005wktpbqmtpoyy" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/29/compitible/" data-id="cj4r0q9ct0009rotpjh8m1iyh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -706,7 +1485,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/28/face/" data-id="cj4ldgqia0008wktpj4taqjaf" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/28/face/" data-id="cj4r0q9cb0007rotp9ueky3ax" class="article-share-link">Share</a>
       
       
     </footer>
@@ -771,276 +1550,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/23/nullandun/" data-id="cj4ldgqig000bwktpn13xyndi" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-ztm" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/23/ztm/" class="article-date">
-  <time class="post-time" datetime="2017-06-23T10:44:43.000Z" itemprop="datePublished">
-    <span class="post-month">6月</span><br/>
-    <span class="post-day">23</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/23/ztm/">http常见状态码及rgba颜色对照表</a>
-    </h1>
-  
-
-        <div>
-          
-          
-              
-  &nbsp; | &nbsp;
-  <div class="view-box">
-    <span id="/2017/06/23/ztm/" class="leancloud_visitors" data-flag-title="http常见状态码及rgba颜色对照表">
-      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
-    </span>
-  </div>
-
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、http状态码"><a href="#一、http状态码" class="headerlink" title="一、http状态码"></a>一、http状态码</h2><h3 id="1-100-199用于指定客户端相应的某些动作"><a href="#1-100-199用于指定客户端相应的某些动作" class="headerlink" title="1. 100~199用于指定客户端相应的某些动作"></a>1. 100~199用于指定客户端相应的某些动作</h3><ul>
-<li>100 (Continue/继续)<br>如果服务器收到头信息中带有100-continue的请求，这是指客户端询问是否可以在后续的请求中发送附件。在这种情况下，服务器用100(SC_CONTINUE)允许客户端继续或用417 (Expectation Failed)告诉客户端不同意接受附件。这个状态码是 HTTP 1.1中新加入的</li>
-<li>101 (Switching Protocols/转换协议)<br>101 (SC_SWITCHING_PROTOCOLS)状态码是指服务器将按照其上的头信息变为一个不同的协议。这是 HTTP 1.1中新加入的。 </li>
-</ul>
-<h3 id="2-200-299用于表示请求成功"><a href="#2-200-299用于表示请求成功" class="headerlink" title="2. 200~299用于表示请求成功"></a>2. 200~299用于表示请求成功</h3><ul>
-<li><strong>200 (OK/正常)</strong><br>200 (SC_OK)的意思是一切正常。一般用于相应GET和POST请求。这个状态码对servlet是缺省的；如果没有调用setStatus方法的话，就会得到200。</li>
-<li><strong>201 (Created/已创建)</strong><br>201 (SC_CREATED)表示服务器在请求的响应中建立了新文档；应在定位头信息中给出它的URL。</li>
-<li>202 (Accepted/接受)<br>202 (SC_ACCEPTED)告诉客户端请求正在被执行，但还没有处理完。 </li>
-<li>202 (Accepted/接受)<br>202 (SC_ACCEPTED)告诉客户端请求正在被执行，但还没有处理完。 </li>
-<li>203 (Non-Authoritative Information/非官方信息) </li>
-<li>204 (No Content/无内容)</li>
-<li>205 (Reset Content/重置内容)</li>
-<li>206 (Partial Content/局部内容</li>
-</ul>
-<h3 id="3-300-399用于已经移动过的文件并且常被包含在定位头信息中指定新的地址信息"><a href="#3-300-399用于已经移动过的文件并且常被包含在定位头信息中指定新的地址信息" class="headerlink" title="3. 300~399用于已经移动过的文件并且常被包含在定位头信息中指定新的地址信息"></a>3. 300~399用于已经移动过的文件并且常被包含在定位头信息中指定新的地址信息</h3><ul>
-<li><strong>300 (Multiple Choices/多重选择)</strong></li>
-<li>301 (Moved Permanently)<br>301 (SC_MOVED_PERMANENTLY)状态是指所请求的文档在别的地方；文档新的URL会在定位响应头信息中给出。浏览器会自动连接到新的URL</li>
-<li>302 (Found/找到)<br>与301有些类似，只是定位头信息中所给的URL应被理解为临时交换地址而不是永久的</li>
-<li>305 (Use Proxy/使用代理)<br>305 (SC_USE_PROXY)表示所请求的文档要通过定位头信息中的代理服务器获得</li>
-<li>307 (Temporary Redirect/临时重定向)</li>
-</ul>
-<h3 id="4-400-499用于指出客户端的错误"><a href="#4-400-499用于指出客户端的错误" class="headerlink" title="4. 400~499用于指出客户端的错误"></a>4. 400~499用于指出客户端的错误</h3><ul>
-<li><strong>400 bad request 错误请求</strong></li>
-<li><strong>401unauthorized 未授权</strong></li>
-<li>402 payment required 付费要求</li>
-<li><strong>403 forbidden 禁止</strong></li>
-<li><strong>404 not found 未发现</strong></li>
-<li>405 method no allowed 方法不允许</li>
-<li><strong>406 not acceptable 不可接受</strong></li>
-<li>407 proxy authentication required 代理需要认证</li>
-<li><strong>408 request timeout 请求超时</strong></li>
-<li>410 gone 离开</li>
-<li>423 interval too brief 间隔太短</li>
-<li>480 temporarily unavailable 临时失效</li>
-<li>487 request terminated 请求终止</li>
-</ul>
-<h3 id="5-500-599用于支持服务器错误"><a href="#5-500-599用于支持服务器错误" class="headerlink" title="5. 500~599用于支持服务器错误"></a>5. 500~599用于支持服务器错误</h3><ul>
-<li>500 server internal error 服务器内部错误</li>
-</ul>
-<ul>
-<li><strong>501 not implemented 不可执行</strong></li>
-<li>502 bad gateway 坏网关</li>
-<li>503 service unavailable 服务无效</li>
-<li><strong>504 server time-out 服务器超时</strong></li>
-<li>505 version not supported 版本不支持</li>
-<li>513 message too large 消息太大</li>
-</ul>
-<h3 id="6-全局性错误"><a href="#6-全局性错误" class="headerlink" title="6. 全局性错误"></a>6. 全局性错误</h3><ul>
-<li>600 busy everywhere 全忙</li>
-<li>603 decline 丢弃</li>
-<li>604 does not exist anywhere 不存在</li>
-<li>606 not acceptable 不可接受</li>
-</ul>
-<h2 id="二、rgba颜色对照表"><a href="#二、rgba颜色对照表" class="headerlink" title="二、rgba颜色对照表"></a>二、rgba颜色对照表</h2><p><a href="http://tool.oschina.net/commons?type=3" target="_blank" rel="external">链接</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/23/ztm/" data-id="cj4ldgqj3000kwktp6as02h3z" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-primitive" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/23/primitive/" class="article-date">
-  <time class="post-time" datetime="2017-06-23T06:36:00.000Z" itemprop="datePublished">
-    <span class="post-month">6月</span><br/>
-    <span class="post-day">23</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/23/primitive/">JS原始类型(primitive type)</a>
-    </h1>
-  
-
-        <div>
-          
-          
-              
-  &nbsp; | &nbsp;
-  <div class="view-box">
-    <span id="/2017/06/23/primitive/" class="leancloud_visitors" data-flag-title="JS原始类型(primitive type)">
-      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
-    </span>
-  </div>
-
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一、基本类型（5种）</p>
-<ul>
-<li>undefined</li>
-<li>boolean</li>
-<li>number</li>
-<li>string</li>
-<li>null</li>
-</ul>
-<p>二、引用类型(对象类型)</p>
-<ul>
-<li>object</li>
-<li>Array</li>
-<li>Function</li>
-<li>Data</li>
-<li>…</li>
-</ul>
-<p>三、区别</p>
-<ol>
-<li>声明变量时不同的内存分配：<ul>
-<li>原始值：直接存储在变量访问的位置</li>
-<li>存储在变量处的值是一个指针（point），指向存储对象的内存地址</li>
-</ul>
-</li>
-<li>不同的内存分配机制也带来了不同的访问机制<ul>
-<li>原始类型的值则是可以直接访问到的</li>
-<li>在javascript中是不允许直接访问保存在堆内存中的对象的，所以在访问一个对象时，<br>首先得到的是这个对象在堆内存中的地址，然后再按照这个地址去获得这个对象中的值，这就是传说中的按引用访问</li>
-</ul>
-</li>
-<li>复制变量时的不同<ul>
-<li>原始值：在将一个保存着原始值的变量复制给另一个变量时，会将原始值的副本赋值给新变量，此后这两个变量是完全独立的，他们只是拥有相同的value而已</li>
-<li>引用值：在将一个保存着对象内存地址的变量复制给另一个变量时，会把这个内存地址赋值给新变量，也就是说这两个变量都指向了堆内存中的同一个对象，他们中任何一个作出的改变都会反映在另一个身上。</li>
-</ul>
-</li>
-<li>参数传递的不同（把实参复制给形参的过程）<ul>
-<li>原始值：只是把变量里的值传递给参数，之后参数和这个变量互不影响。</li>
-<li>引用值：对象变量它里面的值是这个对象在堆内存中的内存地址，这一点你要时刻铭记在心！因此它传递的值也就是这个内存地址，这也就是为什么函数内部对这个参数的修改会体现在外部的原因了，因为它们都指向同一个对象。</li>
-</ul>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/23/primitive/" data-id="cj4ldgqij000cwktpjutoa8xv" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-table" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/23/table/" class="article-date">
-  <time class="post-time" datetime="2017-06-23T02:54:01.000Z" itemprop="datePublished">
-    <span class="post-month">6月</span><br/>
-    <span class="post-day">23</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/23/table/">为什么不建议使用table布局</a>
-    </h1>
-  
-
-        <div>
-          
-          
-              
-  &nbsp; | &nbsp;
-  <div class="view-box">
-    <span id="/2017/06/23/table/" class="leancloud_visitors" data-flag-title="为什么不建议使用table布局">
-      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
-    </span>
-  </div>
-
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>Table要比其它html标记<strong>占更多</strong>的字节。<br>(延迟下载时间，占用服务器更多的流量资源。)</li>
-<li>Tablle会<strong>阻挡浏览器渲染引擎的渲染顺序</strong>。<br>(会延迟页面的生成速度，让用户等待更久的时间。)</li>
-<li>Table里显示图片时需要你把单个、有逻辑性的图片切成多个图。<br>(<strong>增加设计的复杂度</strong>，增加页面加载时间，增加HTTP会话数。)</li>
-<li>在某些浏览器中Table里的<strong>文字的拷贝会出现问题</strong>。<br>(这会让用户不悦。)</li>
-<li>Table会影响其内部的某些布局属性的生效(比如<code>&lt;td&gt;里的</code>元素的<code>height:100%</code>)<br>(这会<strong>限制你页面设计的自由性</strong>。)</li>
-<li>一旦学了CSS知识，你会发现使用table做页面布局会变得更麻烦。<br>(先花时间学一些CSS知识，会省去你以后大量的时间。)</li>
-<li>table对对于页面布局来说，从语义上看是不正确的。<br>(它描述的是表现，而不是内容。)</li>
-<li>table代码会让阅读者抓狂。<br>(不但无法利用CSS，而且会你不知所云)</li>
-<li>table一旦设计完成就变成死的，很难通过CSS让它展现新的面貌。</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/23/table/" data-id="cj4ldgqiu000gwktpmf95late" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/23/nullandun/" data-id="cj4r0q9cw000erotpzshpvnqp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1092,7 +1602,7 @@
     <h2 class="author">BooMiny</h2>
     <h3 class="description">女程序猿也可以性感和可耐o(*￣▽￣*)ブ</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>25</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>

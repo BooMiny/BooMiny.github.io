@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://boominy.github.io/2017/07/01/biji/index.html">
 <meta property="og:site_name" content="SexMonkey">
 <meta property="og:description" content="序言：我这个银啊，最大的缺点局势爱忘，越简单越容易忘，所以我要把所有最基础的东西都给整理一遍，嘻嘻，别觉得我智障哦(⊙o⊙)。开始啦，都是我的小笔记，大家可以滤过，和我一样脑子经常忘带的可以多进来逛逛(●’◡’●)。 1. 插入css样式表： 外部样式表： 内部样式表： 内联样式：例： 优先级：内联样式&amp;gt;内部样式&amp;gt;外部样式  2.插入JS脚本： 放在内部(head或body中)的JS脚">
-<meta property="og:updated_time" content="2017-07-01T14:17:00.335Z">
+<meta property="og:updated_time" content="2017-07-04T01:31:42.795Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="biji">
 <meta name="twitter:description" content="序言：我这个银啊，最大的缺点局势爱忘，越简单越容易忘，所以我要把所有最基础的东西都给整理一遍，嘻嘻，别觉得我智障哦(⊙o⊙)。开始啦，都是我的小笔记，大家可以滤过，和我一样脑子经常忘带的可以多进来逛逛(●’◡’●)。 1. 插入css样式表： 外部样式表： 内部样式表： 内联样式：例： 优先级：内联样式&amp;gt;内部样式&amp;gt;外部样式  2.插入JS脚本： 放在内部(head或body中)的JS脚">
@@ -44,7 +44,7 @@
     <h2 class="author">BooMiny</h2>
     <h3 class="description">女程序猿也可以性感和可耐o(*￣▽￣*)ブ</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>25</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>
@@ -122,11 +122,198 @@
 </ol>
 </li>
 </ul>
-<h4 id="3-JS正则表达式："><a href="#3-JS正则表达式：" class="headerlink" title="3.JS正则表达式："></a>3.JS正则表达式：</h4></script></li></ol></li></ul>
+<h4 id="3-JS调试："><a href="#3-JS调试：" class="headerlink" title="3.JS调试："></a>3.JS调试：</h4><ol>
+<li>浏览器启用调试工具一般是按下 F12 键，并在调试菜单中选择 “Console” 。</li>
+<li>console.log()方法：<ul>
+<li>a = 5;<br>b = 6;<br>c = a + b;<br>console.log(c);</li>
+</ul>
+</li>
+<li>设置断点:<strong>debugger</strong> 关键字用于停止执行 JavaScript，并调用调试函数。<ul>
+<li>var x = 15 * 5;<br>debugger;<br>document.getElementbyId(“demo”).innerHTML = x;</li>
+</ul>
+</li>
+<li>主要浏览器的调试工具：<ul>
+<li>chrome浏览器：<ul>
+<li>在工具中选择开发者工具</li>
+<li>最后选择Console</li>
+</ul>
+</li>
+<li>Firefox浏览器：<ul>
+<li>访问页面:<br><a href="http://www.getfirebug.com。">http://www.getfirebug.com。</a></li>
+<li>按照说明 :<br>安装 Firebug。</li>
+</ul>
+</li>
+<li>Internet Explorer浏览器：<ul>
+<li>在工具中选择开发者工具。</li>
+<li>最后，选择 Console</li>
+</ul>
+</li>
+<li>Opara:<ul>
+<li>打开浏览器。</li>
+<li>Opera 的内置调试工具为 Dragonfly，详细说明可访问页面:<br><a href="http://www.opera.com/dragonfly/。">http://www.opera.com/dragonfly/。</a></li>
+</ul>
+</li>
+<li>Safari:<ul>
+<li>打开浏览器。</li>
+<li>右击鼠标，选择检查元素。</li>
+<li>在底部弹出的窗口中选择”控制台”。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="4-JS变量提升："><a href="#4-JS变量提升：" class="headerlink" title="4.JS变量提升："></a>4.JS变量提升：</h4><ul>
+<li><p>JavaScript 中，函数及变量的声明都将被提升到函数的最顶部。</p>
+</li>
+<li><p>JavaScript 中，变量可以在使用后声明，也就是变量可以先使用再声明。</p>
+</li>
+<li><p>JavaScript 只有声明的变量会提升，初始化的不会。</p>
+<ul>
+<li><p>var x = 5; // 初始化 x</p>
+<p>elem = document.getElementById(“demo”); // 查找元素<br>elem.innerHTML = x + “ “ + y;           // 显示 x 和 y</p>
+<p>var y = 7; // 初始化 y</p>
+<p>//输出5和undefined</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-eval函数："><a href="#5-eval函数：" class="headerlink" title="5.eval函数："></a>5.eval函数：</h4><ul>
+<li><p>eval()只有一个参数。如果<strong>传入的参数不是字符串</strong>，它直接<strong>返回这个函数</strong>。如果参数<strong>是字符串</strong>，它会把字符串当成JavaScript代码进行编译，如果<strong>编译失败</strong>者<strong>抛出</strong>一个语法错误<strong>异常</strong>。如果<strong>编译成功</strong>，则开始<strong>执行这一段代码</strong>，并返回字符串中的最后一个表达式会或语句的值，如果<strong>最后一个表达式或语句没有值</strong>，则最终<strong>返回undefined</strong>。如果字符串<strong>抛出一个异常</strong>，这个异常将把该调用<strong>传递给eval()</strong>。</p>
+</li>
+<li><p>如果一个函数定义了一个局部变量x，然后<strong>调用eval(“x”)</strong>，它会<strong>返回局部变量的值</strong>。如果它调用eval(“x=1”)，它会改变局部变量的值。如果函数<strong>调用了eval(“var y=2;”)</strong>,它<strong>声明了一个新的局部变量y</strong>，同样地，一个函数可以通过如下代码声明一个局部变量：</p>
+<p>eval(“function f(){return x+1;}”);</p>
+</li>
+<li><p>全局eval:但当脚本定义了eval的一个别名，且用另一个名称调用它时，会直接改变全局变量的值</p>
+</li>
+<li><p>在严格模式下，eval执行的代码段可以查询或更改局部变量，但不能在局部作用域中定义新的变量或函数</p>
+</li>
+<li><p>严格模式将“eval”列为保留字，这让eval（）更像一个运算符。不能用一个别名覆盖eval（）函数。并且变量名，函数名。函数参数或者异常捕获的参数都不能取名为eval。</p>
+</li>
+</ul>
+<h4 id="6-JS严格模式："><a href="#6-JS严格模式：" class="headerlink" title="6.JS严格模式："></a>6.JS严格模式：</h4><ul>
+<li>严格模式通过在脚本或函数的<strong>头部添加 “use strict”</strong> 表达式来声明。</li>
+<li>不允许使用未声明的变量：</li>
+<li>不允许删除变量或对象。</li>
+<li>不允许删除函数。</li>
+<li>不允许变量重名:</li>
+<li>不允许使用八进制:</li>
+<li>不允许使用转义字符:</li>
+<li>不允许对只读属性赋值:</li>
+<li>不允许对一个使用getter方法读取的属性进行赋值</li>
+<li>不允许删除一个不允许删除的属性：</li>
+<li>变量名不能使用 “eval” 字符串:</li>
+<li>变量名不能使用 “arguments” 字符串:</li>
+<li>由于一些安全原因，在作用域 eval() 创建的变量不能被调用：</li>
+<li>禁止this关键字指向全局对象。</li>
+</ul>
+<h4 id="7-javascript使用误区："><a href="#7-javascript使用误区：" class="headerlink" title="7.javascript使用误区："></a>7.javascript使用误区：</h4><ul>
+<li><p><strong>if</strong> 条件语句返回 <strong>true</strong> (不是我们预期的)因为条件语句执行为 x 赋值 10，10 为 true</p>
+<ul>
+<li>var x = 0;</li>
+<li>if (x == 10)</li>
+</ul>
+</li>
+<li><p><strong>if</strong> 条件语句返回 <strong>false</strong> (不是我们预期的)因为条件语句执行为 x 赋值 0，0 为 false:</p>
+<ul>
+<li>var x = 0;</li>
+<li>if (x = 0)</li>
+</ul>
+</li>
+<li><p>在常规的比较中，数据类型是被忽略的，以下 if 条件语句返回 true：</p>
+<ul>
+<li>var x = 10;</li>
+<li>var y = “10”;</li>
+<li>if (x == y)</li>
+</ul>
+</li>
+<li><p>在严格的比较运算中，=== 为恒等计算符，同时检查表达式的值与类型，以下 if 条件语句返回 false：</p>
+<ul>
+<li>var x = 10;<br>var y = “10”;<br>if (x === y)</li>
+<li>switch 语句会使用恒等计算符(===)进行比较:<ul>
+<li>以下实例由于类型不一致不会执行 alert 弹窗：</li>
+<li>var x = 10;</li>
+<li>switch(x) {case “10”: alert(“Hello”);}</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>加法连接注意事项：</p>
+<ul>
+<li><strong>加法</strong>是两个<strong>数字</strong>相加。</li>
+<li><strong>连接</strong>是两个<strong>字符串</strong>连接。</li>
+<li>var x = 10 + 5;          // x 的结果为 15</li>
+<li>var x = 10 + “5”;        // x 的结果为 “105”</li>
+</ul>
+</li>
+<li><p>JavaScript 中的所有数据都是以 64 位<strong>浮点型数据(float)</strong> 来存储。</p>
+<p>所有的编程语言，包括 JavaScript，对浮点型数据的精确度都很难确定：</p>
+<ul>
+<li>var x = 0.1;</li>
+<li>var y = 0.2;</li>
+<li>var z = x + y            // z 的结果为 0.3</li>
+<li>if (z == 0.3)            // 返回 false</li>
+<li>为解决以上问题，可以用整数的乘除法来解决：</li>
+<li>var z = (x <em> 10 + y </em> 10) / 10;       // z 的结果为 0.3</li>
+</ul>
+</li>
+<li><p>javascript字符串分行：</p>
+<ul>
+<li>JavaScript 允许我们在字符串中使用断行语句:</li>
+<li>但是，在字符串中直接<strong>使用回车换行</strong>是<strong>会报错</strong>的：</li>
+<li>字符串断行需要使用反斜杠(\).</li>
+</ul>
+</li>
+<li><p>javaScript <strong>不支持使用名字来索引数组</strong>，<strong>只允许使用数字索引</strong>。在 JavaScript 中, <strong>对象</strong> 使用 <strong>名字作为索引</strong>。如果你<strong>使用名字作为索引</strong>，当访问数组时，JavaScript 会把数组<strong>重新定义为标准对象</strong>。</p>
+</li>
+<li><p>在 JavaScript 中, <strong>null</strong> 用于对象, <strong>undefined</strong> 用于变量，属性和方法。</p>
+<p>对象只有被定义才有可能为 null，否则为 undefined。</p>
+</li>
+</ul>
+<h4 id="8-JSON"><a href="#8-JSON" class="headerlink" title="8.JSON"></a>8.JSON</h4><ul>
+<li>JSON 是用于存储和传输数据的格式。</li>
+<li>JSON 是一种轻量级的数据交换格式。</li>
+<li>JSON是独立的语言 </li>
+<li>JSON 易于理解。</li>
+<li>实例：<ul>
+<li>{“sites”:[<br>​    {“name”:”Runoob”, “url”:”www.runoob.com”},<br>​    {“name”:”Google”, “url”:”www.google.com”},<br>​    {“name”:”Taobao”, “url”:”www.taobao.com”}<br>]}</li>
+</ul>
+</li>
+</ul>
+<h4 id="9-javascript-void-0"><a href="#9-javascript-void-0" class="headerlink" title="9.javascript:void(0)"></a>9.javascript:void(0)</h4><ul>
+<li>javascript:void(0), 仅仅表示一个死链接</li>
+</ul>
+<h4 id="10-Javascript代码规范"><a href="#10-Javascript代码规范" class="headerlink" title="10.Javascript代码规范"></a>10.Javascript代码规范</h4><ul>
+<li>全局变量为大写 (<strong>UPPERCASE </strong>)</li>
+<li>常量 (如 PI) 为大写 (<strong>UPPERCASE </strong>)</li>
+</ul>
+<ul>
+<li>变量名推荐使用驼峰法来命名(<strong>camelCase</strong>)</li>
+<li>通常运算符 ( = + - * / ) 前后需要添加空格</li>
+<li>通常使用 4 个空格符号来缩进代码块：</li>
+<li>一条语句通常以分号作为结束符。</li>
+<li><ul>
+<li>将左花括号放在第一行的结尾。</li>
+<li>左花括号前添加一空格。</li>
+<li>将右花括号独立放在一行。</li>
+<li>不要以分号结束一个复杂的声明。</li>
+</ul>
+</li>
+<li>对象定义的规则:<ul>
+<li>将左花括号与类名放在同一行。</li>
+<li>冒号与属性值间有个空格。</li>
+<li>字符串使用双引号，数字不需要。</li>
+<li>最后一个属性-值对后面不要添加逗号。</li>
+<li>将右花括号独立放在一行，并以分号作为结束符号</li>
+</ul>
+</li>
+<li>每行字符小于数 80 个</li>
+<li>HTML 与 JavaScript 尽量使用相同的命名规则。</li>
+</ul>
+</script></li></ol></li></ul>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/07/01/biji/" data-id="cj4ldgqhy0006wktpx0yjtx4h" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/07/01/biji/" data-id="cj4r0q9cb0005rotpmtua11v2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -204,7 +391,7 @@
     <h2 class="author">BooMiny</h2>
     <h3 class="description">女程序猿也可以性感和可耐o(*￣▽￣*)ブ</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>25</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>

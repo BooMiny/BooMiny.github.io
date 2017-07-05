@@ -43,7 +43,7 @@
     <h2 class="author">BooMiny</h2>
     <h3 class="description">女程序猿也可以性感和可耐o(*￣▽￣*)ブ</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>25</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>
@@ -66,6 +66,275 @@
 </div>
 
         <section id="main">
+  
+    <article id="post-ztm" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/23/ztm/" class="article-date">
+  <time class="post-time" datetime="2017-06-23T10:44:43.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br/>
+    <span class="post-day">23</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/23/ztm/">http常见状态码及rgba颜色对照表</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+  &nbsp; | &nbsp;
+  <div class="view-box">
+    <span id="/2017/06/23/ztm/" class="leancloud_visitors" data-flag-title="http常见状态码及rgba颜色对照表">
+      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
+    </span>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、http状态码"><a href="#一、http状态码" class="headerlink" title="一、http状态码"></a>一、http状态码</h2><h3 id="1-100-199用于指定客户端相应的某些动作"><a href="#1-100-199用于指定客户端相应的某些动作" class="headerlink" title="1. 100~199用于指定客户端相应的某些动作"></a>1. 100~199用于指定客户端相应的某些动作</h3><ul>
+<li>100 (Continue/继续)<br>如果服务器收到头信息中带有100-continue的请求，这是指客户端询问是否可以在后续的请求中发送附件。在这种情况下，服务器用100(SC_CONTINUE)允许客户端继续或用417 (Expectation Failed)告诉客户端不同意接受附件。这个状态码是 HTTP 1.1中新加入的</li>
+<li>101 (Switching Protocols/转换协议)<br>101 (SC_SWITCHING_PROTOCOLS)状态码是指服务器将按照其上的头信息变为一个不同的协议。这是 HTTP 1.1中新加入的。 </li>
+</ul>
+<h3 id="2-200-299用于表示请求成功"><a href="#2-200-299用于表示请求成功" class="headerlink" title="2. 200~299用于表示请求成功"></a>2. 200~299用于表示请求成功</h3><ul>
+<li><strong>200 (OK/正常)</strong><br>200 (SC_OK)的意思是一切正常。一般用于相应GET和POST请求。这个状态码对servlet是缺省的；如果没有调用setStatus方法的话，就会得到200。</li>
+<li><strong>201 (Created/已创建)</strong><br>201 (SC_CREATED)表示服务器在请求的响应中建立了新文档；应在定位头信息中给出它的URL。</li>
+<li>202 (Accepted/接受)<br>202 (SC_ACCEPTED)告诉客户端请求正在被执行，但还没有处理完。 </li>
+<li>202 (Accepted/接受)<br>202 (SC_ACCEPTED)告诉客户端请求正在被执行，但还没有处理完。 </li>
+<li>203 (Non-Authoritative Information/非官方信息) </li>
+<li>204 (No Content/无内容)</li>
+<li>205 (Reset Content/重置内容)</li>
+<li>206 (Partial Content/局部内容</li>
+</ul>
+<h3 id="3-300-399用于已经移动过的文件并且常被包含在定位头信息中指定新的地址信息"><a href="#3-300-399用于已经移动过的文件并且常被包含在定位头信息中指定新的地址信息" class="headerlink" title="3. 300~399用于已经移动过的文件并且常被包含在定位头信息中指定新的地址信息"></a>3. 300~399用于已经移动过的文件并且常被包含在定位头信息中指定新的地址信息</h3><ul>
+<li><strong>300 (Multiple Choices/多重选择)</strong></li>
+<li>301 (Moved Permanently)<br>301 (SC_MOVED_PERMANENTLY)状态是指所请求的文档在别的地方；文档新的URL会在定位响应头信息中给出。浏览器会自动连接到新的URL</li>
+<li>302 (Found/找到)<br>与301有些类似，只是定位头信息中所给的URL应被理解为临时交换地址而不是永久的</li>
+<li>305 (Use Proxy/使用代理)<br>305 (SC_USE_PROXY)表示所请求的文档要通过定位头信息中的代理服务器获得</li>
+<li>307 (Temporary Redirect/临时重定向)</li>
+</ul>
+<h3 id="4-400-499用于指出客户端的错误"><a href="#4-400-499用于指出客户端的错误" class="headerlink" title="4. 400~499用于指出客户端的错误"></a>4. 400~499用于指出客户端的错误</h3><ul>
+<li><strong>400 bad request 错误请求</strong></li>
+<li><strong>401unauthorized 未授权</strong></li>
+<li>402 payment required 付费要求</li>
+<li><strong>403 forbidden 禁止</strong></li>
+<li><strong>404 not found 未发现</strong></li>
+<li>405 method no allowed 方法不允许</li>
+<li><strong>406 not acceptable 不可接受</strong></li>
+<li>407 proxy authentication required 代理需要认证</li>
+<li><strong>408 request timeout 请求超时</strong></li>
+<li>410 gone 离开</li>
+<li>423 interval too brief 间隔太短</li>
+<li>480 temporarily unavailable 临时失效</li>
+<li>487 request terminated 请求终止</li>
+</ul>
+<h3 id="5-500-599用于支持服务器错误"><a href="#5-500-599用于支持服务器错误" class="headerlink" title="5. 500~599用于支持服务器错误"></a>5. 500~599用于支持服务器错误</h3><ul>
+<li>500 server internal error 服务器内部错误</li>
+</ul>
+<ul>
+<li><strong>501 not implemented 不可执行</strong></li>
+<li>502 bad gateway 坏网关</li>
+<li>503 service unavailable 服务无效</li>
+<li><strong>504 server time-out 服务器超时</strong></li>
+<li>505 version not supported 版本不支持</li>
+<li>513 message too large 消息太大</li>
+</ul>
+<h3 id="6-全局性错误"><a href="#6-全局性错误" class="headerlink" title="6. 全局性错误"></a>6. 全局性错误</h3><ul>
+<li>600 busy everywhere 全忙</li>
+<li>603 decline 丢弃</li>
+<li>604 does not exist anywhere 不存在</li>
+<li>606 not acceptable 不可接受</li>
+</ul>
+<h2 id="二、rgba颜色对照表"><a href="#二、rgba颜色对照表" class="headerlink" title="二、rgba颜色对照表"></a>二、rgba颜色对照表</h2><p><a href="http://tool.oschina.net/commons?type=3" target="_blank" rel="external">链接</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://boominy.github.io/2017/06/23/ztm/" data-id="cj4r0q9dc000lrotppomeou1h" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-primitive" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/23/primitive/" class="article-date">
+  <time class="post-time" datetime="2017-06-23T06:36:00.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br/>
+    <span class="post-day">23</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/23/primitive/">JS原始类型(primitive type)</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+  &nbsp; | &nbsp;
+  <div class="view-box">
+    <span id="/2017/06/23/primitive/" class="leancloud_visitors" data-flag-title="JS原始类型(primitive type)">
+      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
+    </span>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、基本类型（5种）</p>
+<ul>
+<li>undefined</li>
+<li>boolean</li>
+<li>number</li>
+<li>string</li>
+<li>null</li>
+</ul>
+<p>二、引用类型(对象类型)</p>
+<ul>
+<li>object</li>
+<li>Array</li>
+<li>Function</li>
+<li>Data</li>
+<li>…</li>
+</ul>
+<p>三、区别</p>
+<ol>
+<li>声明变量时不同的内存分配：<ul>
+<li>原始值：直接存储在变量访问的位置</li>
+<li>存储在变量处的值是一个指针（point），指向存储对象的内存地址</li>
+</ul>
+</li>
+<li>不同的内存分配机制也带来了不同的访问机制<ul>
+<li>原始类型的值则是可以直接访问到的</li>
+<li>在javascript中是不允许直接访问保存在堆内存中的对象的，所以在访问一个对象时，<br>首先得到的是这个对象在堆内存中的地址，然后再按照这个地址去获得这个对象中的值，这就是传说中的按引用访问</li>
+</ul>
+</li>
+<li>复制变量时的不同<ul>
+<li>原始值：在将一个保存着原始值的变量复制给另一个变量时，会将原始值的副本赋值给新变量，此后这两个变量是完全独立的，他们只是拥有相同的value而已</li>
+<li>引用值：在将一个保存着对象内存地址的变量复制给另一个变量时，会把这个内存地址赋值给新变量，也就是说这两个变量都指向了堆内存中的同一个对象，他们中任何一个作出的改变都会反映在另一个身上。</li>
+</ul>
+</li>
+<li>参数传递的不同（把实参复制给形参的过程）<ul>
+<li>原始值：只是把变量里的值传递给参数，之后参数和这个变量互不影响。</li>
+<li>引用值：对象变量它里面的值是这个对象在堆内存中的内存地址，这一点你要时刻铭记在心！因此它传递的值也就是这个内存地址，这也就是为什么函数内部对这个参数的修改会体现在外部的原因了，因为它们都指向同一个对象。</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://boominy.github.io/2017/06/23/primitive/" data-id="cj4r0q9cw000drotp303i4qjo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-table" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/23/table/" class="article-date">
+  <time class="post-time" datetime="2017-06-23T02:54:01.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br/>
+    <span class="post-day">23</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/23/table/">为什么不建议使用table布局</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+  &nbsp; | &nbsp;
+  <div class="view-box">
+    <span id="/2017/06/23/table/" class="leancloud_visitors" data-flag-title="为什么不建议使用table布局">
+      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
+    </span>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>Table要比其它html标记<strong>占更多</strong>的字节。<br>(延迟下载时间，占用服务器更多的流量资源。)</li>
+<li>Tablle会<strong>阻挡浏览器渲染引擎的渲染顺序</strong>。<br>(会延迟页面的生成速度，让用户等待更久的时间。)</li>
+<li>Table里显示图片时需要你把单个、有逻辑性的图片切成多个图。<br>(<strong>增加设计的复杂度</strong>，增加页面加载时间，增加HTTP会话数。)</li>
+<li>在某些浏览器中Table里的<strong>文字的拷贝会出现问题</strong>。<br>(这会让用户不悦。)</li>
+<li>Table会影响其内部的某些布局属性的生效(比如<code>&lt;td&gt;里的</code>元素的<code>height:100%</code>)<br>(这会<strong>限制你页面设计的自由性</strong>。)</li>
+<li>一旦学了CSS知识，你会发现使用table做页面布局会变得更麻烦。<br>(先花时间学一些CSS知识，会省去你以后大量的时间。)</li>
+<li>table对对于页面布局来说，从语义上看是不正确的。<br>(它描述的是表现，而不是内容。)</li>
+<li>table代码会让阅读者抓狂。<br>(不但无法利用CSS，而且会你不知所云)</li>
+<li>table一旦设计完成就变成死的，很难通过CSS让它展现新的面貌。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://boominy.github.io/2017/06/23/table/" data-id="cj4r0q9dc000hrotpbvmtir08" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
   
     <article id="post-psskill" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -132,7 +401,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/23/psskill/" data-id="cj4ldgqik000dwktp80do2lqj" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/23/psskill/" data-id="cj4r0q9cw000grotpyaqlvsrc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -189,7 +458,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/22/Lei/" data-id="cj4ldgqhi0002wktpeg44b3gy" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/22/Lei/" data-id="cj4r0q9bv0003rotp26uhqose" class="article-share-link">Share</a>
       
       
     </footer>
@@ -276,7 +545,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/22/annything/" data-id="cj4ldgqhq0004wktpreazp06r" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/22/annything/" data-id="cj4r0q9cb0006rotp8j6ljrgq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -348,7 +617,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/22/href和src的区别/" data-id="cj4ldgqi10007wktpnx0yqyt6" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/22/href和src的区别/" data-id="cj4r0q9cb0008rotpyndpqaun" class="article-share-link">Share</a>
       
       
     </footer>
@@ -459,7 +728,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/22/html块级元素和行级元素/" data-id="cj4ldgqic0009wktp1v8n5lbb" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/22/html块级元素和行级元素/" data-id="cj4r0q9cw000brotpqabo0hni" class="article-share-link">Share</a>
       
       
     </footer>
@@ -610,7 +879,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/22/几种前端语言对比分析/" data-id="cj4ldgqj1000jwktpc1rat8qj" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/22/几种前端语言对比分析/" data-id="cj4r0q9dc000nrotp5slsxlae" class="article-share-link">Share</a>
       
       
     </footer>
@@ -712,290 +981,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/20/JS作用域/" data-id="cj4ldgqhn0003wktphf12fjpe" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-浅谈JS闭包" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/20/浅谈JS闭包/" class="article-date">
-  <time class="post-time" datetime="2017-06-20T01:35:16.000Z" itemprop="datePublished">
-    <span class="post-month">6月</span><br/>
-    <span class="post-day">20</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/20/浅谈JS闭包/">浅谈JS闭包</a>
-    </h1>
-  
-
-        <div>
-          
-          
-              
-  &nbsp; | &nbsp;
-  <div class="view-box">
-    <span id="/2017/06/20/浅谈JS闭包/" class="leancloud_visitors" data-flag-title="浅谈JS闭包">
-      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
-    </span>
-  </div>
-
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、闭包的概念："><a href="#一、闭包的概念：" class="headerlink" title="一、闭包的概念："></a>一、闭包的概念：</h3><p> 闭包是指有权访问另一个函数作用域中的变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量</p>
-<h3 id="二、闭包特点："><a href="#二、闭包特点：" class="headerlink" title="二、闭包特点："></a>二、闭包特点：</h3><ul>
-<li>函数嵌套函数</li>
-<li>函数内部可以引用外部的参数和变量</li>
-<li>参数和变量不会被垃圾回收机制回收</li>
-</ul>
-<h3 id="三、优缺点："><a href="#三、优缺点：" class="headerlink" title="三、优缺点："></a>三、优缺点：</h3><ul>
-<li><p>优点：</p>
-<p>1.希望一个变量长期驻扎在内存中<br>2.避免全局变量的污染<br>3.私有成员的存在</p>
-</li>
-<li><p>缺点：</p>
-<ol>
-<li>闭包有一个非常严重的问题，那就是内存浪费问题，这个内存浪费不仅仅因为它常驻内存，更重要的是，对闭包的使用不当会造成无效内存的产生</li>
-</ol>
-</li>
-</ul>
-<h3 id="四、闭包简例："><a href="#四、闭包简例：" class="headerlink" title="四、闭包简例："></a>四、闭包简例：</h3><ul>
-<li>function f1(){</li>
-</ul>
-<p>　　　　var n=999;</p>
-<p>　　　　nAdd=function(){n+=1}</p>
-<p>　　　　function f2(){<br>　　　　　　alert(n);<br>　　　　}</p>
-<p>　　　　return f2;</p>
-<p>　　}</p>
-<p>　　var result=f1();</p>
-<p>　　result(); // 999</p>
-<p>　　nAdd();</p>
-<p>　　result(); // 1000</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/20/浅谈JS闭包/" data-id="cj4ldgqja000lwktpp7nah49i" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-javascript语言特性" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/19/javascript语言特性/" class="article-date">
-  <time class="post-time" datetime="2017-06-19T07:17:59.000Z" itemprop="datePublished">
-    <span class="post-month">6月</span><br/>
-    <span class="post-day">19</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/19/javascript语言特性/">javascript语言特性</a>
-    </h1>
-  
-
-        <div>
-          
-          
-              
-  &nbsp; | &nbsp;
-  <div class="view-box">
-    <span id="/2017/06/19/javascript语言特性/" class="leancloud_visitors" data-flag-title="javascript语言特性">
-      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
-    </span>
-  </div>
-
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>javascript语言实现继承机制的核心就是 <strong>prototype</strong> ，而不是Java语言那样的类式继承。</li>
-<li>Javascript 解析引擎在读取一个Object的属性的值时，会沿着 <strong>原型链</strong>向上寻找，如果最终没有找到，则该属性值为<strong>undefined</strong>； 如果最终找到该属性的值，则返回结果。</li>
-<li>当javascript解析引擎执行“给一个Object的某个属性赋值”的时候，如果当前Object存在该属性，则改写该属性的值，如果当前的Object本身并不存在该属性，则赋值该属性的值 。</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/19/javascript语言特性/" data-id="cj4ldgqie000awktpbx5p9brg" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-6-7月的北京实训" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/19/6-7月的北京实训/" class="article-date">
-  <time class="post-time" datetime="2017-06-19T06:59:25.000Z" itemprop="datePublished">
-    <span class="post-month">6月</span><br/>
-    <span class="post-day">19</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/19/6-7月的北京实训/">6~7月的北京实训</a>
-    </h1>
-  
-
-        <div>
-          
-          
-              
-  &nbsp; | &nbsp;
-  <div class="view-box">
-    <span id="/2017/06/19/6-7月的北京实训/" class="leancloud_visitors" data-flag-title="6~7月的北京实训">
-      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
-    </span>
-  </div>
-
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、演讲"><a href="#一、演讲" class="headerlink" title="一、演讲"></a>一、演讲</h1><ol>
-<li><p>体态：眼神 表情 </p>
-</li>
-<li><p>声音：大 富有感染力</p>
-</li>
-<li><p>内容：</p>
-<p>​</p>
-</li>
-</ol>
-<h1 id="二、劳动法"><a href="#二、劳动法" class="headerlink" title="二、劳动法"></a>二、劳动法</h1><ol>
-<li><p>实习期：未毕业，工资协商 无五险一金</p>
-</li>
-<li><p>试用期：毕业  有法律保护 五险一金 岗位工资80% 最长不超过六个月</p>
-<p>​                1年：不超过1个月    2~3年：2个月          3年以上：不超过六个月 </p>
-<p>​                 同一个人试用期只能有一次 可以延期（前提是不超过法律规定期限）</p>
-<p>​                 开除条件：</p>
-<ul>
-<li><p>试用期被证明不符合录用条件</p>
-</li>
-<li><p>严重违反用人单位规章制度</p>
-</li>
-<li><p>严重失职违章舞弊</p>
-</li>
-<li><p>劳动者同时与其他用人单位建立劳动关系的</p>
-</li>
-<li><p>虚假信息，威胁等手段</p>
-</li>
-<li><p>酒驾</p>
-</li>
-<li><p>公司内部培训（HR）：工资总额的1.5%~2.5% 培训费用不需偿还</p>
-<p>外资培训：费用高 包含所有的费用（包括住宿费，交通费），培训期间有工资（全资）</p>
-</li>
-</ul>
-<p>3.试用期考核：</p>
-</li>
-</ol>
-<ul>
-<li>签约时不会写明考核标准</li>
-<li>受到不公正对待时要敢于用法律手段维护自己的合法权益（比如说查明不合格项） </li>
-</ul>
-<ol>
-<li><p>签订合同后，如果确实不能胜任这一块工作，可以申请调配，企业需要提前30天提前通知，并给一个月工资</p>
-</li>
-<li><p>年假：（最短休假时间）</p>
-<ul>
-<li>1~10年：5天</li>
-<li>10年以上：10天</li>
-<li>20年以上：15天</li>
-<li>不休无法累计，但是有三薪补偿</li>
-</ul>
-</li>
-<li><p>事假：</p>
-<ul>
-<li>工资全无，累计一定程度有相应惩罚</li>
-<li>可用年假抵扣</li>
-</ul>
-</li>
-<li><p>病假;</p>
-<ul>
-<li>必须有证明</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>带薪40%左右，累计可用年假抵扣</li>
-</ul>
-<ol>
-<li><p>婚嫁，产假，陪产假：</p>
-<ul>
-<li>婚假：结婚证为证明（时常看地区）</li>
-<li>产假：生孩子的人（4个多月）</li>
-<li>陪产假：男方（7~10天）</li>
-</ul>
-</li>
-<li><p>五险一金：（企业与员工共同缴纳个人20%(上限+下限)+40%）</p>
-<ul>
-<li>养老保险</li>
-<li>失业保险（非本人意愿导致失业）钱少并且领取过程麻烦</li>
-<li>医疗保险</li>
-<li>工伤保险</li>
-<li>生育保险(在当地缴纳满一年)</li>
-<li>住房公积金（<strong>一金</strong>）</li>
-</ul>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/19/6-7月的北京实训/" data-id="cj4ldgqh40000wktpvc95d296" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/20/JS作用域/" data-id="cj4r0q9bv0002rotpbyaid4rc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1047,7 +1033,7 @@
     <h2 class="author">BooMiny</h2>
     <h3 class="description">女程序猿也可以性感和可耐o(*￣▽￣*)ブ</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>22</strong><br>文章</div></a>
+      <a href="/archives"><div><strong>25</strong><br>文章</div></a>
       <a href="/categories"><div><strong>0</strong><br>分类</div></a>
       <a href="/tags"><div><strong>0</strong><br>标签</div></a>
     </div>
