@@ -333,7 +333,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/07/05/javafile/" data-id="cj4r0q9cv000arotpcapd0ukv" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/07/05/javafile/" data-id="cj4r1zuna000cl4tpplsygzuj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -473,11 +473,25 @@
 <p>PPTP 用于私人网络之间的连接（隧道）。</p>
 </li>
 </ol>
+<h4 id="四、三次握手和四次挥手："><a href="#四、三次握手和四次挥手：" class="headerlink" title="四、三次握手和四次挥手："></a>四、三次握手和四次挥手：</h4><p><img src="/2017/07/05/TCP-Ip/sanci.png" alt="Alt ttt"></p>
+<p><strong>1.三次握手过程</strong>：</p>
+<ul>
+<li>第一次握手：当传输的数据到达尾部时，host1向host2发送SYN标志位，ACK=0的数据包给host2,并随机产生一个sequence1序列，当host2接收到这个数据后，host2由SYN=1可知客户端是想要建立连接。</li>
+<li>第二次握手：host2要对客户端的联机进行确认，向host1发送应答号ACK=1、SYN=1、确认号是sequence1+1,同时产生一个随机序列sequence2,这样就告诉host1可以进行连接；</li>
+<li>第三次握手：host收到数据检查是否为sequence1+2，以及ACK值是否为1,如果符合host1会发送ACK=1.sequence2+2告诉Host2请求已建立，可以进行连接。</li>
+</ul>
+<p><strong>2.四次挥手过程</strong></p>
+<ul>
+<li>第一次挥手：数据传输到达尾部，host1向host2发送FIN=1标志位，通知host2要断开连接。</li>
+<li>第二次挥手：host2收到host1发来的FIN=1标志后，host2不会立刻向host1发送FIN=1的请求关闭信息，而是先向host1发送一个ACK=1的应答信息，表示：你得请求我已收到，但我的有的数据可能还没有结束传送，你等一下。</li>
+<li>第三次挥手：host2数据传输完成，向host1发送FIN=1.</li>
+<li>第四次挥手：host1 收到FIN=1后，host1担心网络不稳定，host2不知道他要断开连接，向host2发送ACK=1确认信息，把自己设置为TIME_WAIT状态并启动定时器，如果host2没有收到ACK，host2端的定时器到达后会要Host1重新发送ACK，当host2收到确认信息后，host2断开连接。host11等待2MLS，host没有再请求发送ACK，知道host2已经收到ACK，此时host1关闭自己的连接。</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/07/05/TCP-Ip/" data-id="cj4r0q9cb0004rotpl2x6hkyj" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/07/05/TCP-Ip/" data-id="cj4r1zumj0005l4tpt4w4usgp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -647,7 +661,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/07/03/http/" data-id="cj4r0q9cw000crotp4hso23p4" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/07/03/http/" data-id="cj4r1zun1000al4tpk25yz0b9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -721,7 +735,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/07/01/uni/" data-id="cj4r0q9dc000jrotpyv4ueduj" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/07/01/uni/" data-id="cj4r1zunv000ll4tp05pfhmnv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -750,7 +764,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/01/biji/">biji</a>
+      <a class="article-title" href="/2017/07/01/biji/">JS笔记</a>
     </h1>
   
 
@@ -760,7 +774,7 @@
               
   &nbsp; | &nbsp;
   <div class="view-box">
-    <span id="/2017/07/01/biji/" class="leancloud_visitors" data-flag-title="biji">
+    <span id="/2017/07/01/biji/" class="leancloud_visitors" data-flag-title="JS笔记">
       &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
     </span>
   </div>
@@ -980,7 +994,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/07/01/biji/" data-id="cj4r0q9cb0005rotpmtua11v2" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/07/01/biji/" data-id="cj4r1zumq0006l4tp9csk4h2y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1233,7 +1247,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/07/01/JSmanul/" data-id="cj4r0q9bf0000rotptko6z7p5" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/07/01/JSmanul/" data-id="cj4r1zulz0003l4tpj9b8tucv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1304,7 +1318,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/30/tuofeng/" data-id="cj4r0q9dc000irotp93j3rizx" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/30/tuofeng/" data-id="cj4r1zunr000jl4tpusrodtkl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1418,7 +1432,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/29/compitible/" data-id="cj4r0q9ct0009rotpjh8m1iyh" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/29/compitible/" data-id="cj4r1zums0007l4tpenge4ubk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1485,7 +1499,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/28/face/" data-id="cj4r0q9cb0007rotp9ueky3ax" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/28/face/" data-id="cj4r1zumv0008l4tpb8qdsg61" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1550,7 +1564,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://boominy.github.io/2017/06/23/nullandun/" data-id="cj4r0q9cw000erotpzshpvnqp" class="article-share-link">Share</a>
+      <a data-url="http://boominy.github.io/2017/06/23/nullandun/" data-id="cj4r1zunf000el4tpnyv5xukj" class="article-share-link">Share</a>
       
       
     </footer>
