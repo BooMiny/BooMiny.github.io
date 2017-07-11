@@ -95,7 +95,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JAVA," />
 
 
 
@@ -112,15 +112,16 @@
 
 
 <meta name="description" content="​      java读写文件的方法挺多的，在初学java的时候更是傻傻分不清，在搜集各路大神的资料后，我总结了一个较为完善的版本。 一、文件IO图 二、相关的类和流 File类：  File类封装了对用户机器的文件系统进行操作的功能。例如，可以用File类获得文件上次修改的时间移动，或者对文件进行删除、重命名。 File类的主要方法有：getName(),getCanonicalFile(),l">
+<meta name="keywords" content="JAVA">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java读写文件">
+<meta property="og:title" content="Java读写文件">
 <meta property="og:url" content="http://boominy.github.io/2017/07/05/javafile/index.html">
 <meta property="og:site_name" content="SexMonkey">
 <meta property="og:description" content="​      java读写文件的方法挺多的，在初学java的时候更是傻傻分不清，在搜集各路大神的资料后，我总结了一个较为完善的版本。 一、文件IO图 二、相关的类和流 File类：  File类封装了对用户机器的文件系统进行操作的功能。例如，可以用File类获得文件上次修改的时间移动，或者对文件进行删除、重命名。 File类的主要方法有：getName(),getCanonicalFile(),l">
 <meta property="og:image" content="http://boominy.github.io/2017/07/05/javafile/dada.png">
-<meta property="og:updated_time" content="2017-07-05T11:54:25.900Z">
+<meta property="og:updated_time" content="2017-07-11T09:04:07.959Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java读写文件">
+<meta name="twitter:title" content="Java读写文件">
 <meta name="twitter:description" content="​      java读写文件的方法挺多的，在初学java的时候更是傻傻分不清，在搜集各路大神的资料后，我总结了一个较为完善的版本。 一、文件IO图 二、相关的类和流 File类：  File类封装了对用户机器的文件系统进行操作的功能。例如，可以用File类获得文件上次修改的时间移动，或者对文件进行删除、重命名。 File类的主要方法有：getName(),getCanonicalFile(),l">
 <meta name="twitter:image" content="http://boominy.github.io/2017/07/05/javafile/dada.png">
 
@@ -156,7 +157,7 @@
 
 
 
-  <title>java读写文件 | SexMonkey</title>
+  <title>Java读写文件 | SexMonkey</title>
   
 
 
@@ -300,7 +301,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BooMiny">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -312,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">java读写文件</h1>
+          <h1 class="post-title" itemprop="name headline">Java读写文件</h1>
         
 
         <div class="post-meta">
@@ -335,14 +336,47 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/05/javafile/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/05/javafile/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
           
           
-             <span id="/2017/07/05/javafile/" class="leancloud_visitors" data-flag-title="java读写文件">
+             <span id="/2017/07/05/javafile/" class="leancloud_visitors" data-flag-title="Java读写文件">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -474,8 +508,11 @@
 </ol>
 <p>   import java.io.FileWriter;  </p>
 <p>   import java.io.IOException;  </p>
+<p>​    </p>
 <p>   public class Filewriter {  </p>
+<p>​     </p>
 <p>   ​    private static final String LINE_SEPARATOR = System.getProperty(“line.separator”);  </p>
+<p>​     </p>
 <pre><code>/** 
 </code></pre><p>   ​     *  </p>
 <p>   ​     * @param args </p>
@@ -507,6 +544,7 @@
 <p>   ​         */          fw.close();  </p>
 <p>   ​            </p>
 <p>   ​    }  </p>
+<p>​     </p>
 <p>   }  </p>
 <ol>
 <li>实例：</li>
@@ -620,6 +658,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/JAVA/" rel="tag"># JAVA</a>
+          
+        </div>
+      
 
       
       
@@ -667,6 +711,13 @@
           
   <div class="comments" id="comments">
     
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
   </div>
 
 
@@ -702,7 +753,7 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="/images/avatar.jpg"
                alt="BooMiny" />
           <p class="site-author-name" itemprop="name">BooMiny</p>
            
@@ -725,7 +776,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -736,7 +787,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -759,11 +810,11 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/5323027182/profile?topnav=1&wvr=6" target="_blank" title="Weibo">
+                <a href="http://weibo.com/5323027182/profile?topnav=1&wvr=6" target="_blank" title="微博">
                   
-                    <i class="fa fa-fw fa-weibo"></i>
+                    <i class="fa fa-fw fa-globe"></i>
                   
-                  Weibo
+                  微博
                 </a>
               </span>
             
@@ -939,6 +990,26 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://smallMoney.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://boominy.github.io/2017/07/05/javafile/';
+          this.page.identifier = '2017/07/05/javafile/';
+          this.page.title = 'Java读写文件';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://smallMoney.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -951,10 +1022,6 @@
   
 
 
-
-
-
-  
 
 
 

@@ -95,7 +95,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="架构," />
 
 
 
@@ -112,6 +112,7 @@
 
 
 <meta name="description" content="MVC一、三个组成   视图(View):用户界面  控制器(Controller):业务逻辑  模型(Model):数据保存 各部分之间的通信方式： ​     View 传送指令到 Controller  Controller 完成业务逻辑后，要求 Model 改变状态  Model 将新的数据发送到 View，用户得到反馈 二、互动模式   view接受指令传给Controller   直接">
+<meta name="keywords" content="架构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MVC MVP和MVVM">
 <meta property="og:url" content="http://boominy.github.io/2017/06/13/what/index.html">
@@ -123,7 +124,7 @@
 <meta property="og:image" content="http://boominy.github.io/2017/06/13/what/mvc3.png">
 <meta property="og:image" content="http://boominy.github.io/2017/06/13/what/mvp.png">
 <meta property="og:image" content="http://boominy.github.io/2017/06/13/what/mvvm.png">
-<meta property="og:updated_time" content="2017-06-19T07:06:06.060Z">
+<meta property="og:updated_time" content="2017-07-11T08:25:11.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MVC MVP和MVVM">
 <meta name="twitter:description" content="MVC一、三个组成   视图(View):用户界面  控制器(Controller):业务逻辑  模型(Model):数据保存 各部分之间的通信方式： ​     View 传送指令到 Controller  Controller 完成业务逻辑后，要求 Model 改变状态  Model 将新的数据发送到 View，用户得到反馈 二、互动模式   view接受指令传给Controller   直接">
@@ -305,7 +306,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BooMiny">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -340,8 +341,41 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/06/13/what/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/06/13/what/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -455,6 +489,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/架构/" rel="tag"># 架构</a>
+          
+        </div>
+      
 
       
       
@@ -498,6 +538,13 @@
           
   <div class="comments" id="comments">
     
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
   </div>
 
 
@@ -533,7 +580,7 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="/images/avatar.jpg"
                alt="BooMiny" />
           <p class="site-author-name" itemprop="name">BooMiny</p>
            
@@ -556,7 +603,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -567,7 +614,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -590,11 +637,11 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/5323027182/profile?topnav=1&wvr=6" target="_blank" title="Weibo">
+                <a href="http://weibo.com/5323027182/profile?topnav=1&wvr=6" target="_blank" title="微博">
                   
-                    <i class="fa fa-fw fa-weibo"></i>
+                    <i class="fa fa-fw fa-globe"></i>
                   
-                  Weibo
+                  微博
                 </a>
               </span>
             
@@ -770,6 +817,26 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://smallMoney.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://boominy.github.io/2017/06/13/what/';
+          this.page.identifier = '2017/06/13/what/';
+          this.page.title = 'MVC MVP和MVVM';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://smallMoney.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -782,10 +849,6 @@
   
 
 
-
-
-
-  
 
 
 

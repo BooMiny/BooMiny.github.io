@@ -95,7 +95,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="PHP," />
 
 
 
@@ -112,12 +112,13 @@
 
 
 <meta name="description" content="哈哈哈，大神绕过，菜鸟跟进来，整理给自己看的小笔记。  当双引号中包含变量时，变量会与双引号中的内容连接在一起； 当单引号中包含变量时，变量会被当做字符串输出。  字符串很长怎么办？  &amp;lt;?php$string1 = &amp;lt;&amp;lt;&amp;lt;GOD我有一只小毛驴，我从来也不骑。有一天我心血来潮，骑着去赶集。我手里拿着小皮鞭，我心里正得意。不知怎么哗啦啦啦啦，我摔了一身泥.GOD; ec">
+<meta name="keywords" content="PHP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php需要注意的细节">
 <meta property="og:url" content="http://boominy.github.io/2017/07/06/php/index.html">
 <meta property="og:site_name" content="SexMonkey">
 <meta property="og:description" content="哈哈哈，大神绕过，菜鸟跟进来，整理给自己看的小笔记。  当双引号中包含变量时，变量会与双引号中的内容连接在一起； 当单引号中包含变量时，变量会被当做字符串输出。  字符串很长怎么办？  &amp;lt;?php$string1 = &amp;lt;&amp;lt;&amp;lt;GOD我有一只小毛驴，我从来也不骑。有一天我心血来潮，骑着去赶集。我手里拿着小皮鞭，我心里正得意。不知怎么哗啦啦啦啦，我摔了一身泥.GOD; ec">
-<meta property="og:updated_time" content="2017-07-07T06:10:52.739Z">
+<meta property="og:updated_time" content="2017-07-11T09:17:19.380Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php需要注意的细节">
 <meta name="twitter:description" content="哈哈哈，大神绕过，菜鸟跟进来，整理给自己看的小笔记。  当双引号中包含变量时，变量会与双引号中的内容连接在一起； 当单引号中包含变量时，变量会被当做字符串输出。  字符串很长怎么办？  &amp;lt;?php$string1 = &amp;lt;&amp;lt;&amp;lt;GOD我有一只小毛驴，我从来也不骑。有一天我心血来潮，骑着去赶集。我手里拿着小皮鞭，我心里正得意。不知怎么哗啦啦啦啦，我摔了一身泥.GOD; ec">
@@ -298,7 +299,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BooMiny">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -333,8 +334,41 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/06/php/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/06/php/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -456,9 +490,9 @@ function __destruct(){
 <li><p>继承</p>
 <ul>
 <li><p>定义继承于Car的Truck类<br>class Truck extends Car{</p>
-<p>   public function speedUp(){</p>
+<p>  public function speedUp(){</p>
 <pre><code>$this-&gt;speed = parent::speedUp()+50;
-</code></pre><p>   }<br>}</p>
+</code></pre><p>  }<br>}</p>
 </li>
 </ul>
 </li>
@@ -523,6 +557,12 @@ function __destruct(){
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag"># PHP</a>
+          
+        </div>
+      
 
       
       
@@ -542,8 +582,8 @@ function __destruct(){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/07/session/" rel="prev" title="cookie和cookie的区别">
-                cookie和cookie的区别 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/07/session/" rel="prev" title="cookie和session的区别">
+                cookie和session的区别 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -569,6 +609,13 @@ function __destruct(){
 
           
   <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     
   </div>
 
@@ -596,7 +643,7 @@ function __destruct(){
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="/images/avatar.jpg"
                alt="BooMiny" />
           <p class="site-author-name" itemprop="name">BooMiny</p>
            
@@ -619,7 +666,7 @@ function __destruct(){
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -630,7 +677,7 @@ function __destruct(){
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -653,11 +700,11 @@ function __destruct(){
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/5323027182/profile?topnav=1&wvr=6" target="_blank" title="Weibo">
+                <a href="http://weibo.com/5323027182/profile?topnav=1&wvr=6" target="_blank" title="微博">
                   
-                    <i class="fa fa-fw fa-weibo"></i>
+                    <i class="fa fa-fw fa-globe"></i>
                   
-                  Weibo
+                  微博
                 </a>
               </span>
             
@@ -817,6 +864,26 @@ function __destruct(){
 
   
 
+    
+      <script id="dsq-count-scr" src="https://smallMoney.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://boominy.github.io/2017/07/06/php/';
+          this.page.identifier = '2017/07/06/php/';
+          this.page.title = 'php需要注意的细节';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://smallMoney.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -829,10 +896,6 @@ function __destruct(){
   
 
 
-
-
-
-  
 
 
 

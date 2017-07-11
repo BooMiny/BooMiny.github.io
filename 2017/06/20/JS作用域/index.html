@@ -95,7 +95,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JS," />
 
 
 
@@ -112,12 +112,13 @@
 
 
 <meta name="description" content="一、全局变量 申明在函数之外的变量 申明变量时凡是没有var关键字，而直接赋值的变量均为全局变量  二、局部变量 申明在函数体中的变量，并且只能在当前函数体内访问  三、实例 function test() {   ​           a = 30;   //没有用var声明变量，为全局变量 ​          var b = 20; ​     }  test();  console.lo">
+<meta name="keywords" content="JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS作用域 变量提升">
 <meta property="og:url" content="http://boominy.github.io/2017/06/20/JS作用域/index.html">
 <meta property="og:site_name" content="SexMonkey">
 <meta property="og:description" content="一、全局变量 申明在函数之外的变量 申明变量时凡是没有var关键字，而直接赋值的变量均为全局变量  二、局部变量 申明在函数体中的变量，并且只能在当前函数体内访问  三、实例 function test() {   ​           a = 30;   //没有用var声明变量，为全局变量 ​          var b = 20; ​     }  test();  console.lo">
-<meta property="og:updated_time" content="2017-06-20T07:06:13.028Z">
+<meta property="og:updated_time" content="2017-07-11T08:42:39.369Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS作用域 变量提升">
 <meta name="twitter:description" content="一、全局变量 申明在函数之外的变量 申明变量时凡是没有var关键字，而直接赋值的变量均为全局变量  二、局部变量 申明在函数体中的变量，并且只能在当前函数体内访问  三、实例 function test() {   ​           a = 30;   //没有用var声明变量，为全局变量 ​          var b = 20; ​     }  test();  console.lo">
@@ -298,7 +299,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BooMiny">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -333,8 +334,41 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/06/20/JS作用域/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/06/20/JS作用域/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -442,6 +476,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/JS/" rel="tag"># JS</a>
+          
+        </div>
+      
 
       
       
@@ -489,6 +529,13 @@
           
   <div class="comments" id="comments">
     
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
   </div>
 
 
@@ -524,7 +571,7 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="/images/avatar.jpg"
                alt="BooMiny" />
           <p class="site-author-name" itemprop="name">BooMiny</p>
            
@@ -547,7 +594,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -558,7 +605,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -581,11 +628,11 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/5323027182/profile?topnav=1&wvr=6" target="_blank" title="Weibo">
+                <a href="http://weibo.com/5323027182/profile?topnav=1&wvr=6" target="_blank" title="微博">
                   
-                    <i class="fa fa-fw fa-weibo"></i>
+                    <i class="fa fa-fw fa-globe"></i>
                   
-                  Weibo
+                  微博
                 </a>
               </span>
             
@@ -761,6 +808,26 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://smallMoney.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://boominy.github.io/2017/06/20/JS作用域/';
+          this.page.identifier = '2017/06/20/JS作用域/';
+          this.page.title = 'JS作用域 变量提升';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://smallMoney.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -773,10 +840,6 @@
   
 
 
-
-
-
-  
 
 
 

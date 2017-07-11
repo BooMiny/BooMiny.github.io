@@ -95,7 +95,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="HTTP," />
 
 
 
@@ -112,14 +112,15 @@
 
 
 <meta name="description" content="cookie将数据存储在客户端，建立起用户与服务器之间的联系，通常可以解决很多问题，但是cookie仍然具有一些局限： cookie相对不是太安全，容易被盗用导致cookie欺骗 单个cookie的值最大只能存储4k 每次请求都要进行网络传输，占用带宽   session是将用户的会话数据存储在服务端，没有大小限制，通过一个session_id进行用户识别，PHP默认情况下session id是">
+<meta name="keywords" content="HTTP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cookie和cookie的区别">
+<meta property="og:title" content="cookie和session的区别">
 <meta property="og:url" content="http://boominy.github.io/2017/07/07/session/index.html">
 <meta property="og:site_name" content="SexMonkey">
 <meta property="og:description" content="cookie将数据存储在客户端，建立起用户与服务器之间的联系，通常可以解决很多问题，但是cookie仍然具有一些局限： cookie相对不是太安全，容易被盗用导致cookie欺骗 单个cookie的值最大只能存储4k 每次请求都要进行网络传输，占用带宽   session是将用户的会话数据存储在服务端，没有大小限制，通过一个session_id进行用户识别，PHP默认情况下session id是">
-<meta property="og:updated_time" content="2017-07-07T05:26:19.261Z">
+<meta property="og:updated_time" content="2017-07-11T08:57:15.599Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cookie和cookie的区别">
+<meta name="twitter:title" content="cookie和session的区别">
 <meta name="twitter:description" content="cookie将数据存储在客户端，建立起用户与服务器之间的联系，通常可以解决很多问题，但是cookie仍然具有一些局限： cookie相对不是太安全，容易被盗用导致cookie欺骗 单个cookie的值最大只能存储4k 每次请求都要进行网络传输，占用带宽   session是将用户的会话数据存储在服务端，没有大小限制，通过一个session_id进行用户识别，PHP默认情况下session id是">
 
 
@@ -154,7 +155,7 @@
 
 
 
-  <title>cookie和cookie的区别 | SexMonkey</title>
+  <title>cookie和session的区别 | SexMonkey</title>
   
 
 
@@ -298,7 +299,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BooMiny">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -310,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">cookie和cookie的区别</h1>
+          <h1 class="post-title" itemprop="name headline">cookie和session的区别</h1>
         
 
         <div class="post-meta">
@@ -333,14 +334,47 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/07/session/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/07/session/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
           
           
-             <span id="/2017/07/07/session/" class="leancloud_visitors" data-flag-title="cookie和cookie的区别">
+             <span id="/2017/07/07/session/" class="leancloud_visitors" data-flag-title="cookie和session的区别">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -405,6 +439,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/HTTP/" rel="tag"># HTTP</a>
+          
+        </div>
+      
 
       
       
@@ -448,6 +488,13 @@
           
   <div class="comments" id="comments">
     
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
   </div>
 
 
@@ -474,7 +521,7 @@
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="/images/avatar.jpg"
                alt="BooMiny" />
           <p class="site-author-name" itemprop="name">BooMiny</p>
            
@@ -497,7 +544,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -508,7 +555,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -531,11 +578,11 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/5323027182/profile?topnav=1&wvr=6" target="_blank" title="Weibo">
+                <a href="http://weibo.com/5323027182/profile?topnav=1&wvr=6" target="_blank" title="微博">
                   
-                    <i class="fa fa-fw fa-weibo"></i>
+                    <i class="fa fa-fw fa-globe"></i>
                   
-                  Weibo
+                  微博
                 </a>
               </span>
             
@@ -695,6 +742,26 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://smallMoney.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://boominy.github.io/2017/07/07/session/';
+          this.page.identifier = '2017/07/07/session/';
+          this.page.title = 'cookie和session的区别';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://smallMoney.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -707,10 +774,6 @@
   
 
 
-
-
-
-  
 
 
 

@@ -95,7 +95,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JS," />
 
 
 
@@ -112,12 +112,13 @@
 
 
 <meta name="description" content="javascript语言实现继承机制的核心就是 prototype ，而不是Java语言那样的类式继承。 Javascript 解析引擎在读取一个Object的属性的值时，会沿着 原型链向上寻找，如果最终没有找到，则该属性值为undefined； 如果最终找到该属性的值，则返回结果。 当javascript解析引擎执行“给一个Object的某个属性赋值”的时候，如果当前Object存在该属性，则">
+<meta name="keywords" content="JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript语言特性">
 <meta property="og:url" content="http://boominy.github.io/2017/06/19/javascript语言特性/index.html">
 <meta property="og:site_name" content="SexMonkey">
 <meta property="og:description" content="javascript语言实现继承机制的核心就是 prototype ，而不是Java语言那样的类式继承。 Javascript 解析引擎在读取一个Object的属性的值时，会沿着 原型链向上寻找，如果最终没有找到，则该属性值为undefined； 如果最终找到该属性的值，则返回结果。 当javascript解析引擎执行“给一个Object的某个属性赋值”的时候，如果当前Object存在该属性，则">
-<meta property="og:updated_time" content="2017-06-20T01:22:59.445Z">
+<meta property="og:updated_time" content="2017-07-11T08:43:36.509Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript语言特性">
 <meta name="twitter:description" content="javascript语言实现继承机制的核心就是 prototype ，而不是Java语言那样的类式继承。 Javascript 解析引擎在读取一个Object的属性的值时，会沿着 原型链向上寻找，如果最终没有找到，则该属性值为undefined； 如果最终找到该属性的值，则返回结果。 当javascript解析引擎执行“给一个Object的某个属性赋值”的时候，如果当前Object存在该属性，则">
@@ -298,7 +299,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BooMiny">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -333,8 +334,41 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/06/19/javascript语言特性/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/06/19/javascript语言特性/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -400,6 +434,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/JS/" rel="tag"># JS</a>
+          
+        </div>
+      
 
       
       
@@ -447,6 +487,13 @@
           
   <div class="comments" id="comments">
     
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
   </div>
 
 
@@ -473,7 +520,7 @@
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="/images/avatar.jpg"
                alt="BooMiny" />
           <p class="site-author-name" itemprop="name">BooMiny</p>
            
@@ -496,7 +543,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -507,7 +554,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -530,11 +577,11 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/5323027182/profile?topnav=1&wvr=6" target="_blank" title="Weibo">
+                <a href="http://weibo.com/5323027182/profile?topnav=1&wvr=6" target="_blank" title="微博">
                   
-                    <i class="fa fa-fw fa-weibo"></i>
+                    <i class="fa fa-fw fa-globe"></i>
                   
-                  Weibo
+                  微博
                 </a>
               </span>
             
@@ -694,6 +741,26 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://smallMoney.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://boominy.github.io/2017/06/19/javascript语言特性/';
+          this.page.identifier = '2017/06/19/javascript语言特性/';
+          this.page.title = 'javascript语言特性';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://smallMoney.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -706,10 +773,6 @@
   
 
 
-
-
-
-  
 
 
 
