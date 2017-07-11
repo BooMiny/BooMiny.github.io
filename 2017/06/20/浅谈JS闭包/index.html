@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="一、闭包的概念： 闭包是指有权访问另一个函数作用域中的变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量 二、闭包特点： 函数嵌套函数 函数内部可以引用外部的参数和变量 参数和变量不会被垃圾回收机制回收  三、优缺点： 优点： 1.希望一个变量长期驻扎在内存中2.避免全局变量的污染3.私有成员的存在  缺点：  闭包有一个非常严重的问题，那就是内">
+<meta name="description" content="闭包是Javascript中特别重要的概念，今天我们就好好聊以下闭包吧。">
 <meta name="keywords" content="JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈JS闭包">
 <meta property="og:url" content="http://boominy.github.io/2017/06/20/浅谈JS闭包/index.html">
 <meta property="og:site_name" content="SexMonkey">
-<meta property="og:description" content="一、闭包的概念： 闭包是指有权访问另一个函数作用域中的变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量 二、闭包特点： 函数嵌套函数 函数内部可以引用外部的参数和变量 参数和变量不会被垃圾回收机制回收  三、优缺点： 优点： 1.希望一个变量长期驻扎在内存中2.避免全局变量的污染3.私有成员的存在  缺点：  闭包有一个非常严重的问题，那就是内">
-<meta property="og:updated_time" content="2017-07-11T07:45:00.364Z">
+<meta property="og:description" content="闭包是Javascript中特别重要的概念，今天我们就好好聊以下闭包吧。">
+<meta property="og:updated_time" content="2017-07-11T11:23:15.534Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈JS闭包">
-<meta name="twitter:description" content="一、闭包的概念： 闭包是指有权访问另一个函数作用域中的变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量 二、闭包特点： 函数嵌套函数 函数内部可以引用外部的参数和变量 参数和变量不会被垃圾回收机制回收  三、优缺点： 优点： 1.希望一个变量长期驻扎在内存中2.避免全局变量的污染3.私有成员的存在  缺点：  闭包有一个非常严重的问题，那就是内">
+<meta name="twitter:description" content="闭包是Javascript中特别重要的概念，今天我们就好好聊以下闭包吧。">
 
 
 
@@ -360,15 +360,15 @@
           
             
               <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/06/20/浅谈JS闭包/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/06/20/浅谈JS闭包/" itemprop="commentCount"></span>
-                </a>
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
               </span>
+              
+                <a href="/2017/06/20/浅谈JS闭包/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/06/20/浅谈JS闭包/" itemprop="commentsCount"></span>
+                </a>
+              
             
           
 
@@ -395,6 +395,10 @@
 
           
 
+          
+              <div class="post-description">
+                  闭包是Javascript中特别重要的概念，今天我们就好好聊以下闭包吧。
+              </div>
           
 
         </div>
@@ -515,12 +519,7 @@
           
   <div class="comments" id="comments">
     
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      <div id="SOHUCS"></div>
     
   </div>
 
@@ -569,7 +568,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -815,26 +814,6 @@
 
   
 
-    
-      <script id="dsq-count-scr" src="https://smallMoney.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://boominy.github.io/2017/06/20/浅谈JS闭包/';
-          this.page.identifier = '2017/06/20/浅谈JS闭包/';
-          this.page.title = '浅谈JS闭包';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://smallMoney.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
 
 
 
@@ -850,6 +829,25 @@
 
 
 
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cyt6IiwB4';
+      var conf = '9d6ae23686292694ebc77dd118f9ce70';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
 
 
 
