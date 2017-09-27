@@ -1,0 +1,1123 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PI Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Vue," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="在实战中学习，在学习中提高。">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue项目分析学习">
+<meta property="og:url" content="http://boominy.github.io/2017/09/25/vueBattle/index.html">
+<meta property="og:site_name" content="a_^Monkey">
+<meta property="og:description" content="在实战中学习，在学习中提高。">
+<meta property="og:image" content="http://boominy.github.io/2017/09/25/vueBattle/demo1.png">
+<meta property="og:image" content="http://boominy.github.io/2017/09/25/vueBattle/demo2.png">
+<meta property="og:updated_time" content="2017-09-27T10:22:21.510Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue项目分析学习">
+<meta name="twitter:description" content="在实战中学习，在学习中提高。">
+<meta name="twitter:image" content="http://boominy.github.io/2017/09/25/vueBattle/demo1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://boominy.github.io/2017/09/25/vueBattle/"/>
+
+
+
+
+
+  <title>vue项目分析学习 | a_^Monkey</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2af479c8c79e63140b81a75730213438";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">a_^Monkey</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://boominy.github.io/2017/09/25/vueBattle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="BooMiny">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="a_^Monkey">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">vue项目分析学习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-25T12:57:16+08:00">
+                2017-09-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/09/25/vueBattle/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/09/25/vueBattle/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2017/09/25/vueBattle/" class="leancloud_visitors" data-flag-title="vue项目分析学习">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  在实战中学习，在学习中提高。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="一、框架对比"><a href="#一、框架对比" class="headerlink" title="一、框架对比"></a>一、框架对比</h3><ol>
+<li>Vue：<ul>
+<li>核心思想：数据驱动、组件化</li>
+<li>如何实现双向数据绑定：Object.defineProperty</li>
+<li>模板和渲染函数的弹性选择</li>
+<li>简单的语法以及项目构建</li>
+<li>更快的渲染速度和更小的体积</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li>React:<ul>
+<li>更适用于大型应用和更好的可测试性</li>
+<li>同时适用于Web端和原生App</li>
+<li>更大的生态圈带来更多的支持和工具</li>
+</ul>
+</li>
+<li>Vue和Recat相同点：<ul>
+<li>利用虚拟DOM实现快速渲染</li>
+<li>轻量级</li>
+<li>响应式组件</li>
+<li>服务器渲染</li>
+<li>易于集成路由工具，打包工具以及状态管理工具。</li>
+<li>优秀的支持和社区</li>
+</ul>
+</li>
+</ol>
+<h3 id="二、Vue实现双向绑定的代码实例"><a href="#二、Vue实现双向绑定的代码实例" class="headerlink" title="二、Vue实现双向绑定的代码实例"></a>二、Vue实现双向绑定的代码实例</h3><p><img src="/2017/09/25/vueBattle/demo1.png" alt="Alt text"></p>
+<h3 id="三、项目架构分析"><a href="#三、项目架构分析" class="headerlink" title="三、项目架构分析"></a>三、项目架构分析</h3><ol>
+<li>前端（Vue.js-MVVM）：视图层（商品列表、购物车、地址列表、商品结算、订单成功）+公共组件（Vue-Router Axios Vuex Util 依赖）</li>
+<li>后端：（Node+Express）+  数据库（MongoDB）</li>
+</ol>
+<h3 id="四、项目构建"><a href="#四、项目构建" class="headerlink" title="四、项目构建"></a>四、项目构建</h3><ol>
+<li><p>首先你要有node.js和git。</p>
+</li>
+<li><p>安装淘宝镜像:npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
+</li>
+<li><p>全局安装webpack :cnpm install webpack -g</p>
+</li>
+<li><p>全局安装vue的脚手架：npm install vue-cli -g</p>
+</li>
+<li><p>初始化一个webpack项目：</p>
+</li>
+<li><p>简单项目：vue init webpack-simple demoName</p>
+<p><img src="/2017/09/25/vueBattle/demo2.png" alt="Alt text"></p>
+<ul>
+<li>完整项目：vue init webpack proName</li>
+</ul>
+</li>
+<li><p>安装依赖：cnpm install</p>
+</li>
+<li><p>启动：npm run dev</p>
+</li>
+</ol>
+<h3 id="五、vue的基础语法"><a href="#五、vue的基础语法" class="headerlink" title="五、vue的基础语法"></a>五、vue的基础语法</h3><ol>
+<li><p>Mustache语法：</p>
+</li>
+<li><p>Html赋值：v-html = “”</p>
+</li>
+<li><p>绑定属性：v-bind:id = “”</p>
+</li>
+<li><p>使用表达式ok?’YES’:’NO’</p>
+</li>
+<li><p>指令：v-if=””</p>
+</li>
+<li><p>过滤器：和v-bind:id = “rawld | formatld”</p>
+</li>
+<li><p>Class和Style绑定</p>
+<ul>
+<li><p>对象语法：v-bind：class=”{ active:isActive,’text-danger’:hasError}”&gt;</p>
+</li>
+<li><p>数组语法： \<div v-bind:class="[activeClass,errorClass]"></div></p>
+<p>​                     data:{ activeClass: ‘active’,errorClass:’text-danger’}</p>
+</li>
+<li><p>style绑定-对象语法：v-bind:style=”{color:activeColor,fontSize;fontSize+’px’}”</p>
+</li>
+</ul>
+</li>
+<li><p>条件渲染：</p>
+<ul>
+<li>v-if</li>
+<li>v-else（显示或隐藏整个dom）</li>
+<li>v-else-if</li>
+<li>v-show(div不改变dom结构，只是决定显示不显示)</li>
+<li>v-cloak(页面刷新太快，可以实时地显示或隐藏dom)</li>
+</ul>
+</li>
+<li><p>时间处理器：</p>
+<ul>
+<li>v-on:click=”greet”或者@click=”greet”</li>
+<li>v-on:click.stop（阻止冒泡）、v-on:click.stop.prevent（阻止默认事件）、v-on:click.self（绑定自身）、v-on:click.once（只绑定一次）</li>
+<li>v-on:keyup.enter</li>
+</ul>
+</li>
+<li><p>Vue组件</p>
+<ul>
+<li>全局组件和局部组件</li>
+<li>父子组件通信-数据传递（一般来说，不允许子组件向上改变父组件，但是可以通过出发emit来触发）</li>
+<li>Slot</li>
+</ul>
+</li>
+</ol>
+<h3 id="六、前端路由基础知识"><a href="#六、前端路由基础知识" class="headerlink" title="六、前端路由基础知识"></a>六、前端路由基础知识</h3><ol>
+<li>根据不同的url地址展示不同的内容或者页面</li>
+<li>把不同的路由对应不同的内容或页面的任务交给前端来做，之前是通过服务端根据url的不同返回不同的页面实现的。</li>
+<li>什么时候使用前端路由：在单页面应用，大部分页面结构不变，只改变部分内容的使用。</li>
+<li>前端的路由有什么优点和缺点？<ul>
+<li>优点:用户体验好，不需要每次都从服务器全部获取，快速展现给用户。</li>
+<li>缺点：不利于SEO。使用浏览器的前进，后退键的时候会重新发送请求，没有合理地利用缓存。</li>
+</ul>
+</li>
+<li>单页面无法记住之前滚动的位置，无法在前进，后退的时候记住滚动的位置。</li>
+<li>vue-router用来构建SPA</li>
+<li>router-link或者this.$router.push({path:})路由的跳转标签</li>
+<li>router-view组件的渲染</li>
+<li>动态路由的匹配<ul>
+<li>应用商城的详情页面</li>
+</ul>
+</li>
+<li>嵌套路由<ul>
+<li>不需要用户刷新而是需要嵌套子路由</li>
+</ul>
+</li>
+<li>编程式路由<ul>
+<li>通过js来实现页面的跳转</li>
+<li>$router.push(“name”)</li>
+<li>$router.push({path:”name”})</li>
+<li>$router.push({path:”name?a=123”})或者$router.push({path:”name”,query:{a:123}})</li>
+<li>$router.go(1)</li>
+</ul>
+</li>
+<li>命名路由和命名视图<ul>
+<li>给路由定义不同的名字，根据名字进行匹配</li>
+<li>给不同的router-view定义名字，通过名字进行对应组件的渲染</li>
+</ul>
+</li>
+</ol>
+<h3 id="七、Vue-Resource基础介绍"><a href="#七、Vue-Resource基础介绍" class="headerlink" title="七、Vue-Resource基础介绍"></a>七、Vue-Resource基础介绍</h3><ol>
+<li>vue-resource的请求API是按照REST风格设计的，它提供了7种请求API：<ul>
+<li>get(url,[options])</li>
+<li>head(url,[options])</li>
+<li>delete(url,[options])</li>
+<li>jsonp(url,[options])</li>
+<li>post(url,[body],[options])</li>
+<li>put(url,[body],[options])</li>
+<li>patch(url,[body],[options])</li>
+</ul>
+</li>
+<li>补充的基础小知识：<ul>
+<li>url:请求的URL</li>
+<li>method:请求的http方法，如‘GET’,’POST’或其他HTTP方法</li>
+<li>body:发post请求的时候会有request body</li>
+<li>params:发get请求的时候指定的参数</li>
+<li>headers:发请求的时候往request header里面注入的参数。</li>
+<li>timeout:请求超时时间（0表示无超时）</li>
+<li>before:请求发送前的处理函数，类似于jQuery的beforeSend函数</li>
+<li>progress:ProgressEvent回调处理函数</li>
+<li>credientials: 表示跨域请求时是否需要使用凭证。</li>
+<li>emulateHTTP:发送PUT，PATCH,DEKKETE请求时以HTTP POST的方式发送，并设置请求头X-HTTP-Method-Override将request body以application/x-www-form-urlencoded content的方式让服务器端识别</li>
+<li>全局拦截器interceptors:可以在同一个里面处理多个请求</li>
+</ul>
+</li>
+<li>安装vue-resource的命令：vue-resource –save。</li>
+</ol>
+<h3 id="八、ES6讲解"><a href="#八、ES6讲解" class="headerlink" title="八、ES6讲解"></a>八、ES6讲解</h3><ol>
+<li><p>函数的Rest参数和扩展</p>
+</li>
+<li><p>promise使用</p>
+</li>
+<li><p>module.exports和ES6 import/export的使用</p>
+</li>
+</ol>
+<h3 id="九、"><a href="#九、" class="headerlink" title="九、"></a>九、</h3>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue/" rel="tag"># Vue</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/25/friend/" rel="next" title="推荐几个大神博客">
+                <i class="fa fa-chevron-left"></i> 推荐几个大神博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div id="sidebar-dimmer"></div>
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="BooMiny" />
+          <p class="site-author-name" itemprop="name">BooMiny</p>
+           
+              <p class="site-description motion-element" itemprop="description">攻城狮o(*￣▽￣*)ブ啦啦啦</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/BooMiny" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5323027182/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、框架对比"><span class="nav-number">1.</span> <span class="nav-text">一、框架对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、Vue实现双向绑定的代码实例"><span class="nav-number">2.</span> <span class="nav-text">二、Vue实现双向绑定的代码实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、项目架构分析"><span class="nav-number">3.</span> <span class="nav-text">三、项目架构分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、项目构建"><span class="nav-number">4.</span> <span class="nav-text">四、项目构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、vue的基础语法"><span class="nav-number">5.</span> <span class="nav-text">五、vue的基础语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、前端路由基础知识"><span class="nav-number">6.</span> <span class="nav-text">六、前端路由基础知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、Vue-Resource基础介绍"><span class="nav-number">7.</span> <span class="nav-text">七、Vue-Resource基础介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八、ES6讲解"><span class="nav-number">8.</span> <span class="nav-text">八、ES6讲解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#九、"><span class="nav-number">9.</span> <span class="nav-text">九、</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">BooMiny</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+    
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cyt6IiwB4';
+      var conf = '9d6ae23686292694ebc77dd118f9ce70';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("zMavEkdhAYb5ARLg2CDhVDht-gzGzoHsz", "U6Vaenwi1gesVxpnOdWIEyDD");AV.useAVCloudUS();</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
