@@ -120,7 +120,7 @@
 <meta property="og:description" content="在实战中学习，在学习中提高。">
 <meta property="og:image" content="http://boominy.github.io/2017/09/25/vueBattle/demo1.png">
 <meta property="og:image" content="http://boominy.github.io/2017/09/25/vueBattle/demo2.png">
-<meta property="og:updated_time" content="2017-09-27T10:22:21.510Z">
+<meta property="og:updated_time" content="2017-09-30T08:37:21.406Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue项目分析学习">
 <meta name="twitter:description" content="在实战中学习，在学习中提高。">
@@ -579,14 +579,82 @@
 <li>安装vue-resource的命令：vue-resource –save。</li>
 </ol>
 <h3 id="八、ES6讲解"><a href="#八、ES6讲解" class="headerlink" title="八、ES6讲解"></a>八、ES6讲解</h3><ol>
-<li><p>函数的Rest参数和扩展</p>
+<li>函数的Rest参数和扩展</li>
+<li>promise使用</li>
+<li>module.exports和ES6 import/export的使用<ul>
+<li>AMD、CMD、CommeonJs和ES6的区别<ul>
+<li>AMD：依赖前置，在需要的时候需要在最前面给它定义好。</li>
+<li>CMD依赖就近：在什么地方使用就在哪requere。同步概念。</li>
+<li>CommonJs: </li>
+<li>ES6:  export/import</li>
+</ul>
 </li>
-<li><p>promise使用</p>
-</li>
-<li><p>module.exports和ES6 import/export的使用</p>
+</ul>
 </li>
 </ol>
-<h3 id="九、"><a href="#九、" class="headerlink" title="九、"></a>九、</h3>
+<h3 id="九、进入实战"><a href="#九、进入实战" class="headerlink" title="九、进入实战"></a>九、进入实战</h3><ol>
+<li><p>组件分析：</p>
+<ul>
+<li>Header组件</li>
+<li>Footer组件</li>
+<li>面包屑组件</li>
+</ul>
+</li>
+<li><p>main.js分析</p>
+<ul>
+<li>new Vue实例是整个页面的接口：<ul>
+<li>el: ‘app’可以在函数后面跟.mount(“#app”)代替</li>
+<li>template:’&lt;’app’&gt;’可以用rander: funvtion (h) { return h(app)}底层实现。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>assets: 放组件的静态资源，assets里面的图片会在我们打包过程中打包到一起。当图片足够小的时候会生成base64的形式。</li>
+<li>static里面放的图片通过src进行加载，页面中比较大的图片会放在static里面</li>
+</ul>
+<ol>
+<li><p>在组件中，应该把不用的style删去，否则会生成很多空的style.</p>
+</li>
+<li><p>取名字的时候不应该与H5标签名冲突。@直接定位到src目录中去。</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;slot&gt;&lt;/slot&gt;插槽</div></pre></td></tr></table></figure>
+</li>
+<li><p>插件介绍：axios</p>
+<ul>
+<li>npm install axios</li>
+<li>可以通过axios来完成ajax请求</li>
+</ul>
+</li>
+<li><p>插件介绍：vue-lazyload –save</p>
+<ul>
+<li>使用v-lazy可以实现图片的懒加载动画</li>
+</ul>
+</li>
+<li><p>Node.js在linux下安装和环境搭建</p>
+<ul>
+<li>wget : <a href="https://npm.taobao.org/mirrors/node/v8.4.0/node-v8.4.0-linux-x64.tar.gz" target="_blank" rel="external">https://npm.taobao.org/mirrors/node/v8.4.0/node-v8.4.0-linux-x64.tar.gz</a></li>
+<li>解压：tar -xzvf node-v8.4.0-linux-x86.tar.gz</li>
+<li>tar -xvf node-v8.4.0-linux-x64.tar.gz</li>
+<li>in -s /node-v6.10.3-linux-x64/bin/node /usr/local/bin/node</li>
+<li>in -s /node-x6.10.3-linux-x64/bin/npm /usr/loacl/bin/npm</li>
+<li>我的配置过程：<ol>
+<li>登录你的云主机</li>
+<li>wget  <a href="https://npm.taobao.org/mirrors/node/v8.4.0/node-v8.4.0-linux-x64.tar.gz" target="_blank" rel="external">https://npm.taobao.org/mirrors/node/v8.4.0/node-v8.4.0-linux-x64.tar.gz</a></li>
+<li>解压：tar -xzvf node-v8.4.0-linux-x64.tar.g</li>
+<li>可以使用ls -la查看是否有这个安装模块(移除命令：unzip xxx.zip移除模块指令：rm-rf 模块)</li>
+<li>进到目录：node-v8.4.0-linux-x64/bin/</li>
+<li>通过ls -l查看node模块</li>
+<li>通过./node -v查看node.js版本</li>
+<li>建立node的软链接ln -s /node-v8.4.0-linux-x64/bin/node /usr/local/bin/node</li>
+<li>建立npm的软链接ln -s /node-v8.4.0-linux-x64/bin/npm /usr/local/bin/npm</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+
       
     </div>
 
@@ -792,7 +860,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、框架对比"><span class="nav-number">1.</span> <span class="nav-text">一、框架对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、Vue实现双向绑定的代码实例"><span class="nav-number">2.</span> <span class="nav-text">二、Vue实现双向绑定的代码实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、项目架构分析"><span class="nav-number">3.</span> <span class="nav-text">三、项目架构分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、项目构建"><span class="nav-number">4.</span> <span class="nav-text">四、项目构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、vue的基础语法"><span class="nav-number">5.</span> <span class="nav-text">五、vue的基础语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、前端路由基础知识"><span class="nav-number">6.</span> <span class="nav-text">六、前端路由基础知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、Vue-Resource基础介绍"><span class="nav-number">7.</span> <span class="nav-text">七、Vue-Resource基础介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八、ES6讲解"><span class="nav-number">8.</span> <span class="nav-text">八、ES6讲解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#九、"><span class="nav-number">9.</span> <span class="nav-text">九、</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、框架对比"><span class="nav-number">1.</span> <span class="nav-text">一、框架对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、Vue实现双向绑定的代码实例"><span class="nav-number">2.</span> <span class="nav-text">二、Vue实现双向绑定的代码实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、项目架构分析"><span class="nav-number">3.</span> <span class="nav-text">三、项目架构分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、项目构建"><span class="nav-number">4.</span> <span class="nav-text">四、项目构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、vue的基础语法"><span class="nav-number">5.</span> <span class="nav-text">五、vue的基础语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、前端路由基础知识"><span class="nav-number">6.</span> <span class="nav-text">六、前端路由基础知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、Vue-Resource基础介绍"><span class="nav-number">7.</span> <span class="nav-text">七、Vue-Resource基础介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八、ES6讲解"><span class="nav-number">8.</span> <span class="nav-text">八、ES6讲解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#九、进入实战"><span class="nav-number">9.</span> <span class="nav-text">九、进入实战</span></a></li></ol></div>
             
 
           </div>
