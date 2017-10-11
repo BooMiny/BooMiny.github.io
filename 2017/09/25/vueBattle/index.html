@@ -120,7 +120,9 @@
 <meta property="og:description" content="在实战中学习，在学习中提高。">
 <meta property="og:image" content="http://boominy.github.io/2017/09/25/vueBattle/demo1.png">
 <meta property="og:image" content="http://boominy.github.io/2017/09/25/vueBattle/demo2.png">
-<meta property="og:updated_time" content="2017-09-30T08:37:21.406Z">
+<meta property="og:image" content="http://boominy.github.io/2017/09/25/vueBattle/demo3.png">
+<meta property="og:image" content="http://boominy.github.io/2017/09/25/vueBattle/demo5.png">
+<meta property="og:updated_time" content="2017-10-09T16:53:26.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue项目分析学习">
 <meta name="twitter:description" content="在实战中学习，在学习中提高。">
@@ -576,7 +578,9 @@
 <li>全局拦截器interceptors:可以在同一个里面处理多个请求</li>
 </ul>
 </li>
-<li>安装vue-resource的命令：vue-resource –save。</li>
+<li>安装vue-resource的命令：npm install vue-resource</li>
+<li>vue-resource –save。</li>
+<li>安装ejs：npm install ejs –save  可以使用html代替jade</li>
 </ol>
 <h3 id="八、ES6讲解"><a href="#八、ES6讲解" class="headerlink" title="八、ES6讲解"></a>八、ES6讲解</h3><ol>
 <li>函数的Rest参数和扩展</li>
@@ -642,7 +646,7 @@
 <li>我的配置过程：<ol>
 <li>登录你的云主机</li>
 <li>wget  <a href="https://npm.taobao.org/mirrors/node/v8.4.0/node-v8.4.0-linux-x64.tar.gz" target="_blank" rel="external">https://npm.taobao.org/mirrors/node/v8.4.0/node-v8.4.0-linux-x64.tar.gz</a></li>
-<li>解压：tar -xzvf node-v8.4.0-linux-x64.tar.g</li>
+<li>解压：tar -xzvf node-v8.4.0-linux-x64.tar.gz</li>
 <li>可以使用ls -la查看是否有这个安装模块(移除命令：unzip xxx.zip移除模块指令：rm-rf 模块)</li>
 <li>进到目录：node-v8.4.0-linux-x64/bin/</li>
 <li>通过ls -l查看node模块</li>
@@ -651,6 +655,138 @@
 <li>建立npm的软链接ln -s /node-v8.4.0-linux-x64/bin/npm /usr/local/bin/npm</li>
 </ol>
 </li>
+</ul>
+</li>
+</ol>
+<h3 id="九、Node编程基础"><a href="#九、Node编程基础" class="headerlink" title="九、Node编程基础"></a>九、Node编程基础</h3><ol>
+<li>基于Chrome V8引擎</li>
+<li>单线程</li>
+<li>使用Javascript开发后端代码</li>
+<li>非阻塞IO</li>
+<li>实例演示：<ul>
+<li>Common规范</li>
+<li>创建一个Http Server</li>
+<li>创建一个Web容器，可以访问到HTML内容</li>
+<li>Http模块的客户端演示：<ul>
+<li><img src="/2017/09/25/vueBattle/demo3.png" alt="Alt"></li>
+<li>安装express模块: cnpm i -g express-generator</li>
+<li>通过express –version查看版本</li>
+<li>生成express框架文件：express server</li>
+<li>​</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="十、MongoDB"><a href="#十、MongoDB" class="headerlink" title="十、MongoDB"></a>十、MongoDB</h3><ol>
+<li><p>windows平台上安装：</p>
+<ul>
+<li>下载安装包：<a href="https://www.mongodb.com/download-center#community" target="_blank" rel="external">https://www.mongodb.com/download-center#community</a></li>
+<li>安装软件</li>
+<li>创建文件夹/data/db</li>
+<li>在bin目录下启动: mongod.exe –dbpath e:/data/db(git的时候用/window上用\)</li>
+<li>开始使用：mongo</li>
+<li>MongoDB操作：<ul>
+<li>查看所有：show dbs</li>
+<li>创建:<ul>
+<li>use runoob</li>
+<li>db.runoob.insert({“name”:”啦啦啦”})</li>
+</ul>
+</li>
+<li>删除：<ul>
+<li>use runoob</li>
+<li>db.dropDatabase()</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>linux平台上安装</p>
+<ul>
+<li>云主机上的安装请参见博客：<a href="http://blog.csdn.net/leshami/article/details/53171375" target="_blank" rel="external">http://blog.csdn.net/leshami/article/details/53171375</a></li>
+<li>MongoDB安全设置：<ul>
+<li><a href="https://www.howtoing.com/how-to-install-and-configure-mongodb-on-centos-7/" target="_blank" rel="external">https://www.howtoing.com/how-to-install-and-configure-mongodb-on-centos-7/</a></li>
+<li>登录：mongo</li>
+<li>use admin</li>
+<li>验证：db.auth(‘admin’,’admin123’);返回1</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>MongoDB的基本语法：</p>
+<ul>
+<li><img src="/2017/09/25/vueBattle/demo5.png" alt="alt"></li>
+<li>在用户底下创建数据库<ul>
+<li>db.createUser({user:’test’,pwd:’test’,roles:[{role:’readWrite’,db:’testDB’}]})</li>
+<li>use admin</li>
+<li>db.system.users.find({user:’test’})\</li>
+<li>use testDB</li>
+<li>db.auth(‘test’,’test’)</li>
+<li>db.hello.insert({name:’World’})</li>
+<li>db.hello.find()</li>
+</ul>
+</li>
+<li>删除用户：<ul>
+<li>use testDB</li>
+<li>db.dropUser(‘test’)</li>
+</ul>
+</li>
+<li>插入数据<ul>
+<li>db.hello.insert({id:123,name:’hello’})</li>
+<li>show collections</li>
+<li>删除集合：db.hello.drop()</li>
+<li>查看并格式化集合数据db.data.find().pretty()</li>
+<li>查看第一条数据：db.data.findOne()</li>
+<li>db.goods.insert({“productId”:”201710015”,”productName”:”摄像头”,”salePrice”:”222”,”productImage”:”photo.jpg”})</li>
+</ul>
+</li>
+<li>更新数据：<ul>
+<li>db.data.update({userName:’jack’},{$set:{userAge:30}})</li>
+<li>db.data.update({userId:100},{$set:{‘class.name’:’imooc-test’}})</li>
+</ul>
+</li>
+<li>查询数据：<ul>
+<li>db.data.find({“userName”:”jack”}).pretty()</li>
+<li>搜寻大于31的数据：db.data.find({userAge:{$gt:31}}).pretty()</li>
+<li>寻找小于31的数据：db.data.find({userAge:{$lt:31}}).pretty()</li>
+<li>寻找等于30的数据：db.data.find({userAge:{$eq:30}}).pretty()</li>
+<li>寻找大于等于31的数据：db.data.find({userAge:{$gte:31}}).pretty()</li>
+<li>寻找小于等于31的数据：db.data.find({userAge:{$lte:31}}).pretty()</li>
+<li>寻找不等于31的数据：db.data.find({userAge:{$ne:31}}).pretty()</li>
+</ul>
+</li>
+<li>移除数据：<ul>
+<li>db.data.remove({userId:101});</li>
+</ul>
+</li>
+</ul>
+<h3 id="十二、开发商品列表接口"><a href="#十二、开发商品列表接口" class="headerlink" title="十二、开发商品列表接口"></a>十二、开发商品列表接口</h3><ol>
+<li>pm2:<ul>
+<li>优点是不影响其他工作</li>
+<li>安装pm2：npm install pm2 -g</li>
+<li>启动：pm2 satrt +文件路径</li>
+<li>停止进程：pm2 stop all/某个文件的路径</li>
+<li>查看有多少个进程在运行：pm2 list</li>
+<li>查看日志：pm2 log</li>
+</ul>
+</li>
+<li>安装Mongoose<ul>
+<li>npm install mongoose –save</li>
+</ul>
+</li>
+<li>创建model</li>
+<li>创建路由</li>
+<li>基于mongoose,实现商品列表的查询功能</li>
+<li>proxyTable代理</li>
+<li>db.goods.insert({“productId”:”2017100912”,”productName”:”自拍杆”,”salePrice”:88,”productImage”:”2.jpg”})</li>
+</ol>
+</li>
+</ol>
+<h3 id="十三、商品列表接口"><a href="#十三、商品列表接口" class="headerlink" title="十三、商品列表接口"></a>十三、商品列表接口</h3><ol>
+<li>分页插件：<ul>
+<li>cnpm install vue-infinite-scroll –save</li>
+<li>​</li>
 </ul>
 </li>
 </ol>
@@ -783,7 +919,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -794,7 +930,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -805,7 +941,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -860,7 +996,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、框架对比"><span class="nav-number">1.</span> <span class="nav-text">一、框架对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、Vue实现双向绑定的代码实例"><span class="nav-number">2.</span> <span class="nav-text">二、Vue实现双向绑定的代码实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、项目架构分析"><span class="nav-number">3.</span> <span class="nav-text">三、项目架构分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、项目构建"><span class="nav-number">4.</span> <span class="nav-text">四、项目构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、vue的基础语法"><span class="nav-number">5.</span> <span class="nav-text">五、vue的基础语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、前端路由基础知识"><span class="nav-number">6.</span> <span class="nav-text">六、前端路由基础知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、Vue-Resource基础介绍"><span class="nav-number">7.</span> <span class="nav-text">七、Vue-Resource基础介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八、ES6讲解"><span class="nav-number">8.</span> <span class="nav-text">八、ES6讲解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#九、进入实战"><span class="nav-number">9.</span> <span class="nav-text">九、进入实战</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、框架对比"><span class="nav-number">1.</span> <span class="nav-text">一、框架对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、Vue实现双向绑定的代码实例"><span class="nav-number">2.</span> <span class="nav-text">二、Vue实现双向绑定的代码实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、项目架构分析"><span class="nav-number">3.</span> <span class="nav-text">三、项目架构分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、项目构建"><span class="nav-number">4.</span> <span class="nav-text">四、项目构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、vue的基础语法"><span class="nav-number">5.</span> <span class="nav-text">五、vue的基础语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、前端路由基础知识"><span class="nav-number">6.</span> <span class="nav-text">六、前端路由基础知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、Vue-Resource基础介绍"><span class="nav-number">7.</span> <span class="nav-text">七、Vue-Resource基础介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八、ES6讲解"><span class="nav-number">8.</span> <span class="nav-text">八、ES6讲解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#九、进入实战"><span class="nav-number">9.</span> <span class="nav-text">九、进入实战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#九、Node编程基础"><span class="nav-number">10.</span> <span class="nav-text">九、Node编程基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#十、MongoDB"><span class="nav-number">11.</span> <span class="nav-text">十、MongoDB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#十二、开发商品列表接口"><span class="nav-number">12.</span> <span class="nav-text">十二、开发商品列表接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#十三、商品列表接口"><span class="nav-number">13.</span> <span class="nav-text">十三、商品列表接口</span></a></li></ol></div>
             
 
           </div>
